@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project1</title>
+    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+    <!-- !!! mano CSS visada zemiau -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/script.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <header class="row au-15 mb-2 mt-2 no-gutters">
+
+    <!-- ==================HEADER============= -->
+            <div class="col-md-12 col-sm-12">
+            <div id="draggable" class="draggable">
+                <img class="debesis" id="deb" src="./images/cloud.png" alt="">
+                <img class="lietus" id="lie" src="./images/rain-cropped-sm.gif" alt="">
+            </div>
+    <!-- ==================HEADERIO LINKAI==================-->
+                    <div class="logo-links">
+                        <a href="https://www.discogs.com/artist/1032357-Sraunus" target="_blank"><img class="header-logo ml-1" src="./images/discogs-logo.png" alt="sraunus-soundcloud-logo"></a>
+                        <a href="https://soundcloud.com/sraunus" target="_blank"><img class="header-logo ml-1" src="./images/soundcloud-logo.png" alt="sraunus-soundcloud-logo"></a>
+                        <a href="https://www.facebook.com/sraunus/" target="_blank"><img class="header-logo ml-1" src="./images/facebook-logo.png" alt="sraunus-soundcloud-logo"></a>
+                    </div>
+    <!-- ==================HEADERIO LINKAI END==================-->
+            </div>
+        </header>
+    </div>
+                <!-- ======end of header======== -->
+
+                <!-- =======start of wrapper ====== -->
+    <div class="container-fluid">
+
+                <!-- ======= start of MAIN ======= -->
+         <!-- <img id="cloud"  src="./images/cloud.png" alt="sraunus-logo"> -->
+        <div class="row au-70">
+                <!-- ======= NENAUDOJAMAS DIV ======= -->
+            <div class="col-md-2">
+
+            </div>
+            <main  class="col-md-7 np">
+                <svg id="svg-line" height="100%" width="100%">
+                    <line x1="0" y1="0" x2="0" y2="100%" style="stroke:#FBB615;stroke-width:5" />
+                    <line x1="0" y1="0" x2="4%" y2="0" style="stroke:#FBB615;stroke-width:5" />
+                    <line x1="0" y1="100%" x2="4%" y2="100%" style="stroke:#FBB615;stroke-width:5" />
+                    <line x1="96%" y1="0" x2="100%" y2="0" style="stroke:#FBB615;stroke-width:5" />
+                    <line x1="96%" y1="100%" x2="100%" y2="100%" style="stroke:#FBB615;stroke-width:5" />
+                    <line x1="100%" y1="0%" x2="100%" y2="100%" style="stroke:#FBB615;stroke-width:5" />
+                </svg>
+
+
+    <!-- <<<==========================ABOUT DIV WINDOW===============================>>> -->
+
+                <div class="mainWindows" nrw="link1">
+                    <h1 class="op-1 text-center">Window About</h1>
+                </div>
+
+    <!-- <<<==========================MUSIC DIV WINDOW===============================>>> -->
+
+                <div class="mainWindows pad-music" nrw="link2">
+                    <h1 class="op-1 text-center">Window Music</h1>
+
+                </div>
+
+    <!-- <<<==========================GALLERY DIV WINDOW===============================>>> -->
+    <div class="mainWindows pad-gallery" nrw="link3">
+        <div class="image-wrapper mx-auto ">
+            <img class="thumb" src="./resized/bobos-resized.jpg" alt="bobos">
+            <img class="thumb" src="./resized/bzis-resized.jpg" alt="bzis">
+            <img class="thumb" src="./resized/dangus-II-resized.jpg" alt="dangus-dangus-II">
+            <img class="thumb" src="./resized/darzine-resized.jpg" alt="darzine">
+            <img class="thumb" src="./resized/du-stulpai-resized.jpg" alt="du-stulpai">
+            <img class="thumb" src="./resized/duda-resized.jpg" alt="duda">
+            <img class="thumb" src="./resized/eina-resized.jpg" alt="eina">
+            <img class="thumb" src="./resized/fa-bai-resized.jpg" alt="fa-bai">
+            <img class="thumb" src="./resized/fabu-panorama-resized.jpg" alt="fabu-panorama">
+            <img class="thumb" src="./resized/gedas-eina-su-meskere-resized.jpg" alt="gedas-eina-su-meskere">
+            <img class="thumb" src="./resized/gedas-piromanas2-resized.jpg" alt="gedas-piromanas2">
+
+        </div>
+    </div>
+
+    <!-- <div class="mainWindows pad-gallery" nrw="link3">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner op-1" role="listbox">
+        <div class="carousel-item active">
+            <img class="d-block img-fluid" src="images/DSC_1831.JPG" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="images/DSC_1864.JPG" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="images/DSC_1925.JPG" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr5only">Next</span>
+    </a>
+    </div>
+    </div> -->
+    <!-- <<<==========================CONTACT DIV WINDOW===============================>>> -->
+
+                <div class="mainWindows" nrw="link4">
+                    <h1 class="op-1 text-center">Window Contacts</h1>
+                </div>
+            </main>
+            <!-- ======= start of NAV ======= -->
+            <!-- NENAUDOJAMAS NAV -->
+            <nav class="col">
+                <svg id="svg-line-first" height="100%" width="1">
+                    <line x1="0" y1="0" x2="0" y2="100%" style="stroke:#FBB615;stroke-width:5" />
+                </svg>
+                <div class="row au-40 nm" id="switchOff">
+                    <div class="col-md-12 np">
+
+                    </div>
+                </div>
+                <!-- ANTRA NAV SEKCIJA -->
+                <div class="row nm">
+                    <div class="col-md-12 col-md-12 np">
+                        <div class="list-group ml-5 text-center">
+                            <a href="#" class="sideLinks list-group-item list-group-item-action" nrl="link1">ABOUT</a>
+                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-2" nrl="link2">MUSIC</a>
+                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-2" nrl="link3">GALLERY</a>
+                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-2" nrl="link4">CONTACTS</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+                <!-- ======= NENAUDOJAMAS DIV ======= -->
+            <div class="col-md-1">
+
+            </div>
+
+        </div>
+        <!--sitas div uzdaro konteieneri -->
+    </div>
+
+
+    <!-- ========end of wrapper and NAV======== -->
+
+    <!-- ========start of FOOTER======== -->
+    <div class="container">
+        <footer class="row au-5 mb-2">
+            <div class="col mt-2">
+
+            </div>
+
+
+        </footer>
+    </div>
+
+
+
+    </body>
+
+</html>

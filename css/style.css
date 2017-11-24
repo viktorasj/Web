@@ -1,0 +1,207 @@
+body {
+    background-image: url("../images/DSC_2010.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    font-weight: 200;
+    box-sizing: border-box;
+
+}
+
+.au-15 {
+    height: 15vh;
+}
+
+.au-17 {
+    height: 17em;
+}
+.au-18 {
+    height: 18em;
+}
+.au-20 {
+    height: 20vhem;
+}
+
+
+.au-35 {
+    height: 35em;
+}
+.au-40 {
+    height: 40vh;
+}
+.au-50 {
+    height: 50vh;
+}
+.au-70 {
+    height: 70vh;
+}
+
+.look {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    width: 100%;
+    transition: all 5s ease-in-out;
+}
+.op-1 {
+    opacity: 1;
+    z-index: 3
+
+}
+ul {
+    list-style: none;
+}
+.mb-li {
+    margin-bottom: 1em;
+}
+
+.mt-ul {
+    margin-top: 4em;
+}
+
+svg {
+    position: absolute;
+}
+nav.col {
+    padding-left: 0px;
+    padding-right: -0px;
+}
+
+.mainWindows {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+a.list-group-item {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+a.list-group-item-action:hover {
+    background-color: transparent;
+    border: none;
+    color: #FBB615;
+}
+
+a.list-group-item-action:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow:inset 0px 0px 0px 1px #FBB615;
+    color: #FBB615;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+a.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+a.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* nuima keires desines padding*/
+
+.np {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* nuima keires desines margin*/
+
+.nm {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.scrl-music {
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+.pad-music {
+    padding: 3em;
+}
+
+.pad-gallery {
+    padding: 2em;
+}
+
+img.logo {
+    position: absolute;
+    width: 20em;
+    opacity: 0.5;
+}
+
+div.logo-links {
+    display: inline-block;
+    float: right;
+    margin-top: 5vh;
+    margin-right: 10vw;
+}
+.header-logo {
+    width: 45px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header-logo:hover {
+    opacity: 0.9;
+}
+
+#svg-line {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#svg-line-first {
+    opacity: 0.8;
+    filter:grayscale(80%);
+}
+
+.draggable {
+    position: relative;
+    z-index: 4;
+    width: 16em;
+}
+
+.debesis {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.lietus {
+    position: absolute;
+    top: 5em;
+    right: 1em;
+    opacity: 0;
+}
+.sideLinks {
+    font-size: 2vh;
+}
+
+.thumb {
+    width: 300px;
+    filter: grayscale(100%);
+    transition: all 0.2s ease-in-out;
+}
+
+.thumb:hover {
+    filter: grayscale(0%);
+    }
+
+.image-wrapper {
+    width: auto;
+    height: 100%
+}
