@@ -1,0 +1,41 @@
+.au-10 {
+    height: 10em;
+}
+
+.au-30 {
+    height: 30em;
+}
+
+.balta {
+    color: white;
+}
+
+.pl-30 {
+    width: 30em;
+}
+
+.mainW {
+    opacity: 0;
+    display: block;
+    transition: all 1s ease-in-out;
+
+}
+
+.thumb {
+    width: 30vw;
+    height: auto;
+}
+
+.thumb2 {
+    width: 100%;
+    height: auto;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.exit {
+    width: 10vw;
+}
