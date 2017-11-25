@@ -4,14 +4,14 @@ document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
 for (var i = 0; i < mainWArray.length; i++) {
     if (mainWArray[i] == event.target.getAttribute('nrl')) {
         console.log("atidaro ", i, "langa");
-        mainW[i].style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+        mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         mainW[i].style.opacity = "1";
         mainW[i].style.zIndex = "3";
         document.getElementById("svg-line").style.opacity = "1";
         document.getElementById("svg-line-first").style.opacity = "1";
     }
     else if(mainWArray[i] != event.target.getAttribute('nrl')) {
-        mainW[i].style.backgroundColor = "rgba(255, 255, 255, 0)";
+        mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0)";
         mainW[i].style.opacity = "0";
         mainW[i].style.zIndex = "0";
     }

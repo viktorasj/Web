@@ -74,7 +74,7 @@ nav.col {
 
 .mainWindows {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
     height: 100%;
     width: 100%;
     opacity: 0;
@@ -111,14 +111,14 @@ a.list-group-item {
 a.list-group-item-action:hover {
     background-color: transparent;
     border: none;
-    color: #FBB615;
+    color: #FE01E7;
 }
 
 a.list-group-item-action:focus {
     background-color: transparent;
     border: none;
-    box-shadow:inset 0px 0px 0px 1px #FBB615;
-    color: #FBB615;
+    box-shadow:inset 0px 0px 0px 1px #FE01E7;
+    color: #FE01E7;
     background-color: transparent;
     transition: all 0.2s ease-in-out;
 }
