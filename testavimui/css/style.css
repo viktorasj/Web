@@ -20,3 +20,22 @@
     transition: all 1s ease-in-out;
 
 }
+
+.thumb {
+    width: 30vw;
+    height: auto;
+}
+
+.thumb2 {
+    width: 100%;
+    height: auto;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.exit {
+    width: 10vw;
+}
