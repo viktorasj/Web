@@ -79,8 +79,28 @@ nav.col {
     width: 100%;
     opacity: 0;
     transition: background-color 0.5s ease-in-out;
+    overflow: hidden;
+
 }
 
+.gallery-formating{
+    overflow-y: auto;
+    border-bottom: transparent 1vw solid;
+    padding-left: 3vw;
+    padding-right: 2vw;
+}
+
+.thumb {
+    width: 16vw;
+    filter: grayscale(100%);
+    transition: all 0.2s ease-in-out;
+    margin-left: 1vw;
+    margin-top: 1vw;
+}
+
+.thumb:hover {
+    filter: grayscale(0%);
+    }
 
 a.list-group-item {
     background-color: transparent;
@@ -137,9 +157,7 @@ a.list-group-item:last-child {
     padding: 3em;
 }
 
-.pad-gallery {
-    padding: 2em;
-}
+
 
 img.logo {
     position: absolute;
@@ -194,19 +212,4 @@ div.logo-links {
 }
 .sideLinks {
     font-size: 2vh;
-}
-
-.thumb {
-    width: 300px;
-    filter: grayscale(100%);
-    transition: all 0.2s ease-in-out;
-}
-
-.thumb:hover {
-    filter: grayscale(0%);
-    }
-
-.image-wrapper {
-    width: auto;
-    height: 100%
 }
