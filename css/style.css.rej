@@ -1,0 +1,21 @@
+diff a/css/style.css b/css/style.css	(rejected hunks)
+@@ -1,12 +1,17 @@
+ body {
+-    background-image: url("../images/DSC_2010.jpg");
++    background-image: url("../images/DSC_2010_reduced.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100%;
+-    height: auto;
++    height: 100%;
+     font-weight: 200;
+     box-sizing: border-box;
++    overflow: hidden;
++
++}
+ 
++.au-10 {
++    height: 10vh;
+ }
+ 
+ .au-15 {
