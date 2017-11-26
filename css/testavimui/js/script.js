@@ -12,7 +12,6 @@ console.log(photoLinks);
 function showGallery() {
     console.log(event.target.id);
     for (var i = 0; i < photoLinks.length; i++) {
-        photoLinks[i].firstChild.id = "photo"+[i];
         photoLinks[i].firstChild.className = "d-block img-fluid mx-auto";
         photoLinks[i].addEventListener('click', showGallery);
     }

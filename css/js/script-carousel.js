@@ -1,6 +1,5 @@
 var photoLinks = document.getElementsByClassName('photo-links');
-var exit = document.getElementById('exit');
-console.log(exit);
+
 
 for (var i = 0; i < photoLinks.length; i++) {
     photoLinks[i].firstChild.id = "photo"+[i];
@@ -11,17 +10,24 @@ console.log(photoLinks);
 
 function showGallery() {
     console.log(event.target.id);
-    for (var i = 0; i < photoLinks.length; i++) {
-        photoLinks[i].firstChild.id = "photo"+[i];
-        photoLinks[i].firstChild.className = "d-block img-fluid mx-auto";
-        photoLinks[i].addEventListener('click', showGallery);
+    for (var u = 0; u < photoLinks.length; u++) {
+        photoLinks[u].firstChild.className = 'd-block img-fluid mx-auto photo-formating';
     }
     console.log(photoLinks);
+
+    var parentDiv = document.createElement('div');
+    parentDiv.className = 'popup-formating';
+    parentDiv.id = 'parentDiv';
+    document.body.insertBefore(parentDiv, document.body.firstChild);
+
+    var text = '<svg id="cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>';
+    document.getElementById('parentDiv').innerHTML = text;
+
 
     var containerDiv = document.createElement('div');
     containerDiv.className = 'container';
     containerDiv.id = 'id1';
-    document.getElementsByTagName('body')[0].appendChild(containerDiv);
+    document.getElementById('parentDiv').appendChild(containerDiv);
 
     var carouselControlsDiv = document.createElement('div');
     carouselControlsDiv.id = 'carouselExampleControls';
@@ -43,7 +49,6 @@ function showGallery() {
             carouselItemActive.id = 'id' + [i+10];
             document.getElementById('id2').appendChild(carouselItemActive);
             document.getElementById('id' +[i+10]).innerHTML = photoLinks[i].innerHTML;
-            console.log(document.getElementById('id' +[i+10]).innerHTML);
     }
         else /*if (event.target.id != photoLinks[i].firstChild.id)*/ {
             var carouselItem = document.createElement('div');
@@ -51,7 +56,6 @@ function showGallery() {
             carouselItem.id = ('id' + [i+100]);
             document.getElementById('id2').appendChild(carouselItem);
             document.getElementById('id' + [i+100]).innerHTML = photoLinks[i].innerHTML;
-            console.log(photoLinks[i].innerHTML);
 
         }
 
@@ -93,28 +97,35 @@ function showGallery() {
 
     for (var j = 0; j < photoLinks.length; j++) {
         photoLinks[j].removeEventListener('click', showGallery);
-        console.log(photoLinks);
-        photoLinks[j].firstChild.className -= ("d-block img-fluid mx-auto");
+        photoLinks[j].firstChild.className = 'thumb';
+        // photoLinks[j].firstChild.className = ("thumb");
     }
     console.log(document.getElementsByTagName('body'));
+
+    var exit = document.getElementById('cross-button');
+    console.log(exit);
+
+    exit.onclick = function() {
+        // console.log(remGalFromBody);
+        document.getElementById("parentDiv").remove();
+        for (var i = 0; i < photoLinks.length; i++) {
+            photoLinks[i].addEventListener('click', showGallery);
+        }
+    };
+
+
+
+
+
+
+
 
 }
 
 
-exit.onclick = function() {
-    // console.log(remGalFromBody);
-    document.getElementById("id1").remove();
-    for (var i = 0; i < photoLinks.length; i++) {
-        photoLinks[i].addEventListener('click', showGallery);
-    }
 
 
-};
-
-
-
-
-
+//=========================================================================
 
 
 

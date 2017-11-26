@@ -8,7 +8,7 @@ for (var i = 0; i < mainWArray.length; i++) {
         mainW[i].style.opacity = "1";
         mainW[i].style.zIndex = "3";
         document.getElementById("svg-line").style.opacity = "1";
-        document.getElementById("svg-line-first").style.opacity = "1";
+        document.getElementById("svg-line-first").style.opacity = "0";
     }
     else if(mainWArray[i] != event.target.getAttribute('nrl')) {
         mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0)";
