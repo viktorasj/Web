@@ -179,15 +179,15 @@ div.logo-links {
     margin-right: 10vw;
 }
 .header-logo {
-    width: 45px;
+    width: 2em;
     height: auto;
     filter: grayscale(100%);
-    opacity: 0.3;
+    opacity: 0.6;
     transition: opacity 0.3s ease-in-out;
 }
 
 .header-logo:hover {
-    opacity: 0.9;
+    opacity: 1;
 }
 
 #svg-line {
@@ -209,7 +209,7 @@ div.logo-links {
 
 .debesis {
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 .lietus {
@@ -236,8 +236,9 @@ div.logo-links {
     width: 80vw;
     height: 80vh;
     z-index: 5;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     transition: all 2s ease;
+
 }
 
 .photo-formating {
@@ -254,6 +255,13 @@ div.logo-links {
     width: 100%;
     height: auto;
     vertical-align: middle;
+}
+
+#cross-button {
+    position: relative;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 
