@@ -307,3 +307,48 @@ div.logo-links {
     stroke-dashoffset: 0;
   }
 }
+
+@media screen and (max-width: 1610px) {
+    body {
+        background-image: url("../images/background.jpg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 100%;
+        height: 100%;
+        font-weight: 200;
+        box-sizing: border-box;
+    }
+    .thumb {
+        width: 16vw;
+        filter: grayscale(100%);
+        transition: all 0.2s ease-in-out;
+        margin-left: 7px;
+        margin-top: 1vw;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+
+
+        margin-left: 7px;
+    }
+
+}
+
+@media screen and (max-width: 374px) {
+    body {
+        background: url("../images/background.jpg") -125px -100px;
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 100%;
+        height: 667px;
+        font-weight: 200;
+        box-sizing: border-box;
+    }
+    .debesis {
+        display: none;
+    }
+
+
+}
