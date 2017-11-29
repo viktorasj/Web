@@ -1,27 +1,27 @@
 window.onload = function () {
 function doStuff() {
+document.getElementById('musicWindow').style.visibility = "visible"; //reikalingas ijungti music div'a;
 document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
+$("main.col-md-7").css("border-left","#FE01E7 1px solid");
+$("main.col-md-7").css("border-right","#FE01E7 1px solid");
 for (var i = 0; i < mainWArray.length; i++) {
+    console.log(mainWArray);
     if (mainWArray[i] == event.target.getAttribute('nrl')) {
         console.log("atidaro ", i, "langa");
-        mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        mainW[i].style.opacity = "1";
-        mainW[i].style.zIndex = "3";
-        document.getElementById("svg-line").style.opacity = "1";
+        $('.mainWindows').eq(i).animate({opacity: 1}, 500).show();
+        mainW[i].style.backgroundColor = "rgba(0, 0, 0, 1)";
         document.getElementById("svg-line-first").style.opacity = "0";
     }
     else if(mainWArray[i] != event.target.getAttribute('nrl')) {
         mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0)";
-        mainW[i].style.opacity = "0";
-        mainW[i].style.zIndex = "0";
+        $('.mainWindows').eq(i).animate({opacity: 0}, 800).hide();
     }
   }
 }
 
 function refresh(){
     for (var i = 0; i < mainWArray.length; i++){
-        mainW[i].style.backgroundColor = "rgba(255, 255, 255, 0)";
-        mainW[i].style.opacity = "0";
+        mainW[i].style.display = "none";
     }
 }
 
@@ -64,16 +64,34 @@ debesis.ondblclick = function (){
 };
 
 
+$(".sideLinks").click(function(){
+  $(".sideLinks").removeClass("active");
+  $(this).addClass("active");
+});
 
 
 
+$( "#draggable" ).draggable();
 
-
-$( function() {
-  $( "#draggable" ).draggable();
-} );
-
-$( function() {
-  $( "#rain" ).draggable();
-} );
+$( "#rain" ).draggable();
 };
+
+
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+       $( "list-group-item").next().addClass( "active" );
+       $( "list-group-item").removeClass("active");
+   });
+});
+
+// slider for
+
+$(document).ready(function(){
+   $('.slider').bxSlider({
+       responsive: true,
+       pager: false,
+       randomStart: true,
+       keyboardEnabled: true
+   });
+ });

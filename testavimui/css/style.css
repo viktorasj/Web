@@ -1,41 +1,27 @@
-.au-10 {
-    height: 10em;
-}
-
-.au-30 {
-    height: 30em;
-}
-
-.balta {
-    color: white;
-}
-
-.pl-30 {
-    width: 30em;
-}
-
-.mainW {
-    opacity: 0;
+.block-to-close {
     display: block;
-    transition: all 1s ease-in-out;
-
+    width: 800px;
+    height: 600px;
+    margin-left: 50px;
+    margin-top: 100px;
+    background-color: green;
 }
 
-.thumb {
-    width: 30vw;
-    height: auto;
+.block-to-toggle {
+
+    width: 60px;
+    height: 60px;
+    background-color: red;
 }
 
-.thumb2 {
-    width: 100%;
-    height: auto;
+.iframe-on {
 
+    width: 60px;
+    height: 60px;
+    background-color: blue;
 }
 
-.hidden {
-    display: none;
-}
 
-.exit {
-    width: 10vw;
+iframe {
+    display: block;
 }
