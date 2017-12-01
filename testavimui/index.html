@@ -9,23 +9,86 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
     <!-- !!! mano CSS visada zemiau -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script src="./js/jquery-3.2.1.min.js" deger></script>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/script.js" defer></script>
     <!-- <script src="./js/script-carousel.js" defer></script> -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 
 
 </head>
 
     <body>
-        <div class="slider">
-            <div><iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=255314140/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/ambient">Ambient by Sraunus</a></iframe></div>
-            <div><iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=1601112954/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/atmospheric-insomnia">Atmospheric Insomnia by Sraunus</a></iframe></div>
+
+
+        <div id="divForIframe">
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=255314140/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/ambient">Ambient by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1601112954/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/atmospheric-insomnia">Atmospheric Insomnia by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=4103229316/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/asperatus-clouds">Asperatus Clouds by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=74384327/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/vibrant-dead-rock">VIBRANT DEAD ROCK by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=3142394891/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/season-1">Season 1 by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1290605309/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/novellas">Novellas by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=24979014/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/apie-pauli-epet">Apie Paulių Šepetį by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=936072141/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/humanistinis-ep">Humanistinis ep by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=3145400858/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/zukunft-afrika">Zukunft Afrika by Sraunus</a></iframe>
+                <iframe class="visIframes" style="border: 0; width: 30vw; height: 79vh;" playerid="" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1270721151/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/out-of-the-city">Out Of The City by Sraunus</a></iframe>
+                <svg id="music-cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>
         </div>
 
+
+<div class="musicWindow">
+
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/1Ambient.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/2Atmospheric_Insomnia.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/3Asperatus_Clouds.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/4VIBRANT_DEAD_ROCK.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/5Season_1.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/6Novellas.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/7Apie_Pauliu_Sepeti.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid=""  src="./images_art/8Humanistinis_ep.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/9Zukunft_Afrika.jpg" alt=""> </a>
+    <a href="#"> <img class="art alb-img-format" linkid="" src="./images_art/10Out_Of_The_City.jpg" alt=""> </a>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="">
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=255314140/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/ambient">Ambient by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1601112954/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/atmospheric-insomnia">Atmospheric Insomnia by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=4103229316/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/asperatus-clouds">Asperatus Clouds by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=74384327/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/vibrant-dead-rock">VIBRANT DEAD ROCK by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=3142394891/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/season-1">Season 1 by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1290605309/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/novellas">Novellas by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=24979014/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/apie-pauli-epet">Apie Paulių Šepetį by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=936072141/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/humanistinis-ep">Humanistinis ep by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=3145400858/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/zukunft-afrika">Zukunft Afrika by Sraunus</a></iframe></div>
+            <div class="text-center"><iframe class="mano" style="border: 0; width: 24vw; height: 60vh;" src="about:blank" data-src="https://bandcamp.com/EmbeddedPlayer/album=1270721151/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/" seamless><a href="http://sraunus.bandcamp.com/album/out-of-the-city">Out Of The City by Sraunus</a></iframe></div>
+        </div> -->
     </body>
 
 </html>
