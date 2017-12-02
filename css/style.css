@@ -126,14 +126,14 @@ a.list-group-item-action:hover {
     font-weight: 100;
     background-color: transparent;
     border: none;
-    color: #d63ec8;
+    color: #660066;
 }
 
 /*a.list-group-item-action:focus {
     background-color: transparent;
     border: none;
-    box-shadow:inset 0px 0px 0px 1px #d63ec8;
-    color: #d63ec8;
+    box-shadow:inset 0px 0px 0px 1px #660066;
+    color: #660066;
     background-color: transparent;
     transition: all 0.2s ease-in-out;
 }*/
@@ -143,8 +143,8 @@ a.list-group-item-action:hover {
     z-index: 2;
     background-color: transparent;
     border: none;
-    box-shadow:inset 0px 0px 0px 1px #d63ec8;
-    color: #d63ec8;
+    box-shadow:inset 0px 0px 0px 1px #660066;
+    color: #660066;
     background-color: transparent;
     transition: all 0.2s ease-in-out;
 }

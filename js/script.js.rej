@@ -1,0 +1,10 @@
+diff a/js/script.js b/js/script.js	(rejected hunks)
+@@ -14,7 +14,7 @@
+                 $('.mainWindows').eq(i).animate({
+                     opacity: 1
+                 }, 500).show();
+-                mainW[i].style.backgroundColor = "rgba(0, 0, 0, 1)";
++                mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+                 document.getElementById("svg-line-first").style.opacity = "0";
+             } else if (mainWArray[i] != event.target.getAttribute('nrl')) {
+                 mainW[i].style.backgroundColor = "rgba(0, 0, 0, 0)";
