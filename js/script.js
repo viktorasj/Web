@@ -6,8 +6,8 @@ window.onload = function() {
 
         $('#musicWindow').css("visibility", "visible"); //reikalingas ijungti music div'a;
         document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
-        $("main.mdl-cell--7-col").css("border-left", "#FE01E7 1px solid");
-        $("main.mdl-cell--7-col").css("border-right", "#FE01E7 1px solid");
+        $("main.mdl-cell--7-col").css("border-left", "#d63ec8 1px solid");
+        $("main.mdl-cell--7-col").css("border-right", "#d63ec8 1px solid");
         for (var i = 0; i < mainWArray.length; i++) {
             if (mainWArray[i] == event.target.getAttribute('nrl')) {
                 console.log("atidaro ", i, "langa");
@@ -90,15 +90,15 @@ window.onload = function() {
     swNav.addEventListener('click', refresh);
 
     debesis.onmouseup = function() {
-        lietus.style.display = "none";
+        lietus.style.visibility = "hidden";
     };
 
     debesis.onmousedown = function() {
-        lietus.style.display = "block";
+        lietus.style.visibility = "visible";
     };
 
     debesis.ondblclick = function() {
-        lietus.style.display = "block";
+        lietus.style.visibility = "visible";
     };
 
 
