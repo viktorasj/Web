@@ -1,0 +1,27 @@
+body {
+    background-color: rgba(246, 178, 90, 0.76)
+}
+.musicWindow {
+    width: 50vw;
+    height: 100vh;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    background: #fafafa;
+    overflow: scroll;
+}
+
+#divForIframe {
+    display: none;
+    position: absolute;
+    top: 20vh;
+    right: 20vw;
+    width: 40vw;
+    height: 60vh;
+    background-color: pink;
+}
+
+.visIframes {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
