@@ -32,7 +32,6 @@ window.onload = function() {
     }
 
     function showPlayer (e) {
-        console.log(playerDivs);
         for (var i = 0; i < playerDivs.length; i++) {
 
         if (e.target.attributes.linkid.value === playerDivs[i].attributes[2].value){
@@ -45,15 +44,13 @@ window.onload = function() {
         }
         $('#music-cross-button').click(function(){
 
-            $(".visIframes").fadeOut(3000, function (){
-                $('#divForIframe').slideUp("slow");
-                console.log(playerDivs);
-                console.log(document.getElementById('#divForIframe'));
-        });
+            $(".visIframes").fadeOut(1000, function (){
+            $('#divForIframe').slideUp("slow");
+                });
+
+
     });
-
-    }
-
+}
 
 
 
