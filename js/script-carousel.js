@@ -6,16 +6,6 @@ for (var i = 0; i < photoLinks.length; i++) {
     photoLinks[i].addEventListener('click', showGallery);
 }
 
-// $(".photo-links").click(function(){
-//             $("#parentDiv").attr("display", "block").show(3000);
-//         });
-
-console.log(photoLinks);
-
-
-
-
-
 function showGallery() {
     console.log(event.target.id);
     for (var u = 0; u < photoLinks.length; u++) {
@@ -111,24 +101,7 @@ function showGallery() {
     }
     console.log(document.getElementsByTagName('body'));
 
-    //
-    // $("#cross-button").click(function() {
-    //     $("#parentDiv").animate({
-    //         height: 'toggle'
-    //     }, "slow", function() {
-    //         for (var r = 0; r < photoLinks.length; r++) {
-    //             photoLinks[r].addEventListener('click', showGallery);
-    //         }
-    //         $("#parentDiv").remove();
-    //
-    //     });
-    //
-    // });
-
-
     $('#parentDiv').show(500, "swing");
-
-
 
     $('#cross-button').click(function(){
         $('#parentDiv').hide(500, function(){
@@ -139,63 +112,3 @@ function showGallery() {
         });
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//=========================================================================
-
-
-
-
-// function doStuff() {
-//
-//
-//
-//     for (var i = 0; i < mainWArray.length; i++) {
-//         if (mainWArray[i] == event.target.getAttribute('nrl')) {
-//             console.log("atidaro ", i, "langa");
-//             mainW[i].style.display = "block";
-//             mainW[i].style.opacity = "1";
-//         }
-//         else if(mainWArray[i] != event.target.getAttribute('nrl')) {
-//             mainW[i].style.display = "none";
-//             mainW[i].style.opacity = "0";
-//         }
-//     }
-// }
-//
-//
-// var linkai = document.getElementsByTagName('a');
-// var mainW = document.getElementsByClassName('mainW');
-// var mainWArray = [];
-//
-//
-// for (var i = 0; i < linkai.length; i++) {
-//     linkai[i].addEventListener('click', doStuff);
-// }
-// for (i = 0; i < mainW.length; i++) {
-//     mainWArray.push(mainW[i].getAttribute("nrw"));
-// }
-// console.log(mainWArray);
-
-// var element = "div,p,google";
-// var j = element.split(',');
-// var crt;
-//
-// for(var i = 0; i < j.length; i++) {
-//     crt = document.createElement(j[i]);
-//     document.body.appendChild(crt);
-// }

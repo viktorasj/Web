@@ -1,13 +1,60 @@
 window.onload = function() {
 
+    $('.submit-text').click(function(){
+        var name = $('#nameField').val();
+        var email = $('#emailField').val();
+        var textToSend = $('#textAreaField').val();
+
+        document.getElementById("nameField").value = "";
+        document.getElementById("emailField").value = "";
+        document.getElementById("textAreaField").value = "";
+        $.ajax({
+            url:'./php/mailData.php',
+            data: {name: name,
+                   email: email,
+                   message: textToSend},
+            // data: 'name='+name,
+            success: function(){
+                $('#buttonToSend').attr('value','Message Sent!');
+                $('#buttonToSend').css({
+                                            border: '2px solid #33e71f',
+                                            color: '#33e71f',
+                                            width: '51vw'
+                                        }, 200);
+                $('#buttonToSend').clearQueue();
+                $('#buttonToSend').stop();
+            }
+        });
+        $('.submit-text').unbind('click');
+    });
+
+    $.ajax({
+            url: './php/iframe_sources.php',
+            type: 'GET',
+            data: {
+                id: name
+            },
+        })
+        .done(function(data) {
+            document.getElementById('divForIframe').innerHTML += data;
+
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete loading all Iframes to 'Music'");
+        });
+
+
 
     function doStuff() {
 
 
         $('#musicWindow').css("visibility", "visible"); //reikalingas ijungti music div'a;
         document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
-        $("main.mdl-cell--7-col").css("border-left", "#660066 1px solid");
-        $("main.mdl-cell--7-col").css("border-right", "#660066 1px solid");
+        $("main.mdl-cell--7-col").css("border-left", "#FE01F5 1px solid");
+        $("main.mdl-cell--7-col").css("border-right", "#FE01F5 1px solid");
         for (var i = 0; i < mainWArray.length; i++) {
             if (mainWArray[i] == event.target.getAttribute('nrl')) {
                 console.log("atidaro ", i, "langa");
@@ -31,26 +78,28 @@ window.onload = function() {
         }
     }
 
-    function showPlayer (e) {
+    function showPlayer(e) {
+
         for (var i = 0; i < playerDivs.length; i++) {
 
-        if (e.target.attributes.linkid.value === playerDivs[i].attributes[2].value){
+
+            if (e.target.attributes.linkid.value === playerDivs[i].attributes[2].value) {
                 $("#divForIframe").slideDown("slow");
                 $(".visIframes").eq(i).fadeIn(3000);
                 var currentSrc = playerDivs[i].getAttribute('data-src');
                 playerDivs[i].setAttribute('src', '');
                 playerDivs[i].setAttribute('src', currentSrc);
-                }
+            }
         }
-        $('#music-cross-button').click(function(){
+        $('#music-cross-button').click(function() {
 
-            $(".visIframes").fadeOut(1000, function (){
-            $('#divForIframe').slideUp("slow");
-                });
+            $(".visIframes").fadeOut(1000, function() {
+                $('#divForIframe').slideUp("slow");
+            });
 
 
-    });
-}
+        });
+    }
 
 
 
@@ -69,6 +118,8 @@ window.onload = function() {
 
 
 
+
+
     for (i = 0; i < sideLinks.length; i++) {
         sideLinks[i].addEventListener('click', doStuff);
     }
@@ -78,12 +129,8 @@ window.onload = function() {
     }
 
 
-    for (i = 0; i < playerDivs.length; i++) {
-        playerDivs[i].setAttribute("playerid", "music"+[i]);
-    }
-
     for (i = 0; i < albumLinks.length; i++) {
-        albumLinks[i].setAttribute("linkid", "music"+[i]);
+        albumLinks[i].setAttribute("linkid", "music" + [i]);
         albumLinks[i].addEventListener('click', showPlayer);
     }
 
@@ -113,6 +160,21 @@ window.onload = function() {
 
 
     $("#rain").draggable();
+
+    $(".text-textarea").focusin(function() {
+        $('.text-span').css({
+            'border-top': 'solid 2px #e71f1f',
+            'border-bottom': 'solid 2px #e71f1f'
+        });
+    });
+    $(".text-textarea").focusout(function() {
+        $('.text-span').css({
+            'border-top': 'solid 2px #A09C9C',
+            'border-bottom': 'solid 2px #A09C9C'
+        });
+    });
+
+
 
 
 };
