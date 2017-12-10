@@ -1,4 +1,5 @@
 var photoLinks = document.getElementsByClassName('photo-links');
+console.log(photoLinks);
 
 $.ajax({
         url: './php/photos.php',
@@ -32,19 +33,18 @@ function showGallery() {
     $('.popup-formating').css('display','none');
 
     var text = '<svg id="cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>';
-    document.getElementById('parentDiv').innerHTML = text;
+    parentDiv.innerHTML = text;
 
 
     var containerDiv = document.createElement('div');
     containerDiv.className = 'container';
     containerDiv.id = 'id1';
     document.getElementById('parentDiv').appendChild(containerDiv);
-
     var carouselControlsDiv = document.createElement('div');
     carouselControlsDiv.id = 'carouselExampleControls';
     carouselControlsDiv.className = 'carousel slide';
-    document.getElementById('id1').appendChild(carouselControlsDiv);
-    document.getElementById('carouselExampleControls').setAttribute("data-ride", "carousel");
+    containerDiv.appendChild(carouselControlsDiv);
+    containerDiv.setAttribute("data-ride", "carousel");
 
     var carouselInner = document.createElement('div');
     carouselInner.className = 'carousel-inner';

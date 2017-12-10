@@ -1,9 +1,41 @@
 window.onload = function() {
 
+
     $('.submit-text').click(function(){
         var name = $('#nameField').val();
         var email = $('#emailField').val();
         var textToSend = $('#textAreaField').val();
+
+        if(name == "" || email == "" || textToSend == ""){
+            $('#buttonToSend').attr('value','Blank fields');
+            $('#buttonToSend').css({
+                                        color: '#fec90e',
+                                        }, 200);
+            setTimeout(function() {
+                $('#buttonToSend').attr('value','Send!');
+                $('#buttonToSend').css({
+                                            color: '#A09C9C',
+                                            }, 200);
+            }, 4000);
+
+            return;
+        }
+
+        if(!validateEmail(email)) {
+            $('#buttonToSend').attr('value','Check email address');
+            $('#buttonToSend').css({
+                                        color: '#e71f1f',
+                                        }, 200);
+            setTimeout(function() {
+                $('#buttonToSend').attr('value','Send!');
+                $('#buttonToSend').css({
+                                            color: '#A09C9C',
+                                            }, 200);
+            }, 4000);
+
+            return;
+        }
+
 
         document.getElementById("nameField").value = "";
         document.getElementById("emailField").value = "";
@@ -30,10 +62,7 @@ window.onload = function() {
 
     $.ajax({
             url: './php/iframe_sources.php',
-            type: 'GET',
-            data: {
-                id: name
-            },
+            type: 'GET'
         })
         .done(function(data) {
             document.getElementById('divForIframe').innerHTML += data;
@@ -46,7 +75,10 @@ window.onload = function() {
             console.log("complete loading all Iframes to 'Music'");
         });
 
-
+    function validateEmail(tester) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(tester);
+        }
 
     function doStuff() {
 

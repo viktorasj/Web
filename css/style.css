@@ -501,17 +501,17 @@ color: #aaa;
 .button-LogIn:hover {
     color: #000;
     background-color: rgba(#9ba5af, 0.66);
-    border-color: #000
+    border-color: #000;
 }
 
 .button-LogIn.focus, .button-LogIn:focus {
-    box-shadow: 0 0 0 3px #000
+    box-shadow: 0 0 0 3px #000;
 }
 
 .button-LogIn.active, .button-LogIn:active {
     color: #000;
     background-color: rgba(#9ba5af, 0.66);
-    border-color: #000
+    border-color: #000;
 }
 
 
@@ -519,6 +519,7 @@ color: #aaa;
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(187, 187, 187, 0.64);
+}
 
 @media screen and (max-width: 1610px) {
     body {

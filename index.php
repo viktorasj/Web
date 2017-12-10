@@ -28,6 +28,7 @@
 
 <?php
 include_once ('./php/database_functions.php');
+include_once ('./php/main-login.php');
 ?>
     <div class="container-fluid np">
         <div id="divForIframe">
@@ -39,22 +40,12 @@ include_once ('./php/database_functions.php');
                     <input class="login-inputs" type="text" name="username" value="" placeholder="Username" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only" autofocus>
                     <input class="login-inputs" type="text" name="password" value="" placeholder="Password" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only">
                     <button type="submit" class="button-LogIn" name="login" value="Login">LogIn</button>
-                    <?php
-                            $user = "labas";
-                            $pass = "nelabas";
-                            if(isset($_POST["username"])){
-                                $sentUsername = ($_POST['username']);
-                                $sentPassword = ($_POST['password']);
-                                if ($sentUsername == $user && $sentPassword == $pass) {
-                                header('Location: ./php/logged.php');
-                            }
-                        }
-
-
-                    ?>
 
             </form>
         </div>
+
+
+
 
 
 

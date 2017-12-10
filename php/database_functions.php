@@ -70,10 +70,15 @@ function getMessages ($connect) {
     $result = mysqli_query($connect, $my_sql);
     return $result;
 }
-function deleteMessages ($connect) {
+function deleteAllMessages ($connect) {
     $my_sql = "DELETE FROM `messages`";
     mysqli_query($connect, $my_sql);
 }
+function deleteMessages ($connect, $id) {
+    $my_sql = "DELETE FROM `messages`WHERE id=$id";
+    mysqli_query($connect, $my_sql);
+}
+
 
 
 function getAboutArticle ($connect) {
@@ -87,9 +92,24 @@ function updateAboutArticle ($connect, $textToSend) {
     $textToSend = mysqli_real_escape_string($connect, $textToSend);
     $my_sql = "UPDATE articles SET article = '$textToSend' WHERE id=1";
     $result = mysqli_query($connect, $my_sql);
-
-
 }
+
+function getLogin ($connect) {
+    $my_sql = "SELECT * FROM users";
+    $result = mysqli_query($connect, $my_sql);
+    return $result;
+}
+function deleteUsers ($connect, $id) {
+    $my_sql = "DELETE FROM `users`WHERE id=$id";
+    mysqli_query($connect, $my_sql);
+}
+function addUsers ($connect, $name, $password, $status) {
+    $my_sql = "INSERT INTO users VALUES('','$name','$password','$status')";
+    $result = mysqli_query($connect, $my_sql);
+}
+
+
+
 
 
  ?>
