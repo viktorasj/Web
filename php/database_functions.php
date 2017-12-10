@@ -61,8 +61,34 @@ function getAlbumLinks ($connect) {
 
 
 function addMessage ($connect, $name, $email, $message) {
-    $my_sql = "INSERT INTO messages VALUES('','$name','$email','$message')";
+    $my_sql = "INSERT INTO messages VALUES('','$name','$email','$message', NOW())";
     $result = mysqli_query($connect, $my_sql);
+}
+
+function getMessages ($connect) {
+    $my_sql = "SELECT * FROM messages ORDER BY date DESC";
+    $result = mysqli_query($connect, $my_sql);
+    return $result;
+}
+function deleteMessages ($connect) {
+    $my_sql = "DELETE FROM `messages`";
+    mysqli_query($connect, $my_sql);
+}
+
+
+function getAboutArticle ($connect) {
+    $my_sql = "SELECT article FROM articles where id=1";
+    $result = mysqli_query($connect, $my_sql);
+    $result = mysqli_fetch_assoc($result);
+    return $result;
+}
+
+function updateAboutArticle ($connect, $textToSend) {
+    $textToSend = mysqli_real_escape_string($connect, $textToSend);
+    $my_sql = "UPDATE articles SET article = '$textToSend' WHERE id=1";
+    $result = mysqli_query($connect, $my_sql);
+
+
 }
 
 

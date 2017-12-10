@@ -19,7 +19,7 @@ window.onload = function() {
                 $('#buttonToSend').css({
                                             border: '2px solid #33e71f',
                                             color: '#33e71f',
-                                            width: '51vw'
+                                            width: '53vw'
                                         }, 200);
                 $('#buttonToSend').clearQueue();
                 $('#buttonToSend').stop();
@@ -154,6 +154,9 @@ window.onload = function() {
         $(this).addClass("active");
     });
 
+    $('#LogIn-click').click(function(){
+        $('#LogInWindow').slideToggle(2000);
+    });
 
 
     $("#draggable").draggable();
@@ -173,7 +176,6 @@ window.onload = function() {
             'border-bottom': 'solid 2px #A09C9C'
         });
     });
-
 
 
 

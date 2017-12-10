@@ -6,32 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project1</title>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
-    <script src="./libs/Popper/Popper.js"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
     <!-- !!! mano CSS visada zemiau -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/script.js" defer></script>
-    <script src="./js/script-carousel.js" defer></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel = "stylesheet" href = "./css/material.grey-purple.min.css">
     <link rel = "stylesheet" href = "./css/set2.css">
     <link rel = "stylesheet" href = "./libs/font-awesome-4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <script src="./libs/Popper/Popper.js"></script>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/script-carousel.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./js/test.js" defer></script>
+    <script src="./js/script.js" defer></script>
 
 
 </head>
 
 <body>
+
 <?php
 include_once ('./php/database_functions.php');
 ?>
-    <div class="container-fluid">
+    <div class="container-fluid np">
         <div id="divForIframe">
             <svg id="music-cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>
         </div>
+        <div id="LogIn-click"></div>
+        <div id="LogInWindow">
+            <form class="login-form" action="index.php" method="post">
+                    <input class="login-inputs" type="text" name="username" value="" placeholder="Username" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only" autofocus>
+                    <input class="login-inputs" type="text" name="password" value="" placeholder="Password" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only">
+                    <button type="submit" class="button-LogIn" name="login" value="Login">LogIn</button>
+                    <?php
+                            $user = "labas";
+                            $pass = "nelabas";
+                            if(isset($_POST["username"])){
+                                $sentUsername = ($_POST['username']);
+                                $sentPassword = ($_POST['password']);
+                                if ($sentUsername == $user && $sentPassword == $pass) {
+                                header('Location: ./php/logged.php');
+                            }
+                        }
+
+
+                    ?>
+
+            </form>
+        </div>
+
+
 
         <header class="mdl-grid au-10">
 
@@ -66,6 +91,7 @@ include_once ('./php/database_functions.php');
                 <!-- ======= start of MAIN ======= -->
          <!-- <img id="cloud"  src="./images/cloud.png" alt="sraunus-logo"> -->
         <div class="mdl-grid mt-4">
+
                 <!-- ======= NENAUDOJAMAS DIV ======= -->
             <div class="mdl-cell mdl-cell--2-col">
 
@@ -100,7 +126,7 @@ include_once ('./php/database_functions.php');
     <!-- <<<==========================GALLERY DIV WINDOW===============================>>> -->
     <div class="mainWindows gallery-formating" nrw="link3" id="photoGallery">
         <?php for ($i=1; $i <= 38; $i++) {?>
-            <a href="#?photoID=<?php echo $i ?>" class="photo-links"><img class="thumb" src="./images/Reduced gallery/<?php echo $i?>.jpg" alt=""></a>
+            <a href="#?photoID=<?php echo $i ?>" class="photo-links"><img class="thumb" src="./images/Reduced gallery/Image_Thumbnails/<?php echo $i?>.jpg" alt=""></a>
         <?php }; ?>
 
     </div>
@@ -195,6 +221,11 @@ include_once ('./php/database_functions.php');
     <!-- </div> -->
 
 </div>
+<div class="" id="fullSizeWrapper"></div>
+<!-- </div> -->
+
+</div>
+
     </body>
 
 </html>

@@ -15,7 +15,6 @@ body {
 
 a:hover {
     text-decoration: none;
-
 }
 
 h1 {
@@ -55,12 +54,6 @@ h1 {
     height: 70vh;
 }
 
-.look {
-    background-color: rgba(255, 255, 255, 0.3);
-    height: 100%;
-    width: 100%;
-    transition: all 5s ease-in-out;
-}
 .op-1 {
     opacity: 0.4;
     z-index: 3;
@@ -78,7 +71,7 @@ line {
 }
 nav.mdl-grid {
     padding-left: 0px;
-    padding-right: -0px;
+    padding-right: 0px;
 }
 
 .mainWindows {
@@ -133,14 +126,7 @@ a.list-group-item-action:hover {
     color: #FE01F5;
 }
 
-/*a.list-group-item-action:focus {
-    background-color: transparent;
-    border: none;
-    box-shadow:inset 0px 0px 0px 1px #FE01F5;
-    color: #FE01F5;
-    background-color: transparent;
-    transition: all 0.2s ease-in-out;
-}*/
+
 
 .list-group-item.active {
     font-weight: 100;
@@ -352,8 +338,8 @@ div.logo-links {
 #divForIframe {
     display: none;
     position: absolute;
-    left: 17vw;
-    width: 57vw;
+    left: 16vw;
+    width: 58vw;
     height: 86vh;
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.85);
@@ -461,11 +447,78 @@ color: #aaa;
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
+#fullSizeWrapper {
+    display: none;
+}
+#LogIn-click {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    z-index: 6;
+    transition: all 1s ease;
+
+}
+#LogIn-click:hover {
+    background-color: yellow;
+    opacity: 0.5;
+}
+#LogInWindow {
+    display: none;
+    position: absolute;
+    width: 48vw;
+    height: 20em;
+    left: 25vw;
+    z-index: 6;
+    background-color: rgba(207, 147, 33, 0.76)
+}
+
+.login-inputs {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    height: 40px;
+    outline: none;
+    color: white;
+    font-size: 24px;
+}
+.login-form {
+    position: absolute;
+    left: 15%;
+    top: 40%;
+}
+
+.button-LogIn {
+    color: #ffffff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #fff;
+    width: 100px;
+    height: 33px;
+    margin-left: 10px;
+
+}
+
+.button-LogIn:hover {
+    color: #000;
+    background-color: rgba(#9ba5af, 0.66);
+    border-color: #000
+}
+
+.button-LogIn.focus, .button-LogIn:focus {
+    box-shadow: 0 0 0 3px #000
+}
+
+.button-LogIn.active, .button-LogIn:active {
+    color: #000;
+    background-color: rgba(#9ba5af, 0.66);
+    border-color: #000
+}
 
 
 
 
-
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(187, 187, 187, 0.64);
 
 @media screen and (max-width: 1610px) {
     body {
@@ -583,10 +636,10 @@ color: #aaa;
     .sideLinks {
         font-size: 3vh;
         padding: 3px;
-        color: #aaa;
+        color: #cdcdcd;
     }
     .sideLinks:focus {
-        border: 1px solid #FE01F5;
+        box-shadow:inset 0px 0px 0px 1px #FE01F5;
         color: #FE01F5;
     }
 
@@ -606,7 +659,7 @@ color: #aaa;
     height: 65vh;
     }
     .main-windows-formation {
-        width: calc(101.5% - 16px) !important;
+        width: calc(104.5% - 16px) !important;
     }
 
 }
