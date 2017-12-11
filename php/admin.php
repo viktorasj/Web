@@ -37,7 +37,6 @@
             <button style="width: 100px; height: 50px; font-size: 20px; background-color: rgb(49, 220, 223)" type="submit" name="sent">Edit!</button>
         </form>
 
-        <br />
         <?php
         $messages = getMessages ($connection);
 
@@ -136,7 +135,7 @@
                     <?php endwhile; ?>
                 </table>
                 <br />
-                <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(50, 228, 111)" type="submit" name="deleteSelectedUsers">Delete <b>SELECTED</b> users!</button>
+                <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(50, 228, 111)" type="submit" name="deleteSelectedUsers">Delete selected users!</button>
                 <br />
                 <h1>Add users!</h1>
                 <form class="" action="admin.php" method="get">
@@ -146,7 +145,7 @@
                     <input type="radio" name="radio" value="client"> client
                     <input type="radio" name="radio" value="admin" checked> admin <br>
                     <br />
-                    <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(17, 42, 233)" type="submit" name="addUser">Add User</button>
+                    <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(108, 150, 214)" type="submit" name="addUser">Add User</button>
                 </form>
 
     </body>

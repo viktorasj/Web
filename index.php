@@ -4,22 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project1</title>
+    <title>Sraunus</title>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
-    <!-- !!! mano CSS visada zemiau -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel = "stylesheet" href = "./css/material.grey-purple.min.css">
     <link rel = "stylesheet" href = "./css/set2.css">
     <link rel = "stylesheet" href = "./libs/font-awesome-4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="./libs/Popper/Popper.js"></script>
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./js/script-carousel.js" defer></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./js/test.js" defer></script>
-    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
 
 
 </head>
@@ -38,7 +30,7 @@ include_once ('./php/main-login.php');
         <div id="LogInWindow">
             <form class="login-form" action="index.php" method="post">
                     <input class="login-inputs" type="text" name="username" value="" placeholder="Username" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only" autofocus>
-                    <input class="login-inputs" type="text" name="password" value="" placeholder="Password" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only">
+                    <input class="login-inputs" type="password" name="password" value="" placeholder="Password" pattern="[a-zA-Z0-9]+" required title="Numbers and letters only">
                     <button type="submit" class="button-LogIn" name="login" value="Login">LogIn</button>
 
             </form>
@@ -54,8 +46,8 @@ include_once ('./php/main-login.php');
     <!-- ==================HEADER============= -->
             <div class="mdl-cell mdl-cell--12-col nm">
                 <div id="draggable" class="draggable">
-                    <img class="debesis" id="deb" src="./images/cloud.png" alt="">
-                    <img class="lietus" id="lie" src="./images/rain-cropped-sm.gif" alt="">
+                    <img class="cloud" id="cld" src="./images/cloud.png" alt="">
+                    <img class="rain" id="rn" src="./images/rain-cropped-sm.gif" alt="">
                 </div>
 
     <!-- ==================HEADERIO LINKAI==================-->
@@ -170,7 +162,7 @@ include_once ('./php/main-login.php');
                     <line x1="0" y1="100%" x2="0" y2="0" style="stroke:#FE01E7;stroke-width:5" />
                 </svg>
                 <div class="mdl-grid au-40 nm">
-                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone np" id="switchOff">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone np">
 
                     </div>
                 </div>
@@ -195,13 +187,13 @@ include_once ('./php/main-login.php');
 
         </div>
         <!--sitas div uzdaro konteieneri -->
-    <!-- </div> -->
+
 
 
     <!-- ========end of wrapper and NAV======== -->
 
     <!-- ========start of FOOTER======== -->
-    <!-- <div class="container"> -->
+
         <footer class="mdl-grid au-5 mb-2">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 
@@ -209,14 +201,19 @@ include_once ('./php/main-login.php');
 
 
         </footer>
-    <!-- </div> -->
+
 
 </div>
 <div class="" id="fullSizeWrapper"></div>
-<!-- </div> -->
+
 
 </div>
-
+        <script src="./libs/Popper/Popper.js" defer></script>
+        <script src="./libs/jQuery/jquery-3.2.1.min.js" defer></script>
+        <script src="./libs/bootstrap/js/bootstrap.min.js" defer></script>
+        <script src="./js/script-carousel.js" defer></script>
+        <script src="./libs/jQuery/jquery-ui v1.12.1.js"defer ></script>
+        <script src="./js/script.js" defer></script>
     </body>
 
 </html>

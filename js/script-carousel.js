@@ -1,5 +1,5 @@
 var photoLinks = document.getElementsByClassName('photo-links');
-console.log(photoLinks);
+
 
 $.ajax({
         url: './php/photos.php',
@@ -13,7 +13,7 @@ $.ajax({
         console.log("error");
     })
     .always(function() {
-        console.log("complete loading all full size images");
+        // console.log("complete loading all full size images");
     });
 
 for (var i = 0; i < photoLinks.length; i++) {
@@ -24,7 +24,7 @@ for (var i = 0; i < photoLinks.length; i++) {
 function showGallery() {
 
     var fullSizeImg = $(".fullSizeImg").clone();
-    console.log(fullSizeImg);
+
 
     var parentDiv = document.createElement('div');
     parentDiv.className = 'popup-formating';

@@ -72,7 +72,7 @@ window.onload = function() {
             console.log("error");
         })
         .always(function() {
-            console.log("complete loading all Iframes to 'Music'");
+
         });
 
     function validateEmail(tester) {
@@ -83,13 +83,12 @@ window.onload = function() {
     function doStuff() {
 
 
-        $('#musicWindow').css("visibility", "visible"); //reikalingas ijungti music div'a;
         document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
         $("main.mdl-cell--7-col").css("border-left", "#FE01F5 1px solid");
         $("main.mdl-cell--7-col").css("border-right", "#FE01F5 1px solid");
         for (var i = 0; i < mainWArray.length; i++) {
             if (mainWArray[i] == event.target.getAttribute('nrl')) {
-                console.log("atidaro ", i, "langa");
+                // console.log("atidaro ", i, "langa");
                 $('.mainWindows').eq(i).animate({
                     opacity: 1
                 }, 500).show();
@@ -104,11 +103,6 @@ window.onload = function() {
         }
     }
 
-    function refresh() {
-        for (var i = 0; i < mainWArray.length; i++) {
-            mainW[i].style.display = "none";
-        }
-    }
 
     function showPlayer(e) {
 
@@ -137,9 +131,8 @@ window.onload = function() {
 
     var sideLinks = document.getElementsByClassName('sideLinks');
     var mainW = document.getElementsByClassName('mainWindows');
-    var swNav = document.getElementById("switchOff");
-    var lietus = document.getElementById('lie');
-    var debesis = document.getElementById('deb');
+    var rain = document.getElementById('rn');
+    var cloud = document.getElementById('cld');
     var clickable = document.getElementById('clickable');
     var expGallery = document.getElementById('exp-gallery');
     var mainWArray = [];
@@ -166,18 +159,17 @@ window.onload = function() {
         albumLinks[i].addEventListener('click', showPlayer);
     }
 
-    swNav.addEventListener('click', refresh);
 
-    debesis.onmouseup = function() {
-        lietus.style.visibility = "hidden";
+    cloud.onmouseup = function() {
+        rain.style.visibility = "hidden";
     };
 
-    debesis.onmousedown = function() {
-        lietus.style.visibility = "visible";
+    cloud.onmousedown = function() {
+        rain.style.visibility = "visible";
     };
 
-    debesis.ondblclick = function() {
-        lietus.style.visibility = "visible";
+    cloud.ondblclick = function() {
+        rain.style.visibility = "visible";
     };
 
 
