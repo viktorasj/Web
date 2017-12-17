@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 17, 2017 at 06:55 PM
+-- Generation Time: Dec 17, 2017 at 07:56 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -118,7 +118,10 @@ CREATE TABLE `honda_transporter` (
 INSERT INTO `honda_transporter` (`id`, `date`, `dayRoute`, `departed`, `speedo_start`, `arrived_to_client`, `protracted`, `departed_from_client`, `arrived`, `speedo_finish`, `distance`, `fuel`, `driver`, `vechile_name`, `going_time`, `staying_time`, `loading_time`) VALUES
 (1, '2017-01-09', 'UAB', '09:50:00', 2950, '11:10:00', 20, '11:40:00', '13:00:00', 3000, 50, 51, 'antanas', 'honda_transporter', 160, 10, 20),
 (2, '2017-11-15', 'Trakai', '12:20:00', 3000, '13:00:00', 40, '14:00:00', '15:40:00', 3104, 104, 51, 'antanas', 'honda_transporter', 140, 20, 40),
-(3, '2017-10-18', 'KlaipÄ—da', '06:30:00', 3104, '09:00:00', 20, '09:50:00', '12:10:00', 3693, 589, 90, 'antanas', 'honda_transporter', 290, 30, 20);
+(3, '2017-10-18', 'KlaipÄ—da', '06:30:00', 3104, '09:00:00', 20, '09:50:00', '12:10:00', 3693, 589, 90, 'antanas', 'honda_transporter', 290, 30, 20),
+(4, '2017-03-14', 'UkmergÄ—', '05:10:00', 3693, '06:20:00', 20, '08:20:00', '11:00:00', 3899, 206, 82, 'antanas', 'honda_transporter', 230, 100, 20),
+(5, '2017-02-09', 'Utena', '03:20:00', 3899, '05:50:00', 60, '07:50:00', '10:10:00', 4109, 210, 103, 'antanas', 'honda_transporter', 290, 60, 60),
+(6, '2017-01-12', 'Kaunas', '07:20:00', 4109, '08:10:00', 20, '09:00:00', '10:20:00', 4244, 135, 45, 'maryte', 'honda_transporter', 130, 30, 20);
 
 -- --------------------------------------------------------
 
@@ -186,7 +189,13 @@ CREATE TABLE `ssangyong_sprinter` (
 
 INSERT INTO `ssangyong_sprinter` (`id`, `date`, `dayRoute`, `departed`, `speedo_start`, `arrived_to_client`, `protracted`, `departed_from_client`, `arrived`, `speedo_finish`, `distance`, `fuel`, `driver`, `vechile_name`, `going_time`, `staying_time`, `loading_time`) VALUES
 (1, '2017-10-10', 'Klaipeda', '18:00:00', 2833, '19:10:00', 30, '20:00:00', '22:20:00', 3284, 451, 56, 'antanas', 'ssangyong_sprinter', 210, 20, 30),
-(2, '2018-03-16', 'Kulautuva', '15:40:00', 3284, '16:20:00', 10, '17:20:00', '18:10:00', 3350, 66, 26, 'antanas', 'ssangyong_sprinter', 90, 50, 10);
+(2, '2018-03-16', 'Kulautuva', '15:40:00', 3284, '16:20:00', 10, '17:20:00', '18:10:00', 3350, 66, 26, 'antanas', 'ssangyong_sprinter', 90, 50, 10),
+(3, '2017-09-06', 'TelÅ¡iai', '04:00:00', 3350, '05:20:00', 20, '05:40:00', '06:20:00', 3420, 70, 32, 'antanas', 'ssangyong_sprinter', 120, 0, 20),
+(4, '2017-08-14', 'Kaunas', '11:50:00', 3420, '12:50:00', 10, '13:20:00', '14:20:00', 3580, 160, 31, 'antanas', 'ssangyong_sprinter', 120, 20, 10),
+(5, '2017-07-04', 'AnykÅ¡Äiai', '07:10:00', 3580, '08:30:00', 30, '10:00:00', '12:10:00', 3782, 202, 59, 'antanas', 'ssangyong_sprinter', 210, 60, 30),
+(6, '2017-07-12', 'Kaunas', '05:40:00', 3782, '07:00:00', 20, '08:20:00', '10:40:00', 3940, 158, 59, 'maryte', 'ssangyong_sprinter', 220, 60, 20),
+(7, '2017-07-07', 'Vilnius', '06:20:00', 3940, '07:20:00', 20, '08:30:00', '10:10:00', 4215, 275, 44, 'maryte', 'ssangyong_sprinter', 160, 50, 20),
+(8, '2017-10-11', 'Vilnius', '16:10:00', 4215, '17:40:00', 20, '18:30:00', '19:00:00', 4420, 205, 34, 'maryte', 'ssangyong_sprinter', 120, 30, 20);
 
 --
 -- Indexes for dumped tables
@@ -240,7 +249,7 @@ ALTER TABLE `2fuel_usage_pri`
 -- AUTO_INCREMENT for table `honda_transporter`
 --
 ALTER TABLE `honda_transporter`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `lada_2107`
 --
@@ -250,7 +259,7 @@ ALTER TABLE `lada_2107`
 -- AUTO_INCREMENT for table `ssangyong_sprinter`
 --
 ALTER TABLE `ssangyong_sprinter`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
