@@ -115,6 +115,8 @@ window.onload = function() {
                 var currentSrc = playerDivs[i].getAttribute('data-src');
                 playerDivs[i].setAttribute('src', '');
                 playerDivs[i].setAttribute('src', currentSrc);
+                console.log(playerDivs[i]);
+
             }
         }
         $('#music-cross-button').click(function() {
@@ -138,12 +140,19 @@ window.onload = function() {
     var mainWArray = [];
     var albumLinks = document.getElementsByClassName('art');
     var playerDivs = document.getElementsByClassName('visIframes');
+    var photoLinks = document.getElementsByClassName('photo-links');
+    var nesamone = document.getElementById('art');
+    console.log(nesamone);
 
 
-
-
-
-
+$('#menu-gallery').on('click', function () {
+    for (i = 0; i < photoLinks.length; i++) {
+        var currentSrc = photoLinks[i].firstChild.getAttribute('data-src');
+        console.log(currentSrc);
+        photoLinks[i].firstChild.setAttribute('src', '');
+        photoLinks[i].firstChild.setAttribute('src', currentSrc);
+    }
+});
 
     for (i = 0; i < sideLinks.length; i++) {
         sideLinks[i].addEventListener('click', doStuff);

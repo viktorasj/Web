@@ -447,6 +447,8 @@ div#font-edit {
   /* Chrome/Opera/Safari */
   color: rgba(187, 187, 187, 0.64); }
 
+
+
 @media screen and (max-width: 1610px) {
   body {
     background-image: url("../images/background.jpg");

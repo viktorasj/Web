@@ -21,6 +21,7 @@
 <?php
 include_once ('./php/database_functions.php');
 include_once ('./php/main-login.php');
+
 ?>
     <div class="container-fluid np">
         <div id="divForIframe">
@@ -108,8 +109,14 @@ include_once ('./php/main-login.php');
 
     <!-- <<<==========================GALLERY DIV WINDOW===============================>>> -->
     <div class="mainWindows gallery-formating" nrw="link3" id="photoGallery">
-        <?php for ($i=1; $i <= 38; $i++) {?>
-            <a href="#?photoID=<?php echo $i ?>" class="photo-links"><img class="thumb" src="./images/Reduced gallery/Image_Thumbnails/<?php echo $i?>.jpg" alt=""></a>
+        <?php
+        $result = getImagePaths ($connection);
+        $photoPaths = [];
+        foreach ($result as $path) {
+        $photoPaths[]= "./".ltrim($path['thumb_path'], "/.");
+        }
+        foreach ($photoPaths as $i => $path) {?>
+            <a href="#?photoID=<?php echo $i ?>" class="photo-links"><img class="thumb" src="about:blank" data-src="<?php echo $path ?>" alt=""></a>
         <?php }; ?>
 
     </div>
@@ -172,7 +179,7 @@ include_once ('./php/main-login.php');
                         <div class="list-group ml-5 mr-5 text-center" id="font-edit">
                             <a href="#" class="sideLinks list-group-item list-group-item-action" nrl="link1">ABOUT</a>
                             <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link2">MUSIC</a>
-                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link3">GALLERY</a>
+                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link3" id="menu-gallery">GALLERY</a>
                             <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link4">CONTACT</a>
                         </div>
                     </div>
@@ -197,6 +204,7 @@ include_once ('./php/main-login.php');
         <footer class="mdl-grid au-5 mb-2">
             <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 
+                </div>
             </div>
 
 

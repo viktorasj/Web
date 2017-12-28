@@ -1,7 +1,12 @@
 
 
 <?php
-
-for ($i=0; $i <= 37; $i++) { ?>
-    <img class="fullSizeImg" style="display: none;" id="photo<?php echo $i ?>" src="about:blank" data-src="./images/Reduced gallery/<?php echo ($i+1) ?>.jpg">
+include_once ('database_functions.php');
+$result = getImagePaths ($connection);
+$photoPaths = [];
+foreach ($result as $path) {
+$photoPaths[]= "./".ltrim($path['image_path'], "/.");
+}
+foreach ($photoPaths as $i => $path) {?>
+    <img class="fullSizeImg" style="display: none;" id="photo<?php echo $i ?>" src="about:blank" data-src="<?php echo $path ?>">
 <?php } ?>

@@ -16,8 +16,8 @@ function getIframe($connect, $nr) {
 
 }
 
-function createIframe($connect, $src, $href, $label) {
-    $my_sql = "INSERT INTO iframes VALUES('','$src','$href','$label')";
+function createIframe($connect, $src, $href, $label, $imageLink) {
+    $my_sql = "INSERT INTO iframes VALUES('','$src','$href','$label', '$imageLink')";
     $result = mysqli_query($connect, $my_sql);
 }
 
@@ -58,6 +58,13 @@ function getAlbumLinks ($connect) {
     //    echo $value['id']." ".$value['name']." ".$value['lname']."<br />";
     // }
 }
+function getAlbumById ($connect, $id) {
+    $my_sql = "SELECT * FROM iframes where id=$id";
+    $result = mysqli_query($connect, $my_sql);
+    $result = mysqli_fetch_assoc($result);
+    return $result;
+    }
+
 
 
 function addMessage ($connect, $name, $email, $message) {
@@ -108,7 +115,28 @@ function addUsers ($connect, $name, $password, $status) {
     $result = mysqli_query($connect, $my_sql);
 }
 
+function addImagePath($connect, $image_path, $thumb_path) {
+    $my_sql = "INSERT INTO images VALUES('','$image_path','$thumb_path')";
+    $result = mysqli_query($connect, $my_sql);
+}
 
+function getImagePaths ($connect) {
+    $my_sql = "SELECT * FROM images";
+    $result = mysqli_query($connect, $my_sql);
+    return $result;
+    }
+
+function deleteImagePaths ($connect, $id) {
+    $my_sql = "DELETE FROM `images` WHERE id=$id";
+    $result = mysqli_query($connect, $my_sql);
+}
+
+function getImagePathsById ($connect, $id) {
+    $my_sql = "SELECT * FROM images where id=$id";
+    $result = mysqli_query($connect, $my_sql);
+    $result = mysqli_fetch_assoc($result);
+    return $result;
+    }
 
 
 
