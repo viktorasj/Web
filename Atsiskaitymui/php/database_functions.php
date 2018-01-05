@@ -138,6 +138,30 @@ function getImagePathsById ($connect, $id) {
     return $result;
     }
 
+function getLastColor ($connect) {
+    $my_sql = "SELECT * FROM color ORDER BY id DESC";
+    $result = mysqli_query($connect, $my_sql);
+    $result = mysqli_fetch_assoc($result);
+    return $result;
+    }
+
+function addNewColor ($connect, $color_code) {
+    $my_sql = "INSERT INTO color VALUES('','main','$color_code')";
+    $result = mysqli_query($connect, $my_sql);
+}
+
+function getLasts ($connect) {
+    $my_sql = "SELECT * FROM color ORDER BY id";
+    $result = mysqli_query($connect, $my_sql);
+    if (mysqli_num_rows($result)>=3){
+        $start = mysqli_num_rows($result)-3;
+        $my_sql = "SELECT * FROM color WHERE id != (SELECT MAX(id) FROM color) ORDER BY id LIMIT $start, 3";
+        $result = mysqli_query($connect, $my_sql);
+        return $result;
+    }
+    return $result;
+}
+
 
 
  ?>

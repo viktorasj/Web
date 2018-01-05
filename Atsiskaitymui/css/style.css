@@ -34,7 +34,7 @@ h1 {
   height: 20vhem; }
 
 .au-35 {
-  height: 35em; }
+  height: 35vh; }
 
 .au-40 {
   height: 40vh; }
@@ -99,38 +99,7 @@ nav.mdl-grid {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%); }
 
-a.list-group-item {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: white; }
 
-a.list-group-item-action:hover {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: #FE01F5; }
-
-.list-group-item.active {
-  font-weight: 100;
-  z-index: 2;
-  background-color: transparent;
-  border: none;
-  -webkit-box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  color: #FE01F5;
-  background-color: transparent;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-a.list-group-item:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0; }
-
-a.list-group-item:last-child {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
 
 /* nuima keires desines padding*/
 .np {
@@ -156,7 +125,10 @@ div.nm {
 .pad-music {
   padding-left: 3em;
   padding-right: 3em;
-  padding-top: 1em; }
+  padding-top: 1vh;
+}
+
+
 
 img.logo {
   position: absolute;
@@ -212,7 +184,25 @@ div.logo-links {
   opacity: 0.5; }
 
 .sideLinks {
-  font-size: 2vh; }
+  font-size: 2vh;
+  font-weight: 100;
+  background-color: transparent;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ }
+
+a.list-group-item:first-child {
+border-top-left-radius: 0;
+border-top-right-radius: 0; }
+
+a.list-group-item:last-child {
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0; }
+
+a:hover {
+    color: white;
+}
 
 .for-borders {
   padding: 40px; }
@@ -309,9 +299,6 @@ img.alb-img-format {
 img.alb-img-format:hover {
   /*box-shadow: 0px 0px 16px 17px rgb(37, 113, 130);*/
   opacity: 1; }
-
-.music-padding {
-  padding-top: 3em; }
 
 div.mdl-cell mdl-cell--2-col {
   margin-left: 0;
@@ -448,6 +435,23 @@ div#font-edit {
   color: rgba(187, 187, 187, 0.64); }
 
 
+
+#movingNewTracks {
+    display: none;
+}
+
+.newTracksSpan {
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.soundcloud-logo {
+    opacity: 0.5;
+}
 
 @media screen and (max-width: 1610px) {
   body {

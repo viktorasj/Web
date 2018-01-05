@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>testing</title>
+        <title>Edit gallery</title>
     </head>
     <body>
 <?php

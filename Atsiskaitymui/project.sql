@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 28, 2017 at 02:06 PM
+-- Generation Time: Jan 03, 2018 at 11:45 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -38,7 +38,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `article`) VALUES
-(1, 'In early childhood Sraunus (real name - Paulius Markutis) started to play with a comb and piece of paper to imitate the sound of the flanger effect. I was singing in front of a mirror in my fictional language. That was how it all started, Sraunus experiment began. It was interesting, that I was so little taught about music. My creativity roots are firmly seated and I\'m still singing in my own music in my own known language, which is most accurately understood only by me. The others may interpret it according to themselves. Sraunus creations can be described as complicated electronic dub variations, that are floating between minimal techno and experimental restraints diving into pure ambient. In Sraunus journey through music experiments you can clearly hear my influence of Vangelis, Biosphere, Basic Channel community, Deepchord, Pink Floyd, Mr. Cloudy, Angelo Badalamenti (David Lynch\'s \'Twin Peaks\' soundtrack author). Music to enjoy the charm of long and dark nights.lklk');
+(1, 'In early childhood Sraunus (real name - Paulius Markutis) started to play with a comb and piece of paper to imitate the sound of the flanger effect. I was singing in front of a mirror in my fictional language. That was how it all started, Sraunus experiment began. It was interesting, that I was so little taught about music. My creativity roots are firmly seated and I\'m still singing in my own music in my own known language, which is most accurately understood only by me. The others may interpret it according to themselves. Sraunus creations can be described as complicated electronic dub variations, that are floating between minimal techno and experimental restraints diving into pure ambient. In Sraunus journey through music experiments you can clearly hear my influence of Vangelis, Biosphere, Basic Channel community, Deepchord, Pink Floyd, Mr. Cloudy, Angelo Badalamenti (David Lynch\'s \'Twin Peaks\' soundtrack author). Music to enjoy the charm of long and dark nights.');
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,13 @@ CREATE TABLE `color` (
 --
 
 INSERT INTO `color` (`id`, `color_name`, `color_code`) VALUES
-(1, 'main', '#FE01F5');
+(24, 'main', '#40119C'),
+(25, 'main', '#FFF44A'),
+(26, 'main', '#47FFE2'),
+(27, 'main', '#2B94FF'),
+(28, 'main', '#FF0000'),
+(29, 'main', '#03FDFF'),
+(30, 'main', '#00FF13');
 
 -- --------------------------------------------------------
 
@@ -195,7 +201,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `color`
 --
 ALTER TABLE `color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `iframes`
 --
@@ -205,17 +211,17 @@ ALTER TABLE `iframes`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

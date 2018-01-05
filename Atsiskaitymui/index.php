@@ -10,7 +10,7 @@
     <link rel = "stylesheet" href = "./css/set2.css">
     <link rel = "stylesheet" href = "./libs/font-awesome-4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.2">
 
 
 
@@ -21,6 +21,7 @@
 <?php
 include_once ('./php/database_functions.php');
 include_once ('./php/main-login.php');
+include_once ('./php/color_get.php');
 
 ?>
     <div class="container-fluid np">
@@ -59,9 +60,10 @@ include_once ('./php/main-login.php');
                     </div>
                     <div class="list-group mr-5 text-center tablet-menu" id="font-edit">
                         <a href="#" class="sideLinks " nrl="link1">ABOUT</a>
-                        <a href="#" class="sideLinks " nrl="link2">MUSIC</a>
-                        <a href="#" class="sideLinks " nrl="link3">GALLERY</a>
-                        <a href="#" class="sideLinks " nrl="link4">CONTACTS</a>
+                        <a href="#" class="sideLinks " nrl="link2">NEWS</a>
+                        <a href="#" class="sideLinks " nrl="link3">MUSIC</a>
+                        <a href="#" class="sideLinks " nrl="link4">GALLERY</a>
+                        <a href="#" class="sideLinks " nrl="link5">CONTACTS</a>
                     </div>
     <!-- ==================HEADERIO LINKAI END==================-->
             </div>
@@ -98,9 +100,24 @@ include_once ('./php/main-login.php');
                     </p>
 
                 </div>
+    <!-- <<<==========================NEWS DIV WINDOW===============================>>> -->
+            <div class="mainWindows about-formation" nrw="link2">
+                <h2 class="text-center h2-color">Newsfeed</h2>
+
+
+            </div>
+
     <!-- <<<==========================MUSIC DIV WINDOW===============================>>> -->
 
-                <div class="mainWindows pad-music music-formating text-center music-padding" nrw="link2" id="musicWindow">
+                <div class="mainWindows pad-music music-formating text-center music-padding" nrw="link3" id="musicWindow">
+                    <div class="mb-2 p-2" style="height: 170; background-color: rgba(84, 72, 99, 0.65)" id="newTracks">
+                        <span class="newTracksSpan">Click for my newest tracks</span>
+                        <!-- <img class="soundcloud-logo" src="./images/soundcloud-color.png" alt="logo" style="width: 4vw"> -->
+                    </div>
+                    <div class="" style="background-color: rgba(84, 72, 99, 0.65)" id="movingNewTracks">
+                        <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/282664734&amp;color=%23bcbcbc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+                    </div>
+
                     <?php $result = getAlbumLinks ($connection);
                     foreach ($result as $value) {?>
                         <img class="art alb-img-format" linkid="" src="<?php echo $value['artLinks'] ?>" alt="">
@@ -108,7 +125,7 @@ include_once ('./php/main-login.php');
                 </div>
 
     <!-- <<<==========================GALLERY DIV WINDOW===============================>>> -->
-    <div class="mainWindows gallery-formating" nrw="link3" id="photoGallery">
+    <div class="mainWindows gallery-formating" nrw="link4" id="photoGallery">
         <?php
         $result = getImagePaths ($connection);
         $photoPaths = [];
@@ -124,7 +141,7 @@ include_once ('./php/main-login.php');
 
     <!-- <<<==========================CONTACT DIV WINDOW===============================>>> -->
 
-                <div class="mainWindows" nrw="link4">
+                <div class="mainWindows" nrw="link5">
                     <!-- <h1 class="op-1 text-center">Window Contacts</h1> -->
 
                     <section class="content bgcolor-10">
@@ -168,7 +185,7 @@ include_once ('./php/main-login.php');
                 <svg class="path au-70" id="svg-line-first" height="100%" width="1">
                     <line x1="0" y1="100%" x2="0" y2="0" style="stroke:#FE01E7;stroke-width:5" />
                 </svg>
-                <div class="mdl-grid au-40 nm">
+                <div class="mdl-grid au-35 nm">
                     <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone np">
 
                     </div>
@@ -177,10 +194,11 @@ include_once ('./php/main-login.php');
                 <div class="content-grid mdl-grid nm">
                     <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone np">
                         <div class="list-group ml-5 mr-5 text-center" id="font-edit">
-                            <a href="#" class="sideLinks list-group-item list-group-item-action" nrl="link1">ABOUT</a>
-                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link2">MUSIC</a>
-                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link3" id="menu-gallery">GALLERY</a>
-                            <a href="#" class="sideLinks list-group-item list-group-item-action mt-3" nrl="link4">CONTACT</a>
+                            <a href="#" class="sideLinks" nrl="link1">ABOUT</a>
+                            <a href="#" class="sideLinks mt-4" nrl="link2">NEWS</a>
+                            <a href="#" class="sideLinks mt-4" nrl="link3">MUSIC</a>
+                            <a href="#" class="sideLinks mt-4" nrl="link4" id="menu-gallery">GALLERY</a>
+                            <a href="#" class="sideLinks mt-4" nrl="link5">CONTACT</a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +239,7 @@ include_once ('./php/main-login.php');
         <script src="./libs/bootstrap/js/bootstrap.min.js" defer></script>
         <script src="./js/script-carousel.js" defer></script>
         <script src="./libs/jQuery/jquery-ui v1.12.1.js"defer ></script>
-        <script src="./js/script.js" defer></script>
+        <script src="./js/script.js?v=1.0.2" defer></script>
     </body>
 
 </html>

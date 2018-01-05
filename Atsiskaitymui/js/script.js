@@ -84,8 +84,8 @@ window.onload = function() {
 
 
         document.getElementById("svg-line-first").style.filter = "grayscale(0%)";
-        $("main.mdl-cell--7-col").css("border-left", "#FE01F5 1px solid");
-        $("main.mdl-cell--7-col").css("border-right", "#FE01F5 1px solid");
+        $("main.mdl-cell--7-col").css("border-left", mainSiteColor + " 1px solid");
+        $("main.mdl-cell--7-col").css("border-right", mainSiteColor + " 1px solid");
         for (var i = 0; i < mainWArray.length; i++) {
             if (mainWArray[i] == event.target.getAttribute('nrl')) {
                 // console.log("atidaro ", i, "langa");
@@ -141,8 +141,6 @@ window.onload = function() {
     var albumLinks = document.getElementsByClassName('art');
     var playerDivs = document.getElementsByClassName('visIframes');
     var photoLinks = document.getElementsByClassName('photo-links');
-    var nesamone = document.getElementById('art');
-    console.log(nesamone);
 
 
 $('#menu-gallery').on('click', function () {
@@ -183,12 +181,49 @@ $('#menu-gallery').on('click', function () {
 
 
     $(".sideLinks").click(function() {
-        $(".sideLinks").removeClass("active");
-        $(this).addClass("active");
+        $(".sideLinks").css({
+                        'font-weight': '100',
+                        'background-color' : 'transparent',
+                        'box-shadow' : 'none',
+                        'color' : 'white'
+                    }).mouseout(function(){
+                        $(this).css("color","white");
+                    }).mouseover(function(){
+                        $(this).css({
+                            'color' : mainSiteColor,
+                            'font-weight' : '100',
+                            'background-color' : 'transparent',
+                            'border' : 'none'
+                        });
+                    });
+        $(this).css({
+                'font-weight': '100',
+                'background-color' : 'transparent',
+                'box-shadow' : 'inset 0px 0px 0px 1px ' + mainSiteColor,
+                'color' : mainSiteColor
+            }).off('mouseout').off('mouseover');
     });
+
+    $(".sideLinks").mouseover(function(){
+        $(this).css({
+            'color' : mainSiteColor,
+            'font-weight' : '100',
+            'background-color' : 'transparent',
+            'border' : 'none'
+        });
+    });
+
+    $(".sideLinks").mouseout(function(){
+        $(this).css("color","white");
+    });
+
 
     $('#LogIn-click').click(function(){
         $('#LogInWindow').slideToggle(2000);
+    });
+
+    $('#newTracks').click(function(){
+        $('#movingNewTracks').slideToggle(1000);
     });
 
 

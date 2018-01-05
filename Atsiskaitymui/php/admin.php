@@ -56,8 +56,10 @@
         <br>
         <h1>Edit your gallery</h1>
             <input type="button" style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(255, 252, 43)" onclick="location.href='edit_iframes.php';" value="Edit your albums" />
-            <br>
-            <br>
+        <br>
+        <br>
+        <h1>Edit your site color</h1>
+            <input type="button" style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(109, 42, 149)" onclick="location.href='edit_color.php';" value="Change Main Color" />
         <h1>Your messages</h1>
         <br />
         <form class="" action="admin.php" method="get">

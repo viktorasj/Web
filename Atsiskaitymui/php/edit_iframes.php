@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>testing</title>
+        <title>Edit albums</title>
         <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
         <script src="../libs/jQuery/jquery-3.2.1.min.js" defer></script>
         <script src="../libs/bootstrap/js/bootstrap.min.js" defer></script>
