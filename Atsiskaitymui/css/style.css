@@ -477,6 +477,8 @@ div#font-edit {
 .newsfeed-parent{
   display: flex;
   justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2vh;
 }
 .fdrr {
   flex-direction: row-reverse;
@@ -484,18 +486,27 @@ div#font-edit {
 
 .news-date-title {
   display: inline-block;
+  padding-top: 4vh;
+  padding-bottom: 3vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
   min-height: 13vh;
   width: 15vw;
-  background-color: yellow;
+  background-color: rgba(84, 72, 99, 0.65);
 }
 
 .news-content {
     display: inline-block;
     min-height: 13vh;
+    padding: 3vh;
     width: 37vw;
-    background-color: grey;
+    background-color: rgba(84, 72, 99, 0.4);
 
 }
+
+
+
+
 
 
 

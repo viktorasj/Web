@@ -245,6 +245,7 @@ $('.menu-gallery').on('click', function () {
         });
     });
 
+    $("div.newsfeed-parent:nth-child(2n+1)").addClass("fdrr");
 
 
 };

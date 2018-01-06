@@ -106,26 +106,23 @@ include_once ('./php/color_get.php');
     <!-- <<<==========================NEWS DIV WINDOW===============================>>> -->
             <div class="mainWindows about-formation" nrw="link2">
                 <h2 class="text-center h2-color">Newsfeed</h2>
+              <?php
+              $result = getNews ($connection);
+              while ($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="newsfeed-parent m-4">
 
-              <div class="newsfeed-parent m-2">
+                    <div class="news-date-title text-center">
+                     <div class=""><?php echo $row['date'] ?></div>
+                     <hr>
+                     <div class="mt-3"><?php echo $row['title'] ?></div>
 
-                  <div class="news-date-title">
+                    </div>
+                    <div class="news-content">
+                        <?php echo $row['content'] ?>
+                    </div>
+                </div>
+              <?php }?>
 
-                  </div>
-                  <div class="news-content">
-
-                  </div>
-              </div>
-
-              <div class="newsfeed-parent m-2 fdrr">
-
-                  <div class="news-date-title">
-
-                  </div>
-                  <div class="news-content">
-
-                  </div>
-              </div>
 
             </div>
 
