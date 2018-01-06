@@ -34,7 +34,7 @@ h1 {
   height: 20vhem; }
 
 .au-35 {
-  height: 35em; }
+  height: 35vh; }
 
 .au-40 {
   height: 40vh; }
@@ -99,38 +99,7 @@ nav.mdl-grid {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%); }
 
-a.list-group-item {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: white; }
 
-a.list-group-item-action:hover {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: #FE01F5; }
-
-.list-group-item.active {
-  font-weight: 100;
-  z-index: 2;
-  background-color: transparent;
-  border: none;
-  -webkit-box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  color: #FE01F5;
-  background-color: transparent;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-a.list-group-item:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0; }
-
-a.list-group-item:last-child {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
 
 /* nuima keires desines padding*/
 .np {
@@ -159,38 +128,7 @@ div.nm {
   padding-top: 1vh;
 }
 
-a.list-group-item {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: white; }
 
-a.list-group-item-action:hover {
-  font-weight: 100;
-  background-color: transparent;
-  border: none;
-  color: #FE01F5; }
-
-.list-group-item.active {
-  font-weight: 100;
-  z-index: 2;
-  background-color: transparent;
-  border: none;
-  -webkit-box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  box-shadow: inset 0px 0px 0px 1px #FE01F5;
-  color: #FE01F5;
-  background-color: transparent;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
-a.list-group-item:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0; }
-
-a.list-group-item:last-child {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; }
 
 img.logo {
   position: absolute;
@@ -281,6 +219,16 @@ a:hover {
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.85); }
 
+
+  .popup-inv {
+      position: absolute;
+      top: 0vh;
+      left: 80vw;
+      width: 9vw;
+      height: 100%;
+      background-color: transparent;
+  }
+
 .photo-formating {
   width: 100%;
   height: 100%;
@@ -342,6 +290,17 @@ a:hover {
   height: 86vh;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.85); }
+
+#divForIframeInv {
+    display: inherit;
+    position: absolute;
+    left: 58vw;
+    width: 25vw;
+    height: 86vh;
+    z-index: 5;
+    background-color: transparent; }
+
+
 
 .visIframes {
   display: none;
@@ -515,6 +474,33 @@ div#font-edit {
     opacity: 0.5;
 }
 
+.newsfeed-parent{
+  display: flex;
+  justify-content: center;
+}
+.fdrr {
+  flex-direction: row-reverse;
+}
+
+.news-date-title {
+  display: inline-block;
+  min-height: 13vh;
+  width: 15vw;
+  background-color: yellow;
+}
+
+.news-content {
+    display: inline-block;
+    min-height: 13vh;
+    width: 37vw;
+    background-color: grey;
+
+}
+
+
+
+
+
 @media screen and (max-width: 1610px) {
   body {
     background-image: url("../images/background.jpg");
@@ -678,6 +664,19 @@ div#font-edit {
     height: 70vh;
 
 }
+
+.popup-inv {
+    position: absolute;
+    top: -10vh;
+    left: 0vw;
+    width: 100%;
+    height: 10vh;
+    background-color: transparent;
+}
+
+
+
+
 .photo-formating {
     margin-top: 16vh !important;
 }

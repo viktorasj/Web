@@ -32,9 +32,13 @@ function showGallery() {
     document.body.insertBefore(parentDiv, document.body.firstChild);
     $('.popup-formating').css('display','none');
 
-    var text = '<svg id="cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>';
+    var text = '<svg id="cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:'+mainSiteColor+';stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:'+mainSiteColor+';stroke-width:6"></line></svg>';
     parentDiv.innerHTML = text;
 
+    var invDiv = document.createElement('div');
+    invDiv.className = 'popup-inv';
+    invDiv.id = 'invDiv';
+    document.getElementById('parentDiv').appendChild(invDiv);
 
     var containerDiv = document.createElement('div');
     containerDiv.className = 'container';

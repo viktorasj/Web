@@ -162,6 +162,22 @@ function getLasts ($connect) {
     return $result;
 }
 
+function addNews($connect, $title, $content){
+  $my_sql = "INSERT INTO newsfeed VALUES('',NOW(),'$title', '$content')";
+  $result = mysqli_query($connect, $my_sql);
+}
+
+function getNews ($connect) {
+    $my_sql = "SELECT * FROM newsfeed";
+    $result = mysqli_query($connect, $my_sql);
+    return $result;
+    }
+
+function deleteSelectedNews ($connect, $id) {
+        $my_sql = "DELETE FROM newsfeed WHERE id=$id";
+        $result = mysqli_query($connect, $my_sql);
+    }
+
 
 
  ?>

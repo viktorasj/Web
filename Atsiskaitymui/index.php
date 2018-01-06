@@ -10,7 +10,7 @@
     <link rel = "stylesheet" href = "./css/set2.css">
     <link rel = "stylesheet" href = "./libs/font-awesome-4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.2">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.4">
 
 
 
@@ -26,7 +26,10 @@ include_once ('./php/color_get.php');
 ?>
     <div class="container-fluid np">
         <div id="divForIframe">
-            <svg id="music-cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#FE01E7;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#FE01E7;stroke-width:6"></line></svg>
+            <svg id="music-cross-button" height="2em" width="2em"><line x1="0" y1="0" x2="100%" y2="100%" style="stroke:<?php echo $color['color_code'] ?>;stroke-width:6"></line><line x1="0" y1="100%" x2="100%" y2="0" style="stroke:<?php echo $color['color_code'] ?> ;stroke-width:6"></line></svg>
+            <div id="divForIframeInv">
+
+            </div>
         </div>
         <div id="LogIn-click"></div>
         <div id="LogInWindow">
@@ -62,7 +65,7 @@ include_once ('./php/color_get.php');
                         <a href="#" class="sideLinks " nrl="link1">ABOUT</a>
                         <a href="#" class="sideLinks " nrl="link2">NEWS</a>
                         <a href="#" class="sideLinks " nrl="link3">MUSIC</a>
-                        <a href="#" class="sideLinks " nrl="link4">GALLERY</a>
+                        <a href="#" class="sideLinks menu-gallery" nrl="link4">GALLERY</a>
                         <a href="#" class="sideLinks " nrl="link5">CONTACTS</a>
                     </div>
     <!-- ==================HEADERIO LINKAI END==================-->
@@ -104,6 +107,25 @@ include_once ('./php/color_get.php');
             <div class="mainWindows about-formation" nrw="link2">
                 <h2 class="text-center h2-color">Newsfeed</h2>
 
+              <div class="newsfeed-parent m-2">
+
+                  <div class="news-date-title">
+
+                  </div>
+                  <div class="news-content">
+
+                  </div>
+              </div>
+
+              <div class="newsfeed-parent m-2 fdrr">
+
+                  <div class="news-date-title">
+
+                  </div>
+                  <div class="news-content">
+
+                  </div>
+              </div>
 
             </div>
 
@@ -183,7 +205,7 @@ include_once ('./php/color_get.php');
             <!-- NENAUDOJAMAS NAV -->
             <nav class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone nm np" id="allNavigation">
                 <svg class="path au-70" id="svg-line-first" height="100%" width="1">
-                    <line x1="0" y1="100%" x2="0" y2="0" style="stroke:#FE01E7;stroke-width:5" />
+                    <line x1="0" y1="100%" x2="0" y2="0" style="stroke:<?php echo $color['color_code'] ?>;stroke-width:5" />
                 </svg>
                 <div class="mdl-grid au-35 nm">
                     <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone np">
@@ -197,7 +219,7 @@ include_once ('./php/color_get.php');
                             <a href="#" class="sideLinks" nrl="link1">ABOUT</a>
                             <a href="#" class="sideLinks mt-4" nrl="link2">NEWS</a>
                             <a href="#" class="sideLinks mt-4" nrl="link3">MUSIC</a>
-                            <a href="#" class="sideLinks mt-4" nrl="link4" id="menu-gallery">GALLERY</a>
+                            <a href="#" class="sideLinks mt-4 menu-gallery" nrl="link4">GALLERY</a>
                             <a href="#" class="sideLinks mt-4" nrl="link5">CONTACT</a>
                         </div>
                     </div>
@@ -237,9 +259,9 @@ include_once ('./php/color_get.php');
         <script src="./libs/Popper/Popper.js" defer></script>
         <script src="./libs/jQuery/jquery-3.2.1.min.js" defer></script>
         <script src="./libs/bootstrap/js/bootstrap.min.js" defer></script>
-        <script src="./js/script-carousel.js" defer></script>
+        <script src="./js/script-carousel.js?v=1.0.1" defer></script>
         <script src="./libs/jQuery/jquery-ui v1.12.1.js"defer ></script>
-        <script src="./js/script.js?v=1.0.2" defer></script>
+        <script src="./js/script.js?v=1.0.4" defer></script>
     </body>
 
 </html>

@@ -143,7 +143,7 @@ window.onload = function() {
     var photoLinks = document.getElementsByClassName('photo-links');
 
 
-$('#menu-gallery').on('click', function () {
+$('.menu-gallery').on('click', function () {
     for (i = 0; i < photoLinks.length; i++) {
         var currentSrc = photoLinks[i].firstChild.getAttribute('data-src');
         console.log(currentSrc);

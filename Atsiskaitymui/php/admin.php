@@ -3,12 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>AdminArea</title>
+        <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
+        <script src="../libs/jQuery/jquery-3.2.1.min.js" defer></script>
+        <script src="../libs/bootstrap/js/bootstrap.min.js" defer></script>
     </head>
     <body>
+      <div class="container">
+        <br>
+
         <h1>Welcome Admin</h1>
         <form class="" action="../index.php">
                <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(221, 190, 37)" type="submit">Back to my page</button>
         </form>
+        <br>
+        <br>
 
         <h2>Edit your "About Message"</h2>
         <?php
@@ -60,6 +68,12 @@
         <br>
         <h1>Edit your site color</h1>
             <input type="button" style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(109, 42, 149)" onclick="location.href='edit_color.php';" value="Change Main Color" />
+        <br>
+        <br>
+            <h1>Edit your news</h1>
+            <input type="button" style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(6, 254, 141)" onclick="location.href='edit_news.php';" value="Edit NewsFeed" />
+        <br>
+        <br>
         <h1>Your messages</h1>
         <br />
         <form class="" action="admin.php" method="get">
@@ -91,8 +105,8 @@
             }
              ?>
                 <br />
-                <button style="width: 200px; height: 50px; font-size: 20px; background-color: pink" type="submit" name="deleteSelected">Delete <b>SELECTED</b> Messages!</button>
-                <button style="width: 200px; height: 50px; font-size: 20px; background-color: pink" type="submit" name="delete">Delete <b> ALL</b> Messages!</button>
+                <button style="width: 200px; font-size: 20px; background-color: pink" type="submit" name="deleteSelected">Delete <b>SELECTED</b> Messages!</button>
+                <button style="width: 200px; font-size: 20px; background-color: pink" type="submit" name="delete">Delete <b> ALL</b> Messages!</button>
             </form>
             <br />
 
@@ -145,7 +159,7 @@
                     <?php endwhile; ?>
                 </table>
                 <br />
-                <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(50, 228, 111)" type="submit" name="deleteSelectedUsers">Delete selected users!</button>
+                <button style="width: 200px; font-size: 20px; background-color: rgb(50, 228, 111)" type="submit" name="deleteSelectedUsers">Delete selected users!</button>
                 <br />
                 <h1>Add users!</h1>
                 <form class="" action="admin.php" method="get">
@@ -158,5 +172,8 @@
                     <button style="width: 200px; height: 50px; font-size: 20px; background-color: rgb(108, 150, 214)" type="submit" name="addUser">Add User</button>
                 </form>
 
+                </div>
+          <script src="../libs/jQuery/jquery-3.2.1.min.js" defer></script>
+          <script src="../libs/bootstrap/js/bootstrap.min.js" defer></script>
     </body>
 </html>
