@@ -34,7 +34,7 @@ h1 {
   height: 20vhem; }
 
 .au-35 {
-  height: 35vh; }
+  height: 35em; }
 
 .au-40 {
   height: 40vh; }
@@ -99,7 +99,38 @@ nav.mdl-grid {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%); }
 
+a.list-group-item {
+  font-weight: 100;
+  background-color: transparent;
+  border: none;
+  color: white; }
 
+a.list-group-item-action:hover {
+  font-weight: 100;
+  background-color: transparent;
+  border: none;
+  color: #FE01F5; }
+
+.list-group-item.active {
+  font-weight: 100;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #FE01F5;
+  box-shadow: inset 0px 0px 0px 1px #FE01F5;
+  color: #FE01F5;
+  background-color: transparent;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+a.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+a.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
 
 /* nuima keires desines padding*/
 .np {
@@ -128,7 +159,38 @@ div.nm {
   padding-top: 1vh;
 }
 
+a.list-group-item {
+  font-weight: 100;
+  background-color: transparent;
+  border: none;
+  color: white; }
 
+a.list-group-item-action:hover {
+  font-weight: 100;
+  background-color: transparent;
+  border: none;
+  color: #FE01F5; }
+
+.list-group-item.active {
+  font-weight: 100;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #FE01F5;
+  box-shadow: inset 0px 0px 0px 1px #FE01F5;
+  color: #FE01F5;
+  background-color: transparent;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+a.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+a.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
 
 img.logo {
   position: absolute;
