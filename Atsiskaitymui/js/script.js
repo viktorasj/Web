@@ -248,4 +248,7 @@ $('.menu-gallery').on('click', function () {
     $("div.newsfeed-parent:nth-child(2n+1)").addClass("fdrr");
 
 
+    $('#withSoundcloud').on('click', function () {
+        $('#soundcloudLink[src]').attr('src', $('#soundcloudLink')[0].dataset.src);
+      });
 };

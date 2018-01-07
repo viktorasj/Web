@@ -10,7 +10,7 @@
     <link rel = "stylesheet" href = "./css/set2.css">
     <link rel = "stylesheet" href = "./libs/font-awesome-4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.4">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v=1.0.5">
 
 
 
@@ -134,7 +134,7 @@ include_once ('./php/color_get.php');
                         <!-- <img class="soundcloud-logo" src="./images/soundcloud-color.png" alt="logo" style="width: 4vw"> -->
                     </div>
                     <div class="" style="background-color: rgba(84, 72, 99, 0.65)" id="movingNewTracks">
-                        <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/282664734&amp;color=%23bcbcbc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+                        <iframe id="soundcloudLink" width="100%" height="400" scrolling="no" frameborder="no" src="about:blank" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/282664734&amp;color=%23bcbcbc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
                     </div>
 
                     <?php $result = getAlbumLinks ($connection);
@@ -215,7 +215,7 @@ include_once ('./php/color_get.php');
                         <div class="list-group ml-5 mr-5 text-center" id="font-edit">
                             <a href="#" class="sideLinks" nrl="link1">ABOUT</a>
                             <a href="#" class="sideLinks mt-4" nrl="link2">NEWS</a>
-                            <a href="#" class="sideLinks mt-4" nrl="link3">MUSIC</a>
+                            <a href="#" class="sideLinks mt-4" nrl="link3" id="withSoundcloud">MUSIC</a>
                             <a href="#" class="sideLinks mt-4 menu-gallery" nrl="link4">GALLERY</a>
                             <a href="#" class="sideLinks mt-4" nrl="link5">CONTACT</a>
                         </div>
@@ -258,7 +258,7 @@ include_once ('./php/color_get.php');
         <script src="./libs/bootstrap/js/bootstrap.min.js" defer></script>
         <script src="./js/script-carousel.js?v=1.0.1" defer></script>
         <script src="./libs/jQuery/jquery-ui v1.12.1.js"defer ></script>
-        <script src="./js/script.js?v=1.0.4" defer></script>
+        <script src="./js/script.js?v=1.0.5" defer></script>
     </body>
 
 </html>
