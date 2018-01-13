@@ -30,3 +30,12 @@
 .atl-span {
   font-size: 20px;
 }
+
+#atl-input {
+  width: 400px;
+  font-size: 20px;
+}
+
+.dn {
+  display: none;
+}
