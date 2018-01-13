@@ -1,11 +1,32 @@
-p {
-  color: red;
-}
-
 .au {
   height: 4em;
 }
 
 .aux {
   height: 10em;
+}
+
+.cfg-button {
+  width: 10vw;
+  height: 10vh;
+  background-color: #2bb3c8;
+  border: none;
+  box-shadow:inset 0px 0px 5px 1px rgba(15, 77, 77, 1);
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}
+
+.cfg-button:hover {
+  background-color: rgb(23, 115, 129);
+  box-shadow:inset 0px 0px 5px 1px rgba(15, 77, 77, 1);
+}
+
+.atl-choose {
+  font-size: 20px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.atl-span {
+  font-size: 20px;
 }
