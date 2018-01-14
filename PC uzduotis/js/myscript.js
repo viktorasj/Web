@@ -26,9 +26,11 @@ var autor_ir_atlPopSpan = document.getElementById('autor_ir_atlPopSpan');
 var IR_Sodrai_nuo_autoriniu_Span = document.getElementById('IR_Sodrai_nuo_autoriniu_Span');
 var IR_Sodrai_nuo_autoriniu_procSpan = document.getElementById('IR_Sodrai_nuo_autoriniu_procSpan');
 var IR_Sodrai_nuo_autoriniu = document.getElementById('IR_Sodrai_nuo_autoriniu');
-var IR_procentai_sodrai_input = document.getElementById('procentai_sodrai_input').value;
+var IR_procentai_sodrai_input = document.getElementById('IR_procentai_sodrai_input');
 var IRuzAutorinesSutartisSpan = document.getElementById('IRuzAutorinesSutartisSpan');
 var IRvisoSpan = document.getElementById('IRvisoSpan');
+
+
 
 
 if (selectedInput.value === "i_rankas") {
@@ -42,14 +44,14 @@ else if (selectedInput === "ant_popieriaus") {
 
 function inputAtlIRankas () {
 
-  $(atl_antpopier_input).slideToggle();
-  $(atl_irankas_skaiciuokle).slideToggle();
-  $(atl_irankas_input).hide();
-  $(atl_antPopier_skaiciuokle).hide();
+  $(atl_antpopier_input).removeClass('dn');
+  $(atl_irankas_skaiciuokle).removeClass('dn');
+  $(atl_irankas_input).addClass('dn');
+  $(atl_antPopier_skaiciuokle).addClass('dn');
   $('#APcfg-button').addClass('dn');
   $('#IRcfg-button').removeClass('dn');
 
-  IR_Sodrai_nuo_autoriniu_procSpan.innerHTML = IR_procentai_sodrai_input + " %";
+  IR_Sodrai_nuo_autoriniu_procSpan.innerHTML = IR_procentai_sodrai_input.value;
 
 
   $('#atl-input').on('input', function (){
@@ -58,6 +60,7 @@ function inputAtlIRankas () {
 
     var sodrai_nuo_aut_temp = IR_Sodrai_nuo_autoriniu_Span.innerHTML.replace(/\D/g,'');
     var sodrai_nuo_aut = (Number(sodrai_nuo_aut_temp))/100;
+    console.log(sodrai_nuo_aut);
 
     var lieka_nuo_autoriniu = Math.round((((Number(viso_autorSpan.innerHTML.replace(/\D/g,'')))/100)-sodrai_nuo_aut) * 100) / 100;
 
@@ -72,6 +75,7 @@ function inputAtlIRankas () {
     if (isNaN(atl_ant_popieriaus)) {
       atl_ant_popieriaus = 0;
     }
+
     var IRpajamu_mokestis = atl_ant_popieriaus * 0.15;
     var IRsveikatos_draudimas = atl_ant_popieriaus * 0.06;
     var IRpensija = atl_ant_popieriaus * 0.03;
@@ -98,10 +102,10 @@ function inputAtlIRankas () {
 
 
 function inputAtlAntPopier () {
-  $(atl_irankas_input).slideToggle();
-  $(atl_antPopier_skaiciuokle).slideToggle();
-  $(atl_antpopier_input).hide();
-  $(atl_irankas_skaiciuokle).hide();
+  $(atl_irankas_input).removeClass('dn');
+  $(atl_antPopier_skaiciuokle).removeClass('dn');
+  $(atl_antpopier_input).addClass('dn');
+  $(atl_irankas_skaiciuokle).addClass('dn');
   $('#IRcfg-button').addClass('dn');
   $('#APcfg-button').removeClass('dn');
 
@@ -175,7 +179,8 @@ $('#sutartis_btn').on('click', function () {
   viso_autorSpan.innerHTML = viso_uz_sutartis.toFixed(2) + " &euro;";
   var temp2 = parseInt(IRalgAntPopSpan.innerHTML);
   var atl_ir_auto = viso_uz_sutartis + temp2;
-  var IRsodrai_nuo_autoriniu = (viso_uz_sutartis/100)*IR_procentai_sodrai_input;
+  var IRsodrai_nuo_autoriniu = (viso_uz_sutartis/100)*IR_procentai_sodrai_input.value;
+  console.log(Number(IR_Sodrai_nuo_autoriniu_procSpan.innerHTML));
   autor_ir_atlPopSpan.innerHTML = "";
   autor_ir_atlPopSpan.innerHTML = atl_ir_auto.toFixed(2) + " &euro;";
   IR_Sodrai_nuo_autoriniu_Span.innerHTML = IRsodrai_nuo_autoriniu.toFixed(2) + " &euro;";
@@ -186,8 +191,6 @@ $('#sutartis_btn').on('click', function () {
 
   IRvisoSpan.innerHTML = atlyginimas_ir_autorines.toFixed(2) + " &euro;";
 
-
-
   // isvalo langus
   $("#sutarties_pav").val("");
   $("#sutarties_kaina").val("");
@@ -195,6 +198,11 @@ $('#sutartis_btn').on('click', function () {
 });
 
 
+  $('#IR_procentai_sodrai_input').on('input', function (){
+    var IR_procentai_sodrai = parseInt(document.getElementById('IR_procentai_sodrai_input').value);
+    IR_Sodrai_nuo_autoriniu_procSpan.innerHTML = IR_procentai_sodrai;
+
+  });
 
 
 

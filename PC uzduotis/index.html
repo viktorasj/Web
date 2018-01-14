@@ -10,16 +10,51 @@
   </head>
   <body>
   <div class="container">
+
+  <!-- Procentu redagavimas (skaiciuoklei I RANKAS) -->
+
+  <div class="procentu_redagavimas dn" id="IRprocentu_redagavimas">
+    <svg class="cross" id="IRcross" height="2em" width="2em">
+      <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#0092ff;stroke-width:6"></line>
+      <line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#0092ff;stroke-width:6"></line>
+    </svg>
+    <div class="" style="margin-left: 30%; margin-top: 5%">
+        <span class="h3">% Sodrai nuo autorinių sutarčių</span>
+        <input id="IR_procentai_sodrai_input" class="h3 text-center" type="text" name="" value="39.48">
+    </div>
+
+  </div>
+
+  <!-- Procentu redagavimas (skaiciuoklei I RANKAS) -->
+
+    <div class="procentu_redagavimas dn" id="APprocentu_redagavimas">
+
+      <svg class="cross" id="APcross" height="2em" width="2em">
+        <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#0092ff;stroke-width:6"></line>
+        <line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#0092ff;stroke-width:6"></line>
+      </svg>
+    </div>
+
   <!-- Vietoj Footer ROW -->
 
     <div class="row">
-        <div class="col-md-10 d-flex align-items-center justify-content-center">
-          <h3>Atlyginimo skaičiuoklė</h3>
+        <div class="col-md-10 d-flex align-items-end">
+          <img src="./img/logo.png" alt="">
         </div>
-        <div class="col-md">
-          <button class="cfg-button" type="button" name="button">CFG</button>
-        </div>
+
+  <!-- CFG I RANKAS SKAICIUOKLEI -->
+
+
+          <button id="IRcfg-button" class="cfg-button dn" type="button" name="button">REDAGUOTI %</button>
+
+
+  <!-- CFG I ANT POPIERIAUS SKAICIUOKLEI -->
+
+        <button id="APcfg-button" class="cfg-button dn" type="button" name="button">REDAGUOTI %</button>
+
+
     </div>
+
     <hr>
 
   <!-- Atlyginimo pasirinkimas -->
@@ -42,19 +77,19 @@
         <!-- Atlyginimo ant popieriaus ivedimas -->
 
         <div id="atl_antpopier_input" class="mt-3 mb-2 text-center dn">
-          <input id="atl-input" type="number" name="atl_antpopier_input" value="" placeholder="Įveskite atlyginimą ant popieriaus" autofocus>
+          <input class="text-center" id="atl-input" type="number" name="atl_antpopier_input" value="" placeholder="Įveskite atlyginimą ant popieriaus" autofocus>
         </div>
 
         <!-- Atlyginimo i rankas ivedimas -->
 
         <div id="atl_irankas_input" class="mt-3 mb-2 text-center dn">
-          <input id="atl-input" type="number" name="atl_irankas_input" value="" placeholder="Įveskite atlyginimą į rankas">
+          <input class="text-center" id="atl-input" type="number" name="atl_irankas_input" value="" placeholder="Įveskite atlyginimą į rankas">
         </div>
 
       </div>
     </div>
     <hr>
-    <!-- Duomenys -->
+    <!-- Atlyginimo i rankas skaiciuokle -->
     <div class="row">
       <div class="col-md-12">
 
@@ -67,8 +102,11 @@
         <h5 class="ml-4">Pajamų mokestis 15% - <span id="IRpajamu_mokestisSpan"></span> </h5>
         <h5 class="ml-4">Sodra. Sveikatos draudimas 6% - <span id="IRsveikatos_draudimasSpan"></span></h5>
         <h5 class="ml-4">Sodra. Pensijų ir soc. draudimas 3% - <span id="IRpensijaSpan"></span></h5>
+        <h5 class="ml-4 dn" id="IR_Sodrai_nuo_autoriniu">Sodra. Autorinės sutartys <span id="IR_Sodrai_nuo_autoriniu_procSpan"></span><span>% - </span><span id="IR_Sodrai_nuo_autoriniu_Span"></span></h5>
         <hr>
+        <h4 class="dn" id="IRuzAutorinesSutartis">Išmokamas atlyginimas už autorines sutartis - <span id="IRuzAutorinesSutartisSpan"></span></h4>
         <h4>Išmokamas atlyginimas "į rankas" - <span id="IRiRankasSpan"></span></h4>
+        <h4 class="dn" id="IRviso">Išmokamas atlyginimas viso - <span id="IRvisoSpan"></span></h4>
         <hr>
         <h5>Darbdavio sumokami mokesčiai (į Sodrą) - 31.18%</h5>
         <h4>Visa darbo vietos kaina - <span id="IRdarboVietaSpan"></span></h4>
