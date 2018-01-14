@@ -7,8 +7,8 @@
 }
 
 .cfg-button {
-  width: 10vw;
-  height: 10vh;
+  width: 8vw;
+  height: 8vh;
   background-color: #2bb3c8;
   border: none;
   box-shadow:inset 0px 0px 5px 1px rgba(15, 77, 77, 1);
@@ -38,4 +38,22 @@
 
 .dn {
   display: none;
+}
+
+#add_icon {
+  width: 3em;
+  height: 3em;
+  opacity: 0.8;
+}
+#add_icon:hover {
+  opacity: 1;
+}
+
+.autorines {
+  border: 1px solid black;
+}
+
+#autorines_input {
+  height: auto;
+  background-color: #35B7FF;
 }
