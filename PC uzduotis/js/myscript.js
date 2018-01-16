@@ -315,7 +315,7 @@ $('#APsutartis_btn').on('click', function () {
 // kintamieji
   var temp2 = Number(APalgIrankSpan.innerHTML);
   var atl_ir_auto = viso_uz_sutartis + temp2;
-  var APsodrai_nuo_autoriniu = (viso_uz_sutartis*100)/(100-IR_procentai_sodrai_input.value)-viso_uz_sutartis;
+  var APsodrai_nuo_autoriniu = (viso_uz_sutartis*100)/(100-AP_procentai_sodrai_input.value)-viso_uz_sutartis;
   var esamas_atlyginimas = Number(APantPopSpan.innerHTML);
   var atlyginimas_ir_autorines = apv(viso_uz_sutartis + APsodrai_nuo_autoriniu + Number(APantPopSpan.innerHTML));
 
@@ -368,6 +368,41 @@ $('#APsutartis_btn').on('click', function () {
     IR_Sodrai_nuo_autoriniu_Span.innerHTML = IR_Sodrai_nuo_aut_Span;
     IRuzAutorinesSutartisSpan.innerHTML = apv(IR_aut_lieka_nuo_sodros);
     IRvisoSpan.innerHTML = apv (IR_viso);
+});
+
+  $('#AP_procentai_sodrai_input').on('input', function (){
+    var AP_procentai_sodrai = document.getElementById('AP_procentai_sodrai_input').value;
+
+//apsauga
+    if (AP_procentai_sodrai > 100) {
+      alert("100% max");
+      document.getElementById('AP_procentai_sodrai_input').value = 100;
+      AP_procentai_sodrai = 100;
+    }
+//apsauga
+    else if (AP_procentai_sodrai < 0) {
+      alert("Sodra nedamokės ;) ");
+      document.getElementById('AP_procentai_sodrai_input').value = 0;
+      AP_procentai_sodrai = 0;
+    }
+//apsauga
+    else if (!AP_procentai_sodrai) {
+      AP_procentai_sodrai = 0;
+    }
+
+    AP_Sodrai_nuo_autoriniu_procSpan.innerHTML = AP_procentai_sodrai;
+
+
+//kintamieji
+    var AP_Sodrai_nuo_aut_Span = apv((Number(APviso_autorSpan.innerHTML))*100/(100-AP_procentai_sodrai)-(Number(APviso_autorSpan.innerHTML)));
+    var AP_aut_lieka_nuo_sodros = Number(APviso_autorSpan.innerHTML) + AP_Sodrai_nuo_aut_Span;
+    var AP_viso = (Number(APantPopSpan.innerHTML)) + AP_aut_lieka_nuo_sodros;
+    var APvisoSpan = document.getElementById('APvisoSpan');
+
+//parse
+    AP_Sodrai_nuo_autoriniu_Span.innerHTML = AP_Sodrai_nuo_aut_Span;
+    APuzAutorinesSutartisSpan.innerHTML = apv(AP_aut_lieka_nuo_sodros);
+    APvisoSpan.innerHTML = apv (AP_viso);
 });
 
 
