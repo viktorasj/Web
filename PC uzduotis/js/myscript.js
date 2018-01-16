@@ -7,6 +7,7 @@ var atl_irankas_input = document.getElementById('atl_irankas_input');
 var atl_irankas_skaiciuokle = document.getElementById('atl_irankas_skaiciuokle');
 var atl_antPopier_skaiciuokle = document.getElementById('atl_antPopier_skaiciuokle');
 
+var ivesti_sutartis = document.getElementById('ivesti_sutartis');
 
 
 
@@ -64,10 +65,11 @@ else if (selectedInput.value === "ant_popieriaus") {
 
 function inputAtlIRankas () {
 
-  $(atl_antpopier_input).removeClass('dn');
-  $(atl_irankas_skaiciuokle).removeClass('dn');
-  $(atl_irankas_input).addClass('dn');
-  $(atl_antPopier_skaiciuokle).addClass('dn');
+  $(atl_irankas_input).hide();
+  $(atl_antPopier_skaiciuokle).hide();
+  $(atl_antpopier_input).slideToggle();
+  $(atl_irankas_skaiciuokle).slideToggle();
+  $(ivesti_sutartis).slideToggle();
   $('#APcfg-button').addClass('dn');
   $('#IRcfg-button').removeClass('dn');
 
@@ -117,10 +119,11 @@ function inputAtlIRankas () {
 function inputAtlAntPopier () {
 
 // show/hide
-  $(atl_irankas_input).removeClass('dn');
-  $(atl_antPopier_skaiciuokle).removeClass('dn');
-  $(atl_antpopier_input).addClass('dn');
-  $(atl_irankas_skaiciuokle).addClass('dn');
+  $(atl_irankas_input).slideToggle();
+  $(atl_antPopier_skaiciuokle).slideToggle();
+  $(atl_antpopier_input).hide();
+  $(atl_irankas_skaiciuokle).hide();
+  $(ivesti_sutartis).hide();
   $('#IRcfg-button').addClass('dn');
   $('#APcfg-button').removeClass('dn');
 
@@ -176,14 +179,14 @@ $('#selectedInput').on('change', function (){
   }
 });
 
-
-$('#sutartis_btn').one("click", function () {
-   $(IRautor).slideToggle();
-   $(IRautor_ir_atlPop).slideToggle();
-   $(IR_Sodrai_nuo_autoriniu).slideToggle();
-   $(IRuzAutorinesSutartis).slideToggle();
-   $(IRviso).slideToggle();
- });
+//parodo autoriniu eilutes kai autorine sutartis pirma kart ivesta
+  $('#sutartis_btn').one("click", function () {
+     $(IRautor).slideToggle();
+     $(IRautor_ir_atlPop).slideToggle();
+     $(IR_Sodrai_nuo_autoriniu).slideToggle();
+     $(IRuzAutorinesSutartis).slideToggle();
+     $(IRviso).slideToggle();
+   });
 
 // $('#sutartis_btn').ready(function () {
 //    $(IRautor).slideToggle();

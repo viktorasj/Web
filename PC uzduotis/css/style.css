@@ -1,3 +1,15 @@
+::-webkit-scrollbar {
+display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 .au {
   height: 4em;
 }
@@ -8,7 +20,7 @@
 
 .cfg-button {
   width: 8vw;
-  height: 8vh;
+  height: 5vh;
   background-color: #2bb3c8;
   border: none;
   box-shadow:inset 0px 0px 5px 1px rgba(15, 77, 77, 1);
@@ -69,5 +81,7 @@
 }
 
 .cross {
-float: right;
+position: absolute;
+top: 22vh;
+left: 97vw;
 }

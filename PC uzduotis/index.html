@@ -77,13 +77,13 @@
         <!-- Atlyginimo ant popieriaus ivedimas -->
 
         <div id="atl_antpopier_input" class="mt-3 mb-2 text-center dn">
-          <input class="text-center atl-input" id="IRatl-input" type="number" name="atl_antpopier_input" value="" placeholder="Įveskite atlyginimą ant popieriaus" autofocus>
+          <input class="text-center atl-input" id="IRatl-input" type="number" name="atl_antpopier_input" value="" placeholder="Įveskite atlyginimą ant popieriaus" max="10" autofocus>
         </div>
 
         <!-- Atlyginimo i rankas ivedimas -->
 
         <div id="atl_irankas_input" class="mt-3 mb-2 text-center dn">
-          <input class="text-center atl-input" id="APatl-input" type="number" name="atl_irankas_input" value="" placeholder="Įveskite atlyginimą į rankas" autofocus>
+          <input class="text-center atl-input" id="APatl-input" type="number" name="atl_irankas_input" value="" placeholder="Įveskite atlyginimą į rankas" max="10" autofocus>
         </div>
 
       </div>
@@ -141,7 +141,7 @@
     <div class="row au">
        <div class="col-md-12"> <!-- autorines sutartys -->
          <div class="">
-           <div class="">
+           <div id="ivesti_sutartis" style="display: none">
                 <img class="mb-1" id="add_icon" src="./img/add.png" alt="">
                   <span class="h5">Autorinės sutartys</span>
           </div>
