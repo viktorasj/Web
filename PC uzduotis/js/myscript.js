@@ -7,7 +7,10 @@ var atl_irankas_input = document.getElementById('atl_irankas_input');
 var atl_irankas_skaiciuokle = document.getElementById('atl_irankas_skaiciuokle');
 var atl_antPopier_skaiciuokle = document.getElementById('atl_antPopier_skaiciuokle');
 
-var ivesti_sutartis = document.getElementById('ivesti_sutartis');
+var IRivesti_sutartis = document.getElementById('IRivesti_sutartis');
+var APivesti_sutartis = document.getElementById('APivesti_sutartis');
+
+
 
 
 
@@ -19,17 +22,19 @@ var IRsveikatos_draudimasSpan = document.getElementById('IRsveikatos_draudimasSp
 var IRpensijaSpan = document.getElementById('IRpensijaSpan');
 var IRiRankasSpan = document.getElementById('IRiRankasSpan');
 var IRdarboVietaSpan = document.getElementById('IRdarboVietaSpan');
-var sutartis_btn = document.getElementById('sutartis_btn');
+
+var IRsutartis_btn = document.getElementById('IRsutartis_btn');
 var IRautor = document.getElementById('IRautor');
-var viso_autorSpan = document.getElementById('viso_autorSpan');
+var IRviso_autorSpan = document.getElementById('IRviso_autorSpan');
 var IRautor_ir_atlPop = document.getElementById('IRautor_ir_atlPop');
-var autor_ir_atlPopSpan = document.getElementById('autor_ir_atlPopSpan');
+var IRautor_ir_atlPopSpan = document.getElementById('IRautor_ir_atlPopSpan');
 var IR_Sodrai_nuo_autoriniu_Span = document.getElementById('IR_Sodrai_nuo_autoriniu_Span');
 var IR_Sodrai_nuo_autoriniu_procSpan = document.getElementById('IR_Sodrai_nuo_autoriniu_procSpan');
 var IR_Sodrai_nuo_autoriniu = document.getElementById('IR_Sodrai_nuo_autoriniu');
 var IR_procentai_sodrai_input = document.getElementById('IR_procentai_sodrai_input');
 var IRuzAutorinesSutartisSpan = document.getElementById('IRuzAutorinesSutartisSpan');
 var IRvisoSpan = document.getElementById('IRvisoSpan');
+
 
 //kai skaiciuojamas atlyginimas "ant popieriaus" (AP reiskia "ant popieriaus")
 
@@ -39,6 +44,18 @@ var APsveikatos_draudimasSpan = document.getElementById('APsveikatos_draudimasSp
 var APpensijaSpan = document.getElementById('APpensijaSpan');
 var APantPopSpan = document.getElementById('APantPopSpan');
 var APdarbdSumMokSpan = document.getElementById('APdarbdSumMokSpan');
+
+var APsutartis_btn = document.getElementById('APsutartis_btn');
+var APautor = document.getElementById('APautor');
+var APviso_autorSpan = document.getElementById('APviso_autorSpan');
+var APautor_ir_atlIRank = document.getElementById('APautor_ir_atlIRank');
+var APautor_ir_atlIRankSpan = document.getElementById('APautor_ir_atlIRankSpan');
+var AP_Sodrai_nuo_autoriniu_Span = document.getElementById('AP_Sodrai_nuo_autoriniu_Span');
+var AP_Sodrai_nuo_autoriniu_procSpan = document.getElementById('AP_Sodrai_nuo_autoriniu_procSpan');
+var AP_Sodrai_nuo_autoriniu = document.getElementById('AP_Sodrai_nuo_autoriniu');
+var AP_procentai_sodrai_input = document.getElementById('AP_procentai_sodrai_input');
+var APuzAutorinesSutartisSpan = document.getElementById('APuzAutorinesSutartisSpan');
+var APvisoSpan = document.getElementById('APvisoSpan');
 
 
 
@@ -69,7 +86,8 @@ function inputAtlIRankas () {
   $(atl_antPopier_skaiciuokle).hide();
   $(atl_antpopier_input).slideToggle();
   $(atl_irankas_skaiciuokle).slideToggle();
-  $(ivesti_sutartis).slideToggle();
+  $('#IRautorines').removeClass('dn');
+  $('#APautorines').addClass('dn');
   $('#APcfg-button').addClass('dn');
   $('#IRcfg-button').removeClass('dn');
 
@@ -96,7 +114,7 @@ function inputAtlIRankas () {
       atl_ant_popieriaus = 0;
     }
 
-    var aut = Number(viso_autorSpan.innerHTML);
+    var aut = Number(IRviso_autorSpan.innerHTML);
     var lieka_nuo_autoriniu = Number(IRuzAutorinesSutartisSpan.innerHTML);
     var IRpajamu_mokestis = skaiProc(atl_ant_popieriaus, 15);
     var IRsveikatos_draudimas = skaiProc(atl_ant_popieriaus, 6);
@@ -110,7 +128,7 @@ function inputAtlIRankas () {
     IRpensijaSpan.innerHTML = IRpensija;
     IRiRankasSpan.innerHTML = IRiRankas;
     IRdarboVietaSpan.innerHTML = IRdarboVieta;
-    autor_ir_atlPopSpan.innerHTML = atl_ant_popieriaus+aut;
+    IRautor_ir_atlPopSpan.innerHTML = atl_ant_popieriaus+aut;
     IRvisoSpan.innerHTML = IRiRankas + lieka_nuo_autoriniu;
   });
 }
@@ -123,11 +141,12 @@ function inputAtlAntPopier () {
   $(atl_antPopier_skaiciuokle).slideToggle();
   $(atl_antpopier_input).hide();
   $(atl_irankas_skaiciuokle).hide();
-  $(ivesti_sutartis).hide();
+  $('#APautorines').removeClass('dn');
+  $('#IRautorines').addClass('dn');
   $('#IRcfg-button').addClass('dn');
   $('#APcfg-button').removeClass('dn');
 
-
+AP_Sodrai_nuo_autoriniu_procSpan.innerHTML = AP_procentai_sodrai_input.value;
 //read fu-ja
   $('#APatl-input').on('input', function (){
 // nuskaitomas input'as
@@ -150,11 +169,14 @@ function inputAtlAntPopier () {
     }
 
 //skaiciuokles "ant popieriaus" kintamieji
+    var aut = Number(APviso_autorSpan.innerHTML);
+    var uzAutorinesSutartis = Number(APuzAutorinesSutartisSpan.innerHTML);
     var APantPop = apv((APatl_i_rankas*100)/76);
     var APpajamu_mokestis = skaiProc (APantPop, 15);
     var APsveikatos_draudimas = skaiProc (APantPop, 6);
     var APpensija = skaiProc (APantPop, 3);
     var APdarbdSumMok = skaiProc (APantPop, 31.18);
+
 
 //parse to AP skaiciuokle
     APalgIrankSpan.innerHTML = APatl_i_rankas;
@@ -163,8 +185,11 @@ function inputAtlAntPopier () {
     APsveikatos_draudimasSpan.innerHTML = APsveikatos_draudimas;
     APpensijaSpan.innerHTML = APpensija;
     APdarbdSumMokSpan.innerHTML = APdarbdSumMok;
-    console.log(Number(APdarbdSumMokSpan.innerHTML));
-});
+    APautor_ir_atlIRankSpan.innerHTML = Number(APatl_i_rankas)+aut;
+    APvisoSpan.innerHTML = apv(APantPop + uzAutorinesSutartis);
+
+
+  });
 }
 
 //fu-ja suveikia kai keiciamas ivedimas i rankas/ ant popieriaus
@@ -180,26 +205,35 @@ $('#selectedInput').on('change', function (){
 });
 
 //parodo autoriniu eilutes kai autorine sutartis pirma kart ivesta
-  $('#sutartis_btn').one("click", function () {
-     $(IRautor).slideToggle();
-     $(IRautor_ir_atlPop).slideToggle();
-     $(IR_Sodrai_nuo_autoriniu).slideToggle();
-     $(IRuzAutorinesSutartis).slideToggle();
-     $(IRviso).slideToggle();
+  $('.sutartis_button').one("click", function () {
+    if($(this).attr('id') === "IRsutartis_btn") {
+       $(IRautor).slideToggle();
+       $(IRautor_ir_atlPop).slideToggle();
+       $(IR_Sodrai_nuo_autoriniu).slideToggle();
+       $(IRuzAutorinesSutartis).slideToggle();
+       $(IRviso).slideToggle();
+     }
+     else if ($(this).attr('id') === "APsutartis_btn") {
+       $(APautor).slideToggle();
+       $(APautor_ir_atlIRank).slideToggle();
+       $(AP_Sodrai_nuo_autoriniu).slideToggle();
+       $(APuzAutorinesSutartis).slideToggle();
+       $(APviso).slideToggle();
+     }
    });
 
-// $('#sutartis_btn').ready(function () {
-//    $(IRautor).slideToggle();
-//    $(IRautor_ir_atlPop).slideToggle();
-//    $(IR_Sodrai_nuo_autoriniu).slideToggle();
-//    $(IRuzAutorinesSutartis).slideToggle();
-//    $(IRviso).slideToggle();
-//  });
+// $('#IRsutartis_btn').ready(function () {
+//  $(IRautor).slideToggle();
+//  $(IRautor_ir_atlPop).slideToggle();
+//  $(IR_Sodrai_nuo_autoriniu).slideToggle();
+//  $(IRuzAutorinesSutartis).slideToggle();
+//  $(IRviso).slideToggle();
+// });
 
-
-$('#sutartis_btn').on('click', function () {
-  var sutarties_pav = document.getElementById('sutarties_pav').value;
-  var sutarties_kaina = document.getElementById('sutarties_kaina').value;
+//Autoriniu sutarciu ivedimas skaiciuoklei "i rankas"
+$('#IRsutartis_btn').on('click', function () {
+  var sutarties_pav = document.getElementById('IRsutarties_pav').value;
+  var sutarties_kaina = document.getElementById('IRsutarties_kaina').value;
 
 //apsauga jei neivestu sutarties duomenu
   if (sutarties_pav === "" || sutarties_kaina === "") {
@@ -212,7 +246,7 @@ $('#sutartis_btn').on('click', function () {
   nauja_sutartis.className = "nauja_sutartis h5 ml-5 mt-3 mb-3";
   nauja_sutartis.setAttribute("kaina", sutarties_kaina); //iraso sutarties kaina i attr "kaina"
   nauja_sutartis.innerHTML = "&#9673; Įtraukta autorinė sutartis: "+sutarties_pav+" už "+sutarties_kaina+" &euro;";
-  $(nauja_sutartis).appendTo('.sutartys_div');
+  $(nauja_sutartis).appendTo('#IRsutartys_div');
 
 //surenka visas itrauktas sutartis ir atiduoda bendra sutarciu kainu suma ("viso uz sutartis")
   var temp = document.getElementsByClassName('nauja_sutartis');
@@ -233,17 +267,70 @@ $('#sutartis_btn').on('click', function () {
   var atlyginimas_ir_autorines = apv(esamas_atlyginimas + (viso_uz_sutartis - IRsodrai_nuo_autoriniu));
 
 // parse to html
-  viso_autorSpan.innerHTML = "";
-  viso_autorSpan.innerHTML = viso_uz_sutartis;
-  autor_ir_atlPopSpan.innerHTML = "";
-  autor_ir_atlPopSpan.innerHTML = atl_ir_auto;
+  IRviso_autorSpan.innerHTML = "";
+  IRviso_autorSpan.innerHTML = viso_uz_sutartis;
+  IRautor_ir_atlPopSpan.innerHTML = "";
+  IRautor_ir_atlPopSpan.innerHTML = atl_ir_auto;
   IR_Sodrai_nuo_autoriniu_Span.innerHTML = IRsodrai_nuo_autoriniu;
   IRuzAutorinesSutartisSpan.innerHTML = (viso_uz_sutartis - IRsodrai_nuo_autoriniu);
   IRvisoSpan.innerHTML = atlyginimas_ir_autorines;
 
+
 // isvalo langus
-  $("#sutarties_pav").val("");
-  $("#sutarties_kaina").val("");
+  $("#IRsutarties_pav").val("");
+  $("#IRsutarties_kaina").val("");
+
+});
+
+//Autoriniu sutarciu ivedimas skaiciuoklei "ant popieriaus"
+$('#APsutartis_btn').on('click', function () {
+  var sutarties_pav = document.getElementById('APsutarties_pav').value;
+  var sutarties_kaina = document.getElementById('APsutarties_kaina').value;
+
+//apsauga jei neivestu sutarties duomenu
+  if (sutarties_pav === "" || sutarties_kaina === "") {
+    alert ("Neįvestas sutarties pavadinimas arba suma");
+    return;
+  }
+
+//sukuria DOM, atvaizduoja sutartis
+  var nauja_sutartis = document.createElement('div');
+  nauja_sutartis.className = "nauja_sutartis2 h5 ml-5 mt-3 mb-3";
+  nauja_sutartis.setAttribute("kaina", sutarties_kaina); //iraso sutarties kaina i attr "kaina"
+  nauja_sutartis.innerHTML = "&#9673; Įtraukta autorinė sutartis: "+sutarties_pav+" už "+sutarties_kaina+" &euro;";
+  $(nauja_sutartis).appendTo('#APsutartys_div');
+
+//surenka visas itrauktas sutartis ir atiduoda bendra sutarciu kainu suma ("viso uz sutartis")
+  var temp = document.getElementsByClassName('nauja_sutartis2');
+  var sutarciu_suma = [];
+  var viso_uz_sutartis = 0;
+  for (i = 0; i < temp.length; i++) {
+    sutarciu_suma[i] = parseInt(temp[i].attributes[1].value);
+  }
+  for (i = 0; i < sutarciu_suma.length; i++) {
+    viso_uz_sutartis = viso_uz_sutartis + sutarciu_suma[i];
+  }
+
+
+// kintamieji
+  var temp2 = Number(APalgIrankSpan.innerHTML);
+  var atl_ir_auto = viso_uz_sutartis + temp2;
+  var APsodrai_nuo_autoriniu = (viso_uz_sutartis*100)/(100-IR_procentai_sodrai_input.value)-viso_uz_sutartis;
+  var esamas_atlyginimas = Number(APantPopSpan.innerHTML);
+  var atlyginimas_ir_autorines = apv(viso_uz_sutartis + APsodrai_nuo_autoriniu + Number(APantPopSpan.innerHTML));
+
+// parse to html
+  APviso_autorSpan.innerHTML = "";
+  APviso_autorSpan.innerHTML = viso_uz_sutartis;
+  APautor_ir_atlIRankSpan.innerHTML = "";
+  APautor_ir_atlIRankSpan.innerHTML = atl_ir_auto;
+  AP_Sodrai_nuo_autoriniu_Span.innerHTML = apv(APsodrai_nuo_autoriniu);
+  APuzAutorinesSutartisSpan.innerHTML = apv(viso_uz_sutartis + APsodrai_nuo_autoriniu);
+  APvisoSpan.innerHTML = atlyginimas_ir_autorines;
+
+// isvalo langus
+  $("#APsutarties_pav").val("");
+  $("#APsutarties_kaina").val("");
 
 });
 
@@ -272,8 +359,8 @@ $('#sutartis_btn').on('click', function () {
 
 
 //kintamieji
-    var IR_Sodrai_nuo_aut_Span = apv((Number(viso_autorSpan.innerHTML))*(IR_procentai_sodrai/100));
-    var IR_aut_lieka_nuo_sodros = Number(viso_autorSpan.innerHTML) - IR_Sodrai_nuo_aut_Span;
+    var IR_Sodrai_nuo_aut_Span = apv((Number(IRviso_autorSpan.innerHTML))*(IR_procentai_sodrai/100));
+    var IR_aut_lieka_nuo_sodros = Number(IRviso_autorSpan.innerHTML) - IR_Sodrai_nuo_aut_Span;
     var IR_viso = (Number(IRiRankasSpan.innerHTML)) + IR_aut_lieka_nuo_sodros;
     var IRvisoSpan = document.getElementById('IRvisoSpan');
 
@@ -286,18 +373,23 @@ $('#sutartis_btn').on('click', function () {
 
 
 // atidaro autoriniu sutarciu langa
-  $('#add_icon').click(function(){
-      $("#autorines_input").slideToggle('slow');
+  $('.add_icon').click(function(){
+    if($(this).attr('id') === "IRadd_icon") {
+        $("#IRautorines_input").slideToggle('slow');
+    }
+    else if($(this).attr('id') === "APadd_icon") {
+        $("#APautorines_input").slideToggle('slow');
+    }
   });
 
 // sutarciu apsauga, jei neivestu laukeliu
-  $("#sutarties_pav").on("click", function(){
+  $("#IRsutarties_pav").on("click", function(){
       if(IRalgAntPopSpan.innerHTML === "") {
         alert ("Neįvestas atlyginimas");
         }
   });
 
-// rodo procentu korekcijos div'a
+// rodo procentu korekcijos div'a skaiciuokleje "I RANKAS"
   $('#IRcfg-button').on('click', function () {
     $('#IRprocentu_redagavimas').slideToggle();
   });
@@ -305,7 +397,7 @@ $('#sutartis_btn').on('click', function () {
   $('#IRcross').on('click', function () {
     $('#IRprocentu_redagavimas').slideToggle();
   });
-
+// rodo procentu korekcijos div'a skaiciuokleje "ANT POPIERIAUS"
   $('#APcfg-button').on('click', function () {
     $('#APprocentu_redagavimas').slideToggle();
   });

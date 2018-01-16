@@ -33,6 +33,10 @@
         <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#0092ff;stroke-width:6"></line>
         <line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#0092ff;stroke-width:6"></line>
       </svg>
+      <div class="" style="margin-left: 30%; margin-top: 5%">
+          <span class="h3">% Sodrai nuo autorinių sutarčių</span>
+          <input id="AP_procentai_sodrai_input" class="h3 text-center" type="number" name="" value="39.48">
+      </div>
     </div>
 
   <!-- Vietoj Footer ROW -->
@@ -54,7 +58,6 @@
 
 
     </div>
-
     <hr>
 
   <!-- Atlyginimo pasirinkimas -->
@@ -63,8 +66,8 @@
       <div class="col-md-12 d-flex align-items-center justify-content-center">
         <span class="atl-span mr-2 mb-1 d-flex align-items-center justify-content-center">Skaičiuosime atlyginimą</span>
         <select class="atl-choose" name="" id="selectedInput">
-          <option value="i_rankas">Į rankas</option>
           <option value="ant_popieriaus">Ant popieriaus</option>
+          <option value="i_rankas">Į rankas</option>
         </select>
       </div>
     </div>
@@ -95,8 +98,8 @@
 
       <div id="atl_irankas_skaiciuokle" class="dn">
         <h4>Priskaičiuotas atlyginimas "ant popieriaus" - <span id="IRalgAntPopSpan"></span><span class="IReuroSign dn"> &euro;</span></h4>
-        <h5 id="IRautor" class="dn">Viso už autorines sutartis - <span id="viso_autorSpan"></span><span class="IReuroSign dn"> &euro;</span></h5>
-        <h5 id="IRautor_ir_atlPop" class="dn">Autorinės sutartys + atlyginimas "ant popieriaus" - <span id="autor_ir_atlPopSpan"></span><span class="IReuroSign dn"> &euro;</span></h5>
+        <h5 id="IRautor" class="dn">Viso už autorines sutartis - <span id="IRviso_autorSpan"></span><span class="IReuroSign dn"> &euro;</span></h5>
+        <h5 id="IRautor_ir_atlPop" class="dn">Autorinės sutartys + atlyginimas "ant popieriaus" - <span id="IRautor_ir_atlPopSpan"></span><span class="IReuroSign dn"> &euro;</span></h5>
         <hr>
         <h4>Sodros mokesčiai:</h4>
         <h5 class="ml-4">Pajamų mokestis 15% - <span id="IRpajamu_mokestisSpan"></span> <span class="IReuroSign dn"> &euro;</span></h5>
@@ -116,18 +119,18 @@
 
       <div id="atl_antPopier_skaiciuokle" class="dn">
         <h4>Išmokamas atlyginimas "į rankas" - <span id="APalgIrankSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
-        <!-- <h5 id="IRautor" class="dn">Viso už autorines sutartis - <span id="viso_autorSpan"></span></h5> -->
-        <!-- <h5 id="IRautor_ir_atlPop" class="dn">Autorinės sutartys + atlyginimas "ant popieriaus" - <span id="autor_ir_atlPopSpan"></span></h5> -->
+        <h5 id="APautor" class="dn">Viso už autorines sutartis "į rankas" - <span id="APviso_autorSpan"></span><span class="APeuroSign dn"> &euro;</span></h5>
+        <h5 id="APautor_ir_atlIRank" class="dn">Autorinės sutartys + atlyginimas ("į rankas") - <span id="APautor_ir_atlIRankSpan"></span><span class="APeuroSign dn"> &euro;</span></h5>
         <hr>
         <h4>Sodros mokesčiai:</h4>
         <h5 class="ml-4">Pajamų mokestis 15% - <span id="APpajamu_mokestisSpan"></span><span class="APeuroSign dn"> &euro;</span> </h5>
         <h5 class="ml-4">Sodra. Sveikatos draudimas 6% - <span id="APsveikatos_draudimasSpan"></span><span class="APeuroSign dn"> &euro;</span></h5>
         <h5 class="ml-4">Sodra. Pensijų ir soc. draudimas 3% - <span id="APpensijaSpan"></span><span class="APeuroSign dn"> &euro;</span></h5>
-        <!-- <h5 class="ml-4 dn" id="IR_Sodrai_nuo_autoriniu">Sodra. Autorinės sutartys <span id="IR_Sodrai_nuo_autoriniu_procSpan"></span><span>% - </span><span id="IR_Sodrai_nuo_autoriniu_Span"></span></h5> -->
+        <h5 class="ml-4 dn" id="AP_Sodrai_nuo_autoriniu">Sodra. Autorinės sutartys <span id="AP_Sodrai_nuo_autoriniu_procSpan"></span><span>% - </span><span id="AP_Sodrai_nuo_autoriniu_Span"></span><span class="APeuroSign dn"> &euro;</span></h5>
         <hr>
-        <!-- <h4 class="dn" id="IRuzAutorinesSutartis">Išmokamas atlyginimas už autorines sutartis - <span id="IRuzAutorinesSutartisSpan"></span></h4> -->
+        <h4 class="dn" id="APuzAutorinesSutartis">Priskaičiuota už autorines sutartis "ant popieriaus" - <span id="APuzAutorinesSutartisSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
         <h4>Priskaičiuotas atlyginimas "ant popieriaus" - <span id="APantPopSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
-        <!-- <h4 class="dn" id="IRviso">Išmokamas atlyginimas viso - <span id="IRvisoSpan"></span></h4> -->
+        <h4 class="dn" id="APviso">Atlyginimas ir autorinės sutartys viso "ant popieriaus" - <span id="APvisoSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
         <hr>
         <h5>Darbdavio sumokami mokesčiai (į Sodrą) - 31.18%</h5>
         <h4>Darbdavio sumokami mokesčiai - <span id="APdarbdSumMokSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
@@ -138,25 +141,44 @@
 
       <!-- Autorines sutartys -->
   <hr>
+
+  <!-- skaiciuoklei "I RANKAS" skirtos autorines sutartys -->
     <div class="row au">
        <div class="col-md-12"> <!-- autorines sutartys -->
-         <div class="">
-           <div id="ivesti_sutartis" style="display: none">
-                <img class="mb-1" id="add_icon" src="./img/add.png" alt="">
+         <div id="IRautorines">
+           <div id="IRivesti_sutartis">
+                <img class="mb-1 add_icon" id="IRadd_icon" src="./img/add.png" alt="">
                   <span class="h5">Autorinės sutartys</span>
           </div>
-          <div id="autorines_input" class="dn">
-            <div class="sutartys_div pt-3">
+          <div id="IRautorines_input" class="dn autorines_input">
+            <div id="IRsutartys_div" class="pt-3">
 
             </div>
-            <input id="sutarties_pav" class="m-3" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą" style="width: 650px;">
-            <input id="sutarties_kaina" type="number" name="" value="" placeholder="Sutarties suma">
-            <button id="sutartis_btn" class="m-3 float-right" type="submit" name="button">Įtrauktį autorinę sutartį</button>
+            <input id="IRsutarties_pav" class="m-3" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą" style="width: 650px;">
+            <input id="IRsutarties_kaina" type="number" name="" value="" placeholder="Sutarties suma">
+            <button id="IRsutartis_btn" class="m-3 float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
+          </div>
           </div>
 
-          </div>
-       </div>
 
+
+  <!-- skaiciuoklei "ANT POPIERIAUS" skirtos autorines sutartys -->
+
+         <div id="APautorines">
+           <div id="APivesti_sutartis">
+                <img class="mb-1 add_icon" id="APadd_icon" src="./img/add.png" alt="">
+                  <span class="h5">Autorinės sutartys</span>
+          </div>
+          <div id="APautorines_input" class="dn autorines_input">
+            <div id="APsutartys_div" class="pt-3">
+
+            </div>
+            <input id="APsutarties_pav" class="m-3" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą" style="width: 650px;">
+            <input id="APsutarties_kaina" type="number" name="" value="" placeholder="Sutarties 'i rankas' suma">
+            <button id="APsutartis_btn" class="m-3 float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
+          </div>
+        </div>
+      </div>
     </div>
 
 </div>
