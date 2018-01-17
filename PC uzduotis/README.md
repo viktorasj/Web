@@ -1,6 +1,6 @@
 1.Konfiguracinis langas nustatyti procentus <br />
 2.Turi buti lange 2 skirtukai (angl. Tab). <br />
-	1.Pirmas turi buti algos skaiciavimui “i rankas” <br />
+     1.Pirmas turi buti algos skaiciavimui “i rankas” <br />
 		2.1.1. Turi buti ivedama alga ant popieriaus <br />
 		2.1.2. Rezultatai turi buti pateikiami: <br />
 			2.1.2.1. Sodros mokesciai <br />
