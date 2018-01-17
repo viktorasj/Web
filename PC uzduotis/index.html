@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atlyginimo skaičiuoklė</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-
-
+    <link rel="stylesheet" href="./css/style.css?v=1.0.3">
   </head>
   <body>
   <div class="container">
@@ -18,7 +17,7 @@
       <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#0092ff;stroke-width:6"></line>
       <line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#0092ff;stroke-width:6"></line>
     </svg>
-    <div class="" style="margin-left: 30%; margin-top: 5%">
+    <div class="pop-up">
         <span class="h3">% Sodrai nuo autorinių sutarčių</span>
         <input id="IR_procentai_sodrai_input" class="h3 text-center" type="number" name="" value="39.48">
     </div>
@@ -33,7 +32,7 @@
         <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:#0092ff;stroke-width:6"></line>
         <line x1="0" y1="100%" x2="100%" y2="0" style="stroke:#0092ff;stroke-width:6"></line>
       </svg>
-      <div class="" style="margin-left: 30%; margin-top: 5%">
+      <div class="pop-up">
           <span class="h3">% Sodrai nuo autorinių sutarčių</span>
           <input id="AP_procentai_sodrai_input" class="h3 text-center" type="number" name="" value="39.48">
       </div>
@@ -42,20 +41,17 @@
   <!-- Vietoj Footer ROW -->
 
     <div class="row">
-        <div class="col-md-10 d-flex align-items-end">
-          <img src="./img/logo.png" alt="">
+        <div class="col-md-10 col-xs-2 d-flex align-items-end" title="refresh">
+          <img id="image" src="./img/logo.png" alt="">
         </div>
 
   <!-- CFG I RANKAS SKAICIUOKLEI -->
 
-
-          <button id="IRcfg-button" class="cfg-button dn" type="button" name="button">REDAGUOTI %</button>
-
+          <button id="IRcfg-button" class="cfg-button dn" type="button" name="button" title="Procentų Sodrai nuo autorinių sutarčių korekcija">%</button>
 
   <!-- CFG ANT POPIERIAUS SKAICIUOKLEI -->
 
-        <button id="APcfg-button" class="cfg-button dn" type="button" name="button">REDAGUOTI %</button>
-
+        <button id="APcfg-button" class="cfg-button dn" type="button" name="button" title="Procentų Sodrai nuo autorinių sutarčių korekcija">%</button>
 
     </div>
     <hr>
@@ -63,11 +59,11 @@
   <!-- Atlyginimo pasirinkimas -->
 
     <div class="row au">
-      <div class="col-md-12 d-flex align-items-center justify-content-center">
+      <div class="col-md-12 col-xs-12 d-flex align-items-center justify-content-center">
         <span class="atl-span mr-2 mb-1 d-flex align-items-center justify-content-center">Skaičiuosime atlyginimą</span>
-        <select class="atl-choose" name="" id="selectedInput">
-          <option value="ant_popieriaus">Ant popieriaus</option>
+        <select class="atl-choose" name="" id="selectedInput" title="Pasirinkti skaičiuoklę">
           <option value="i_rankas">Į rankas</option>
+          <option value="ant_popieriaus">Ant popieriaus</option>
         </select>
       </div>
     </div>
@@ -75,7 +71,7 @@
     <!-- Atlyginimo ivedimas -->
 
     <div class="row">
-      <div class="bg-info col-md-12">
+      <div class="bg-info col-md-12 col-xs-12">
 
         <!-- Atlyginimo ant popieriaus ivedimas -->
 
@@ -88,13 +84,12 @@
         <div id="atl_irankas_input" class="mt-3 mb-2 text-center dn">
           <input class="text-center atl-input" id="APatl-input" type="number" name="atl_irankas_input" value="" placeholder="Įveskite atlyginimą į rankas" max="10" autofocus>
         </div>
-
       </div>
     </div>
     <hr>
     <!-- Atlyginimo i rankas skaiciuokle -->
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 col-xs-12">
 
       <div id="atl_irankas_skaiciuokle" class="dn">
         <h4>Priskaičiuotas atlyginimas "ant popieriaus" - <span id="IRalgAntPopSpan"></span><span class="IReuroSign dn"> &euro;</span></h4>
@@ -115,8 +110,6 @@
         <h4>Visa darbo vietos kaina - <span id="IRdarboVietaSpan"></span><span class="IReuroSign dn"> &euro;</span></h4>
       </div>
 
-
-
       <div id="atl_antPopier_skaiciuokle" class="dn">
         <h4>Išmokamas atlyginimas "į rankas" - <span id="APalgIrankSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
         <h5 id="APautor" class="dn">Viso už autorines sutartis "į rankas" - <span id="APviso_autorSpan"></span><span class="APeuroSign dn"> &euro;</span></h5>
@@ -135,7 +128,6 @@
         <h5>Darbdavio sumokami mokesčiai (į Sodrą) - 31.18%</h5>
         <h4>Darbdavio sumokami mokesčiai - <span id="APdarbdSumMokSpan"></span><span class="APeuroSign dn"> &euro;</span></h4>
       </div>
-
     </div>
   </div>
 
@@ -143,8 +135,8 @@
   <hr>
 
   <!-- skaiciuoklei "I RANKAS" skirtos autorines sutartys -->
-    <div class="row au">
-       <div class="col-md-12"> <!-- autorines sutartys -->
+    <div class="row">
+       <div class="col-md-12 col-xs-12"> <!-- autorines sutartys -->
          <div id="IRautorines">
            <div id="IRivesti_sutartis">
                 <img class="mb-1 add_icon" id="IRadd_icon" src="./img/add.png" alt="">
@@ -154,13 +146,11 @@
             <div id="IRsutartys_div" class="pt-3">
 
             </div>
-            <input id="IRsutarties_pav" class="m-3" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą" style="width: 650px;">
-            <input id="IRsutarties_kaina" type="number" name="" value="" placeholder="Sutarties suma">
-            <button id="IRsutartis_btn" class="m-3 float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
+            <input id="IRsutarties_pav" class="m-3  sutarties_pav" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą">
+            <input id="IRsutarties_kaina" class="sutarties_kaina" type="number" name="" value="" placeholder="Sutarties suma">
+            <button id="IRsutartis_btn" class="m-3  float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
           </div>
           </div>
-
-
 
   <!-- skaiciuoklei "ANT POPIERIAUS" skirtos autorines sutartys -->
 
@@ -171,19 +161,17 @@
           </div>
           <div id="APautorines_input" class="dn autorines_input">
             <div id="APsutartys_div" class="pt-3">
-
             </div>
-            <input id="APsutarties_pav" class="m-3" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą" style="width: 650px;">
-            <input id="APsutarties_kaina" type="number" name="" value="" placeholder="Sutarties 'i rankas' suma">
-            <button id="APsutartis_btn" class="m-3 float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
+            <input id="APsutarties_pav" class="m-3  sutarties_pav" type="text" name="" value="" placeholder="Įveskite trumpą sutarties pavadinimą">
+            <input id="APsutarties_kaina" class="sutarties_kaina" type="number" name="" value="" placeholder="Sutarties 'i rankas' suma">
+            <button id="APsutartis_btn" class="m-3  float-right sutartis_button" type="submit" name="button">Įtrauktį autorinę sutartį</button>
           </div>
         </div>
       </div>
     </div>
-
 </div>
 
 <script type="text/javascript" src="./lib/jQuery/jquery-3.2.1.min.js" defer> </script>
-<script type="text/javascript" src="./js/myscript.js" defer> </script>
+<script type="text/javascript" src="./js/myscript.js?v=1.0.3" defer> </script>
 </body>
 </html>
