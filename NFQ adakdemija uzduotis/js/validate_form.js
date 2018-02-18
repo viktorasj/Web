@@ -29,6 +29,9 @@ function validate (buyer) {
   else if (!validateEmail(buyer.email)) {
       changeButtonOnFail ('Check email');
     }
+  else if (isNaN(buyer.qty)) {
+      changeButtonOnFail ('Qty must be number');
+    }
   else {
       return true;
     }
