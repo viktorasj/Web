@@ -9,47 +9,10 @@ $input_fields = array('buyer_name' => 'Name', //an array for input field names
                       'buyer_qty' => 'Qty of Guitars');
 
 ?>
-
     <div class="guitar">
       <audio src="./sound/guitar.mp3" preload="auto"></audio>
     </div>
     <div class="container">
-        <div class="order_div">
-          <p class="h4 text-center mb-3 fill_up_headline">Please fill-up buyer's form</p>
-
-            <?php foreach ($input_fields as $id => $input_field_name): ?>
-              <div class="group">
-                <input type="text" id="<?php echo ($id)?>">
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label><?php echo ($input_field_name) ?></label>
-              </div>
-            <?php endforeach; ?>
-
-          <div class="buy_button">
-            <p id="buy_button" class="text-center">Buy me!</p>
-          </div>
-
-        </div>
-
-        <div class="shipping_info_div">
-            <p class="h4 text-center mb-3 shipping_info_headline">Check shipping information</p>
-            <div class="buyer_information">
-            </div>
-            <div class="incorrect confirm_button">
-              <p>Refill</p>
-            </div>
-            <div class="correct confirm_button">
-              <p>It's correct</p>
-            </div>
-        </div>
-
-        <div class="confirmation_div">
-            <p class="h4 text-center mb-3 shipping_info_headline">Billing information</p>
-            <p class="h5 billing_information">Congratulations <span id="buyer-name"></span>! Thank you for your purchace. We're waiting for your payment to us. Your order number is <span id="order-number"></span>. Don't forget to fill it in "Details" input field while doing a bank transfer. We'll ship your <b>unique</b> guitar in 1-2 working days after the payment is received. We'll email everything soon.</p>
-        </div>
-
-
       <div class="row">
         <div class="col-md-12 mt-10">
           <div class="">
@@ -63,8 +26,36 @@ $input_fields = array('buyer_name' => 'Name', //an array for input field names
             <p>Buy me for <span id="guitarPrice"></span>&euro;</p>
           </div>
         </div>
-
-      </div>
+        <div class="order_div">
+          <p class="h4 text-center mb-3 fill_up_headline">Please fill-up buyer's form</p>
+            <?php foreach ($input_fields as $id => $input_field_name): //multiplies input fields ?>
+              <div class="group">
+                <input type="text" id="<?php echo ($id)?>">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label><?php echo ($input_field_name) ?></label>
+              </div>
+            <?php endforeach; ?>
+          <div class="buy_button">
+            <p id="buy_button" class="text-center">Buy me!</p>
+          </div>
+        </div>
+        <div class="shipping_info_div">
+            <p class="h4 text-center mb-3 shipping_info_headline">Check information</p>
+              <div class="buyer_information">
+              </div>
+              <div class="incorrect confirm_button">
+                <p>Refill</p>
+              </div>
+              <div class="correct confirm_button">
+                <p>It's correct</p>
+              </div>
+        </div>
+        <div class="confirmation_div">
+            <p class="h4 text-center mb-3 shipping_info_headline">Billing information</p>
+            <p class="h5 billing_information">Congratulations <span id="buyer-name"></span>! Thank you for your purchace. We're waiting for your payment to us. Your order number is <span id="order-number"></span>. Don't forget to fill it in "Details" input field while doing a bank transfer. We'll ship your <b>unique</b> guitar in 1-2 working days after the payment is received. We'll email everything soon.</p>
+        </div>
+        </div>
         <div class="row">
           <div class="col-md-12">
             <div class="guitar_div">

@@ -35,13 +35,15 @@ include_once ('./f_show_order_results.php');
             if (!isset($_GET['sort']) && !isset($_GET['search'])) {
               $allOrders = showResults($newOrder, 'getOrders', $results_per_page, "", "", "");
             }
-            // if searching - reload $allOrders to search results
+            // if search field is blank
             elseif (isset($_GET['searchin_phrase']) && $_GET['searchin_phrase'] === "") {
               header('Location: ./order_list.php');
             }
+            // if search field is blank
             elseif (isset($_GET['searchin_phrase'])) {
               $allOrders = showResults($newOrder, 'searchOrders', $results_per_page, $_GET['searchin_phrase'], "", "");
             }
+            //if sorting results
             elseif (isset($_GET['sort'])) {
               $allOrders = showResults($newOrder, 'sortOrders', $results_per_page, "", $_GET['sort'], $_GET['column_name']);
             }
@@ -55,7 +57,7 @@ include_once ('./f_show_order_results.php');
                   <th class="text-center tr_th_<?php echo $key?>" style="border: 2px solid black">
                     <?php echo $value ?>
                     <form class="" action="order_list.php" method="get">
-                      <input type="hidden" name="column_name" value="<?php echo $key ?>">
+                      <input type="hidden" name="column_name" value="<?php echo $key ?>"> <!-- prints col name -->
                       <button class="sort_button" type="submit" name="sort" value="ASC">&#9650;</button>
                       <button class="sort_button" type="submit" name="sort" value="DESC">&#9660;</button>
                     </form>

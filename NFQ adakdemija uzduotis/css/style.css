@@ -200,3 +200,38 @@ tr, th, td {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1440px) {
+
+  .mt-10 {
+      margin-top: 15%;
+  }
+  img {
+    width: 50em;
+  }
+  .buy_me_button {
+    margin-top: 20%;
+    left: 40%;
+  }
+  .homemade_text {
+    margin-top: 2%;
+    left: 40%;
+  }
+  .order_div {
+    left: 40%;
+    width: 32em;
+    height: 44em;
+  }
+  .shipping_info_div {
+    width: 32em;
+    height: 44em;
+  }
+  .confirm_button {
+    margin-left: 1em;
+    padding: 0.3em 1em 0 1em;
+  }
+  .confirmation_div {
+    width: 32em;
+    height: 44em;
+  }
+}

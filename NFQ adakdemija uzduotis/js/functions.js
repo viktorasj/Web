@@ -51,7 +51,5 @@ function guitarSound (){
     var guitarAudio = $('.guitar').find('audio')[0];
     guitarHover.hover(function(){
        guitarAudio.play();
-    }, function(){
-       guitarAudio.stop();
     });
-});
+}
