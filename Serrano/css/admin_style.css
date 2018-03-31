@@ -1,0 +1,18 @@
+#pizza_price_medium, #pizza_price_big{
+  width: 10vw;
+}
+#pizza_img_norm, #pizza_cat {
+  width: 20vw;
+}
+
+#add_form {
+  display: none;
+}
+
+div#add_form div {
+  display: none;
+}
+
+.active {
+  display: block!important;
+}
