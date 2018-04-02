@@ -25,12 +25,87 @@
       }
     }
   }
-  class upload_images extends image_functions {
 
+  class upload_images extends image_functions {
+      private $target_dir = "../img/normal/";
+      protected $files;
+      private $target_file;
+      private $targetFileSize;
+      private $imageFileType;
+
+      public function tryToUpload ($file){
+        $this->files = $file;
+        $this->target_file = $this->target_dir . basename($file["image_file"]["name"]);
+        $this->targetFileSize = $file["image_file"]["size"];
+        $this->imageFileType = strtolower(pathinfo($this->target_file,PATHINFO_EXTENSION));
+        if ($this->checkImage($this->files["image_file"]["tmp_name"]) &&
+              $this->checkIfFileExist($this->target_file) &&
+              $this->checkFileSize($this->targetFileSize)) {
+                uploadImageFile ($this->files["image_file"]["tmp_name"], $this->target_file);
+          }
+      }
   }
 
-  class image_functions {
 
+  class image_functions {
+    public function compress($source, $destination, $quality) {
+          $info = getimagesize($source);
+
+          if ($info['mime'] == 'image/jpeg')
+              $image = imagecreatefromjpeg($source);
+
+          elseif ($info['mime'] == 'image/gif')
+              $image = imagecreatefromgif($source);
+
+          elseif ($info['mime'] == 'image/png')
+              $image = imagecreatefrompng($source);
+
+          imagejpeg($image, $destination, $quality);
+      }
+
+      public function checkImage ($target) {
+          $check = getimagesize($target);
+          if($check === false) {
+          $message = "err Prisegtas failas - ne nuotrauka";
+          echo ($message);
+          return false;
+        }
+          else {
+            return true;
+          }
+      }
+
+      public function checkIfFileExist ($target) {
+        if (file_exists($target)) {
+            $message = "err Nuotrauka egzistuoja";
+            echo ($message);
+            return false;
+        }
+        else {
+          return true;
+        }
+      }
+
+      public function checkFileSize ($target) {
+        if ($target > 5000000) {
+            $message = "err Prisegtas per didelė nuotrauka";
+            echo ($message);
+            return false;
+        }
+        else {
+          return true;
+        }
+      }
+
+      public function uploadImageFile ($fileName, $destination) {
+        move_uploaded_file($fileName, $destination);
+        $message = "added Produktas pridėtas";
+        $source_img = $destination;
+        $destination_img = '../img//thumbs/'.'thumb_'.basename($destination);
+        compress($source_img, $destination_img, 50);
+        echo ($message);
+        return;
+      }
   }
 
   // public function addOrder () {
