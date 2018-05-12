@@ -19,12 +19,9 @@ $('input[name=optradio_add]').click(function (){
 
 $('button[name=add_food]').click(function (){
   var collected_data = collect_data();
-  for (var key in collected_data) {
-    if (!collected_data[key])
-        return;
-      }
   send_data(collected_data);
 });
+
 
 function collect_data(){
     var food_to_add = {
@@ -65,7 +62,7 @@ function clear_inputs (message) {
   $('input[name=optradio_add]').prop('checked', false);
   $('#add_form').slideToggle();
   $('#food_name, #food_ingridients, #food_price_medium, #food_price_big, #food_img_norm, #food_cat').val("");
-  $('label, input[name=optradio_add]').hide();
+  $('label input[name=optradio_add]').hide();
   if (message.includes("added")) {
     textColor = "rgb(27, 205, 2)";
     textToPrint = message.replace("added ", "");
@@ -87,6 +84,6 @@ function clear_inputs (message) {
   }, 3000);
   setTimeout(function(){
     $('div[sub-id=header_add] h3').remove();
-    $('label, input[name=optradio_add]').show();
+    $('label input[name=optradio_add]').show();
   }, 4000);
 }

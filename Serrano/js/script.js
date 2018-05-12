@@ -9,6 +9,7 @@ function addFood () {
   $('aside').empty(); //have to empty side menu because of previous food view
   var foodType = event.target.getAttribute('ba'); // what food is requested to getFoodByFoodType
   var receivedFood = JSON.parse(getFoodByFoodType (foodType)); // food object request
+  console.log(receivedFood);
   $('<div/>',{ class : 'aside-list'}).appendTo('aside'); //sidemenu parent div is appended to aside
   for (i = 0; i < receivedFood.length; i++) { //food is appended to sidemenu
     var asideMenuItem = '<div class="card" food-name="' + receivedFood[i].food_name + '" food-type="'+ receivedFood[i].food_type + '">' +

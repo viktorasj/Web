@@ -52,7 +52,7 @@ function compress($source, $destination, $quality) {
     move_uploaded_file($fileName, $destination);
     $message = "added Produktas pridėtas";
     $source_img = $destination;
-    $destination_img = '../img//thumbs/'.'thumb_'.basename($destination);
+    $destination_img = '../img/thumbs/'.'thumb_'.basename($destination);
     compress($source_img, $destination_img, 50);
     echo ($message);
     return;

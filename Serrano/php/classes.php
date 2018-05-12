@@ -24,6 +24,9 @@
         echo('error adding food');
       }
     }
+    // public function updateFoodById ($food_type, $id) {
+    //   $sql = "UPDATE $food_type SET"
+    // }
   }
 
   class upload_images extends image_functions {
@@ -41,8 +44,8 @@
         if ($this->checkImage($this->files["image_file"]["tmp_name"]) &&
               $this->checkIfFileExist($this->target_file) &&
               $this->checkFileSize($this->targetFileSize)) {
-                uploadImageFile ($this->files["image_file"]["tmp_name"], $this->target_file);
-          }
+                $this->uploadImageFile ($this->files["image_file"]["tmp_name"], $this->target_file);
+        }
       }
   }
 
@@ -71,7 +74,7 @@
           return false;
         }
           else {
-            return true;
+          return true;
           }
       }
 
@@ -82,18 +85,17 @@
             return false;
         }
         else {
-          return true;
+           return true;
         }
       }
 
       public function checkFileSize ($target) {
         if ($target > 5000000) {
             $message = "err Prisegtas per didelė nuotrauka";
-            echo ($message);
             return false;
         }
         else {
-          return true;
+            return true;
         }
       }
 
@@ -101,12 +103,15 @@
         move_uploaded_file($fileName, $destination);
         $message = "added Produktas pridėtas";
         $source_img = $destination;
-        $destination_img = '../img//thumbs/'.'thumb_'.basename($destination);
-        compress($source_img, $destination_img, 50);
+        $destination_img = '../img/thumbs/'.'thumb_'.basename($destination);
+        $this->compress($source_img, $destination_img, 50);
         echo ($message);
         return;
       }
   }
+
+
+
 
   // public function addOrder () {
   //     $sql = "INSERT INTO orders VALUES('', '$this->name', '$this->last_name', '$this->email', '$this->shipping_adr', '$this->qty', '$this->order_price', '$this->order_number', NOW())";

@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Serrano administration</title>
-  <link rel="stylesheet" href="../libs/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/admin_style.css?v=1.0">
-</head>
-<body>
+<?php
+include_once ('./includes/admin_header.php');
+include_once ('./includes/admin_footer.php')
+?>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -17,6 +10,9 @@
             <h3>Puslapio Administravimas</h3>
           </div>
         </div>
+
+        <!-- ADD PRODUCT -->
+
         <div class="card mt-5">
           <div class="card-header text-center ">
             <h3>Pridėti produktą</h3>
@@ -62,23 +58,30 @@
             <button type="submit" class="btn btn-primary" name="add_food">Pridėti</button>
           </div>
         </div>
-        <!-- <div class="card mt-5">
+
+        <!-- EDIT PRODUCT -->
+
+        <div class="card mt-5">
+          <div class="test mx-auto">
+
+          </div>
           <div class="card-header text-center ">
             <h3>Redaguoti produktą</h3>
           </div>
-          <div class="card-header text-center">
+          <div class="card-header text-center" sub-id="header_edit">
             <label class="radio-inline"><input type="radio" name="optradio_edit" value="pizza">Pica</label>
             <label class="radio-inline ml-5"><input type="radio" name="optradio_edit" value="salad">Salotos</label>
             <label class="radio-inline ml-5"><input type="radio" name="optradio_edit" value="rolls">Roletai</label>
             <label class="radio-inline ml-5"><input type="radio" name="optradio_edit" value="other">Kiti patiekalai</label>
           </div>
-        </div> -->
+          <div class="card-body mx-auto first_body" id="edit_form">
+          </div>
+          <div class="card-body second_body">
+
+          </div>
+
+        <!--  -->
+
     </div>
   </div>
   </div>
-  <script type="text/javascript" src="../libs/jQuery/jquery-3.2.1.min.js" defer></script>
-  <script type="text/javascript" src="../libs/bootstrap/js/bootstrap.min.js" defer></script>
-  <script type="text/javascript" src="../js/admin_script.js" defer></script>
-</body>
-
-</html>

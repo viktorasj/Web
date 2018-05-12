@@ -65,7 +65,7 @@
             </svg>
           </div>
           <div class="col-lg-5">
-            <span class="teleph"><a style="text-decoration: none; color: white" href="tel:+37060000000">860000000</a></span>
+            <span class="teleph"><a style="text-decoration: none; color: white" href="tel:+37067768132">867768132</a></span>
           </div>
         </div>
 
