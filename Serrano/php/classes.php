@@ -24,9 +24,27 @@
         echo('error adding food');
       }
     }
-    // public function updateFoodById ($food_type, $id) {
-    //   $sql = "UPDATE $food_type SET"
-    // }
+
+    public function updateFood ($id, $food_name, $food_ingridients, $food_price_medium, $food_price_big, $food_img_thumb, $food_img_norm, $food_cat, $food_type) {
+      $sql = "UPDATE $food_type
+              SET food_name = '$food_name',
+                  food_ingridients = '$food_ingridients',
+                  food_price_medium = '$food_price_medium',
+                  food_price_big = '$food_price_big',
+                  food_cat = '$food_cat',
+                  food_type = '$food_type'
+              WHERE id='$id'";
+
+      $result = $this->connect()->query($sql);
+    }
+
+    public function getRowById ($food_type, $id) {
+      $sql = "SELECT * FROM $food_type WHERE id='$id'";
+      $result = $this->connect()->query($sql);
+      $result = mysqli_fetch_assoc($result);
+      return $result;
+    }
+
   }
 
   class upload_images extends image_functions {
@@ -37,6 +55,7 @@
       private $imageFileType;
 
       public function tryToUpload ($file){
+
         $this->files = $file;
         $this->target_file = $this->target_dir . basename($file["image_file"]["name"]);
         $this->targetFileSize = $file["image_file"]["size"];
@@ -108,7 +127,10 @@
         echo ($message);
         return;
       }
+
   }
+
+
 
 
 

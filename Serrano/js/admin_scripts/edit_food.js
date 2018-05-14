@@ -18,7 +18,6 @@ function request_product (food_type) {
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
           var received_data = JSON.parse(request.responseText);
-          console.log(received_data);
           for (var i = 0; i < received_data.length; i++) {
             $('#edit_form').prepend('<div class="card d-inline-block mr-4 food_card" id="'+received_data[i].id+'" style="width:200px">'+
                                       '<img class="card-img-top" src="../'+received_data[i].food_img_thumb+'" alt="">'+
@@ -38,38 +37,37 @@ function request_product (food_type) {
     };
   }
 
-  function list_edit_form (clicked_obj, id) {
-    for (var i = 0; i < clicked_obj.length; i++) {
-      if (clicked_obj[i].id === id) {
-        if (clicked_obj[i].food_price_medium === clicked_obj[i].food_price_big) {
-          clicked_obj[i].food_price = clicked_obj[i].food_price_big;
+  function list_edit_form (received_data, id) {
+    for (var i = 0; i < received_data.length; i++) {
+      if (received_data[i].id === id) {
+        if (received_data[i].food_price_medium === received_data[i].food_price_big) {
+          received_data[i].food_price = received_data[i].food_price_big;
           prices = '<div class="form-group">'+
                           '<label>Produkto kaina</label>'+
-                          '<input type="text" id="edit_food_price" class="form-control" value="'+clicked_obj[i].food_price+'"required>'+
+                          '<input type="text" id="edit_food_price" class="form-control" value="'+received_data[i].food_price+'"required>'+
                         '</div>';
         }
         else {
           prices = '<div class="form-group">'+
                           '<label>Vidutinės picos kaina</label>'+
-                          '<input type="text" id="edit_food_price_medium" class="form-control" value="'+clicked_obj[i].food_price_medium+'"required>'+
+                          '<input type="text" id="edit_food_price_medium" class="form-control" value="'+received_data[i].food_price_medium+'"required>'+
                         '</div>'+
                         '<div class="form-group">'+
                           '<label>Didelės picos kaina</label>'+
-                          '<input type="text" id="edit_food_price_big" class="form-control" value="'+clicked_obj[i].food_price_big+'"required>'+
+                          '<input type="text" id="edit_food_price_big" class="form-control" value="'+received_data[i].food_price_big+'"required>'+
                         '</div>';
         }
-        console.log(clicked_obj[i]);
         $('.second_body').prepend('<div class="form-group">'+
-                                    '<p class="text-center" id="product_id">Produkto ID: '+clicked_obj[i].id+'</p>'+
-                                    '<img style="width: 10em; border: 2px solid #DFDFDF; margin-left: 43%" src="../'+clicked_obj[i].food_img_thumb+'" alt="">'+
+                                    '<p class="text-center" id="product_id">Produkto ID: '+received_data[i].id+'</p>'+
+                                    '<img style="width: 10em; border: 2px solid #DFDFDF; margin-left: 43%" src="../'+received_data[i].food_img_thumb+'" alt="">'+
                                   '</div>'+
                                   '<div class="form-group">'+
                                     '<label>Produkto pavadinimas</label>'+
-                                    '<input type="text" id="edit_food_name" class="form-control" value="'+clicked_obj[i].food_name+'"required>'+
+                                    '<input type="text" id="edit_food_name" class="form-control" value="'+received_data[i].food_name+'"required>'+
                                   '</div>'+
-                                  '<div class="form-group">'+
+                                  '<div cass="form-group">'+
                                     '<label>Produkto ingridientai</label>'+
-                                    '<input type="text" id="edit_food_ingridients" class="form-control" value="'+clicked_obj[i].food_ingridients+'"required>'+
+                                    '<input type="text" id="edit_food_ingridients" class="form-control" value="'+received_data[i].food_ingridients+'"required>'+
                                   '</div>'+
                                   this.prices+
                                   '<div class="form-group">'+
@@ -97,15 +95,14 @@ function request_product (food_type) {
     });
 
     $('button[name=edit_food]').click(function (){
-      var data_to_edit = collect_edited_data ();
+      var data_to_edit = collect_edited_data (id);
       send_edited_data (data_to_edit);
-
     });
   }
 
-  function collect_edited_data() {
+  function collect_edited_data(id) {
     var product_to_edit = {
-    edited_product_id: $('p#product_id').val(),
+    edited_product_id: id,
     edited_product_type: $('input[name=optradio_edit]:checked').val(),
     edited_product_name: $('input#edit_food_name').val(),
     edited_product_ingridients: $('input#edit_food_ingridients').val(),
@@ -119,6 +116,9 @@ function request_product (food_type) {
     if (!product_to_edit.edited_product_price_medium || !product_to_edit.edited_product_price_medium) {
       product_to_edit.edited_product_price_medium = product_to_edit.edited_product_price;
       product_to_edit.edited_product_price_big = product_to_edit.edited_product_price;
+    }
+    else if (!product_to_edit.edited_product_price) {
+      product_to_edit.edited_product_price = product_to_edit.edited_product_price_big;
     }
     return product_to_edit;
   }
@@ -134,7 +134,6 @@ function request_product (food_type) {
       request.send(formData);
       request.onreadystatechange = function () {
           if (request.readyState == 4 && request.status == 200) {
-            console.log("sended to edit");
-          }
+         }
       };
     }

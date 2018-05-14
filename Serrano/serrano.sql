@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 31, 2018 at 10:24 PM
+-- Generation Time: May 14, 2018 at 09:35 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.1.5
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `serrano`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `other`
+--
+
+CREATE TABLE `other` (
+  `id` int(4) NOT NULL,
+  `food_name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_ingridients` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_price_medium` decimal(6,2) NOT NULL,
+  `food_price_big` decimal(6,2) NOT NULL,
+  `food_img_thumb` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `food_img_norm` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `food_cat` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_type` varchar(255) COLLATE utf8_lithuanian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
 
 -- --------------------------------------------------------
 
@@ -45,11 +63,25 @@ CREATE TABLE `pizza` (
 --
 
 INSERT INTO `pizza` (`id`, `food_name`, `food_ingridients`, `food_price_medium`, `food_price_big`, `food_img_thumb`, `food_img_norm`, `food_cat`, `food_type`) VALUES
-(19, 'Sicilijos', 'Ingridientai: sūris, saliamis, alyvuogės', 5.99, 6.99, './img/pizza1.jpg', './img/pizza1.jpg', 'Veg', 'pizza'),
-(21, 'Havajų', 'Sūris, kumpis, ananasai', 4.99, 6.99, './img/pizza2.jpg', './img/pizza2.jpg', 'Mės', 'pizza'),
-(23, 'Capricciosa', 'Ingridientai: Sūris, pievagrybiai, alyvuogės, švieži bazilikai, saliamis', 5.99, 6.99, './img/pizza3.jpg', './img/pizza3.jpg', 'mės', 'pizza'),
-(24, 'Ypatingoji', 'Ingridientai: Sūris, vištiena, šoninė, paprika, porai, bazilikų padažas', 4.99, 6.99, './img/pizza4.jpg', './img/pizza4.jpg', 'mės', 'pizza'),
-(173, 'test', 'test', 12.00, 14.00, './img/thumbs/thumb_CAM00026.jpg', './img/normal/CAM00026.jpg', 'Mės', 'pizza');
+(28, 'Siciliana', 'Ingridientai: Sūris, varškė, rukola, alyvuogės, kumpis', 4.99, 6.99, './img/thumbs/thumb_pizza1.jpg', './img/normal/pizza1.jpg', 'Mės', 'pizza');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rolls`
+--
+
+CREATE TABLE `rolls` (
+  `id` int(4) NOT NULL,
+  `food_name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_ingridients` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_price_medium` decimal(6,2) NOT NULL,
+  `food_price_big` decimal(6,2) NOT NULL,
+  `food_img_thumb` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `food_img_norm` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `food_cat` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `food_type` varchar(255) COLLATE utf8_lithuanian_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
 
 -- --------------------------------------------------------
 
@@ -70,20 +102,25 @@ CREATE TABLE `salad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_lithuanian_ci;
 
 --
--- Dumping data for table `salad`
---
-
-INSERT INTO `salad` (`id`, `food_name`, `food_ingridients`, `food_price_medium`, `food_price_big`, `food_img_thumb`, `food_img_norm`, `food_cat`, `food_type`) VALUES
-(22, 'Su vištiena', 'Pekino salota, pomidorai, vištiena, skrebučiai, kietasis sūris', 1.99, 1.99, './img/chicken_salad.jpg', './img/chicken_salad.jpg', 'Mės', 'salad');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `other`
+--
+ALTER TABLE `other`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pizza`
 --
 ALTER TABLE `pizza`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rolls`
+--
+ALTER TABLE `rolls`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -97,15 +134,25 @@ ALTER TABLE `salad`
 --
 
 --
+-- AUTO_INCREMENT for table `other`
+--
+ALTER TABLE `other`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
 -- AUTO_INCREMENT for table `pizza`
 --
 ALTER TABLE `pizza`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `rolls`
+--
+ALTER TABLE `rolls`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `salad`
 --
 ALTER TABLE `salad`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;COMMIT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -57,4 +57,9 @@ function compress($source, $destination, $quality) {
     echo ($message);
     return;
   }
+
+  function deleteExistingImages ($received_row) {
+    unlink('.'.$received_row['food_img_norm']);
+    unlink('.'.$received_row['food_img_thumb']);
+  }
   ?>

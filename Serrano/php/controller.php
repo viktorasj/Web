@@ -1,6 +1,7 @@
 <?php
 include_once ('./db_conn.php');
 include_once ('./classes.php');
+include_once ('./functions.php');
 
 
 if (isset($_POST) && isset($_FILES)) {
@@ -32,8 +33,8 @@ if (isset($_POST) && isset($_FILES)) {
                       $_POST['food_type']
                       );
        $upload_images->tryToUpload($_FILES);
+     }
   }
-}
   if($_POST['request_type'] === "get food")  {
     $requested_food = $food->getFood ($_POST['food_type']);
     $return_arr = [];
@@ -53,8 +54,23 @@ if (isset($_POST) && isset($_FILES)) {
   }
 
   if ($_POST['request_type'] === "edit food") {
-    echo ('success');
+    if($_POST && !$_FILES) {
+      $food->updateFood($_POST['edited_product_id'],
+                        $_POST['edited_product_name'],
+                        $_POST['edited_product_ingridients'],
+                        $_POST['edited_product_price_medium'],
+                        $_POST['edited_product_price_big'],
+                        '',
+                        '',
+                        $_POST['edited_product_cat'],
+                        $_POST['edited_product_type']
+                      );
+    }
+    elseif($_POST && $_FILES) {
+      // print_r($_POST, $_FILES);
+      // $result = $food->getRowById ($_POST['edited_product_type'], $_POST['edited_product_id']);
+      // deleteExistingImages ($result);
+    }
   }
 }
-
 ?>
