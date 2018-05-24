@@ -25,7 +25,7 @@
       }
     }
 
-    public function updateFood ($id, $food_name, $food_ingridients, $food_price_medium, $food_price_big, $food_img_thumb, $food_img_norm, $food_cat, $food_type) {
+    public function updateFood ($id, $food_name, $food_ingridients, $food_price_medium, $food_price_big, $food_cat, $food_type) {
       $sql = "UPDATE $food_type
               SET food_name = '$food_name',
                   food_ingridients = '$food_ingridients',
@@ -34,7 +34,14 @@
                   food_cat = '$food_cat',
                   food_type = '$food_type'
               WHERE id='$id'";
+      $result = $this->connect()->query($sql);
+    }
 
+    public function updateFoodImagesDb($id, $food_type, $food_img_thumb, $food_img_normal) {
+      $sql = "UPDATE $food_type
+              SET food_img_thumb = '$food_img_thumb',
+                  food_img_norm = '$food_img_normal'
+              WHERE id='$id'";
       $result = $this->connect()->query($sql);
     }
 
@@ -43,6 +50,15 @@
       $result = $this->connect()->query($sql);
       $result = mysqli_fetch_assoc($result);
       return $result;
+    }
+
+    public function deleteFoodById($id, $food_type) {
+      $sql = "DELETE FROM $food_type WHERE id='$id'";
+      $result = $this->connect()->query($sql);
+      if($result) {
+        $msg = "Produktas ištrintas";
+      }
+      return $msg;
     }
 
   }
@@ -55,7 +71,6 @@
       private $imageFileType;
 
       public function tryToUpload ($file){
-
         $this->files = $file;
         $this->target_file = $this->target_dir . basename($file["image_file"]["name"]);
         $this->targetFileSize = $file["image_file"]["size"];

@@ -65,3 +65,7 @@ function getFoodByFoodType (foodType) {
       }
   }).responseText;
 }
+
+$('.logo').on('dblclick', function(){
+  window.open('../serrano2/php/admin.php', '_blank');
+});

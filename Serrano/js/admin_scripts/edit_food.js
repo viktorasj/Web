@@ -65,7 +65,7 @@ function request_product (food_type) {
                                     '<label>Produkto pavadinimas</label>'+
                                     '<input type="text" id="edit_food_name" class="form-control" value="'+received_data[i].food_name+'"required>'+
                                   '</div>'+
-                                  '<div cass="form-group">'+
+                                  '<div class="form-group">'+
                                     '<label>Produkto ingridientai</label>'+
                                     '<input type="text" id="edit_food_ingridients" class="form-control" value="'+received_data[i].food_ingridients+'"required>'+
                                   '</div>'+
@@ -89,6 +89,7 @@ function request_product (food_type) {
     }
 
     $('button[name=exit_editing]').click(function (){
+      $('.second_body').find('.form-group').remove();
       $('.second_body').hide(500);
       $('#edit_form').show(500);
       $('.second_body').find('button').remove();
@@ -97,8 +98,17 @@ function request_product (food_type) {
     $('button[name=edit_food]').click(function (){
       var data_to_edit = collect_edited_data (id);
       send_edited_data (data_to_edit);
+      showEditMessage ('Redagavimas įvykdytas', "rgb(27, 205, 2)");
+    });
+
+    $('button[name=delete_product]').click(function (){
+      if (window.confirm("Ar tikrai norite ištrinti produktą?")) {
+        deleteProduct(id, $('input[name=optradio_edit]:checked').val());
+      }
     });
   }
+
+
 
   function collect_edited_data(id) {
     var product_to_edit = {
@@ -134,6 +144,40 @@ function request_product (food_type) {
       request.send(formData);
       request.onreadystatechange = function () {
           if (request.readyState == 4 && request.status == 200) {
+         }
+      };
+    }
+
+    function showEditMessage (msg, textColor) {
+      $('.form-group').hide("slow");
+      $('.second_body').find('.form-group').remove();
+      $('.second_body').find('button').remove();
+      $('.second_body').hide(2000);
+      $('label input[name=optradio_edit]').hide();
+      $('div[sub-id=header_edit]').append('<h3 style="color: '+textColor+'; transition: all ease 2s;">['+msg+']</h3>');
+      setTimeout(function(){
+        $('div[sub-id=header_edit] h3').css({
+          'transform': 'scale(6, 6)',
+          'opacity': '0'
+        });
+      }, 3000);
+      setTimeout(function(){
+        $('div[sub-id=header_edit] h3').remove();
+        $('label input[name=optradio_edit]').show();
+      }, 4000);
+    }
+
+    function deleteProduct(id, food_type){
+      var request = new XMLHttpRequest ();
+      var formData = new FormData();
+      formData.append('request_type', "delete food by id");
+      formData.append('id', id);
+      formData.append('food_type', food_type);
+      request.open('post', '../php/controller.php', true);
+      request.send(formData);
+      request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+              showEditMessage (request.responseText, "rgb(236, 2, 2)");
          }
       };
     }
