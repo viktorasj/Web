@@ -42,4 +42,11 @@
   .reply div {
     background-color: #e2dfdf;
   }
+  .main_comment_form, .reply_comment_form {
+    padding: 1em!important;
+  }
+  div.row.pl-5.pr-5 {
+    padding-left: 1em!important;
+    padding-right: 1em!important;
+  }
 }
