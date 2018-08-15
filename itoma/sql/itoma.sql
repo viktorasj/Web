@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 15, 2018 at 02:26 PM
+-- Generation Time: Aug 15, 2018 at 03:10 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.2.1
 
@@ -114,8 +114,8 @@ CREATE TABLE `segments` (
 --
 
 INSERT INTO `segments` (`id`, `name`) VALUES
-(1, 'Logistic'),
-(2, 'Administrative');
+(1, 'Logistics'),
+(2, 'Administration');
 
 -- --------------------------------------------------------
 
