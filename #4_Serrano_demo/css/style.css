@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+body{
+  background-color: #EBE4C4;
+}
+nav {
+  background-color: rgba(247, 146, 28, 0.78);
+}
+
+footer {
+  background-color: rgba(247, 146, 28, 0.78);
+  height: auto;
+  z-index: 2;
+}
+
+aside {
+  height: 34vw;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+  border-radius: 0;
+  margin-bottom: 1vw;
+  border: 1vh solid white;
+}
+.card:hover {
+  filter: brightness(75%);
+}
+.card-body, .card-footer {
+  padding: 0;
+}
+
+.card-body img {
+  width: 100%;
+  height: 8vw;
+}
+
+.card-footer {
+  height: 7vh;
+  background-color: #CE0808;
+  z-index: 2;
+  border-top: 1vh solid white;
+  color: white;
+  font-size: 2vw;
+  font-family: Lobster;
+  padding-bottom: 1vh;
+}
+
+.footer-row {
+  height: 100%;
+}
+.empty {
+  height: 2vh;
+}
+
+.np {
+  padding-left: 0;
+  padding-right: 0;
+}
+.navi {
+  color: white;
+  font-size: 2vw;
+  font-style: italic;
+  height: 8vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  text-decoration: none;
+}
+.navi:hover {
+  background-color: #CE0808;
+  text-decoration: none;
+  color: white;
+}
+
+.navi:focus {
+  background-color: #CE0808;
+  text-decoration: none;
+  color: white;
+}
+
+
+.logo {
+  position: absolute;
+  left: 10vw;
+  height: 15vw;
+  opacity: 0.7;
+  z-index: 3;
+}
+
+.wrapper {
+  height: 24vw;
+  border: 1vh solid white;
+  overflow: hidden;
+  position: relative
+}
+
+.img-wrap {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.info {
+  color: white;
+  height: 10vw;
+  border-left: 1vh solid white;
+  border-right: 1vh solid white;
+  border-bottom: 1vh solid white;
+  background-color: #282E35;
+}
+
+.show-menu {
+  height: 42rem;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.pizza, .salad, .rolls, .other {
+  display: none;
+}
+
+.aside-pizza, .aside-salad, .aside-rolls, .aside-others {
+  display: none;
+}
+
+.ingridientsText {
+  font-size: 1.5vw;
+}
+
+.price_parent_div {
+position: relative;
+z-index: 5;
+float: right;
+width: 12vw;
+margin-top: -1rem;
+transition: all ease 1s;
+}
+
+.price_parent_div:hover {
+  transform: scale(1.2, 1.2) rotate(-5deg);
+}
+
+.price_star_img {
+  width: 100%;
+}
+.price_parag_p1 {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  color: white;
+  font-size: 2vw;
+  font-family: Lobster;
+}
+.price_parag_p2 {
+  position: absolute;
+  top: 45%;
+  left: 12%;
+  color: white;
+  font-size: 1vw;
+  font-family: Lobster;
+}
+
+.price_parag_p3 {
+  position: absolute;
+  top: 60%;
+  left: 16%;
+  color: white;
+  font-size: 1vw;
+  font-family: Lobster;
+}
+
+.price_parag_p4 {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  color: white;
+  font-size: 2vw;
+  font-family: Lobster;
+}
+.price_parag_p5 {
+  position: absolute;
+  top: 47%;
+  left: 34%;
+  color: white;
+  font-size: 1.7vw;
+  font-family: Lobster;
+}
+.contacts {
+  padding: 1%;
+  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 20%;
+  background-color: #282E35;
+  border-radius: 1em;
+}
+.contacts p{
+  font-family: Lobster;
+  color: white;
+  font-size: 1.4vw;
+}
+
+.teleph {
+  font-size: 2.5vw;
+  color: white;
+  margin-bottom: 0;
+}
+.svg-phone {
+  position: absolute;
+  top: 0.8vw;
+  width: 3vw;
+}
+div.address p {
+  margin-bottom: 0;
+}
+div.contacts p {
+  margin-bottom: 0;
+}
+.social {
+  display: inline-block;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+.social a {
+  text-decoration: none;
+}
+.social_icon {
+  height: 5vw;
+}
+.social_icon_text{
+  margin-top: 2vw;
+  color: white;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 415px) {
+  .logo {
+    left: 70vw;
+    height: 23vw;
+  }
+  aside {
+    width: 100%;
+    height: 34vw;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-top: 2vw;
+    padding: 0px!important;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+  section.mr-2 {
+    margin-right: 0!important;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .info {
+    width: 100%;
+    height: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navi {
+    font-size: 4vw;
+    height: 7vw;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .card {
+    display: inline-block;
+    width: 25vw;
+    height: 17vh;
+    margin-left: 1vw;
+    background-color: white;
+    border: 1vw solid white;
+    margin-bottom: 1em;
+    transition: all 0.2s ease;
+  }
+  .card img {
+    height: 16vw;
+  }
+  .card-footer {
+    height: 5vh;
+    font-size: 4vw;
+  }
+  .ingridientsText {
+    font-size: 4vw;
+  }
+
+  .price_parent_div {
+  display: none;
+  }
+  .contacts {
+    width: 50%;
+    padding: 1%;
+    height: auto;
+    margin-bottom: 1rem;
+    background-color: #282E35;
+    border-radius: 1em;
+  }
+  .social {
+    width: 30%;
+  }
+
+}
