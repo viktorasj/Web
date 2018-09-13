@@ -1,0 +1,19 @@
+.fira_font{
+  font-family: 'Fira Sans', sans-serif;
+}
+.michroma_font{
+  font-family: 'Michroma', sans-serif;
+}
+.form_style {
+  border: 2px solid black;
+}
+.mdl-textfield__label{
+   margin-bottom:0px;
+ }
+#mystery_box_pic{
+  margin-top: 45%;
+}
+#buy_button {
+  width: 33.33%;
+  border: 2px solid rgb(124, 124, 124);  
+}
