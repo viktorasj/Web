@@ -6,6 +6,8 @@
 }
 .form_style {
   border: 2px solid black;
+  width: 70%;
+  height: 33em;
 }
 .mdl-textfield__label{
    margin-bottom:0px;
@@ -15,5 +17,9 @@
 }
 #buy_button {
   width: 33.33%;
-  border: 2px solid rgb(124, 124, 124);  
+  border: 2px solid rgb(124, 124, 124);
+}
+#error_report{
+  display: none;
+  color: red;
 }
