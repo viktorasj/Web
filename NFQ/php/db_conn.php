@@ -13,9 +13,6 @@ class dbh {
 
     $conn = new mysqli ($this->servername, $this->username, $this->password, $this->dbname);
     mysqli_query($conn, "SET NAMES 'utf8'");
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    } 
     return $conn;
   }
 }

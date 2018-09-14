@@ -5,6 +5,17 @@
   font-family: 'Michroma', sans-serif;
 }
 .form_style {
+  position: absolute;
+  left: 3%;
+  border: 2px solid black;
+  width: 70%;
+  height: 33em;
+}
+
+#confirmation_window {
+  display: none;
+  position: absolute;
+  left: 3%;
   border: 2px solid black;
   width: 70%;
   height: 33em;

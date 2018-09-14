@@ -26,7 +26,7 @@
          </div>
          <div class="row p-3">
            <div class="col-sm-12 fira_font">
-             <p class="h5">Dreaming about great purchace? Why not to get our <b>Mystery Box</b>?! Remember the golden phrase "...A boat's a boat, but the Mystery Box could be anything! It could even be a boat!".</p>
+             <p class="h5">Dreaming about great purchace? Why not to get our <b>Mystery Box</b>?! Remember the golden phrase "...A boat's a boat, but the Mystery Box could be anything! It could even be a boat!"?</p>
              <br>
              <p class="h5"><b>Fill up</b> the form below, <b>pay</b> us and the <b>box is yours</b>!</p>
            </div>
@@ -59,6 +59,9 @@
                  <br>
                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mt-5" id="buy_button">Buy</button>
                </form>
+             </div>
+             <div class="ml-5 mr-5 p-5 fira_font" id="confirmation_window">
+               <p class="h5">labas</p>
              </div>
             </div>
          </div>

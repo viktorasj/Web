@@ -8,14 +8,38 @@ function make_order (order_info){
       return data;
     }
   }).responseText;
-
-  if(returnedJson === ""){
+  var order_details = JSON.parse(returnedJson);
+  if(!order_details.message){
     $('#error_report').html('');
-    $('form').slideUp();
+    animate_form1 ();
+    $('#confirmation_window').css({'display':'block'});
+    
   }
   else{
-    $('#error_report').html(returnedJson).slideDown();
+    $('#error_report').html(order_details.message).slideDown();
   }
+}
+
+function animate_form1 (){
+  setTimeout(function(){
+    $('.form_style').css({'display':'none'});
+  }, 1000);
+    $('.form_style').css({
+    'transition': 'all ease 1s',
+    'left': '100%',
+    'opacity': '0'
+  });
+}
+
+
+function create_order_id(length) {
+  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  var uniqueNum = "";
+  for (var i = 0; i < length; i++) {
+    var x = Math.floor(Math.random() * chars.length);
+    uniqueNum += chars.charAt(x);
+  }
+  return uniqueNum;
 }
 
 $('#buy_button').click(function(){
@@ -23,7 +47,8 @@ $('#buy_button').click(function(){
       name: $('#name').val(),
       email: $('#email').val(),
       sh_addr: $('#sh_addr').val(),
-      qty: $('#qty').val()
+      qty: $('#qty').val(),
+      order_id: create_order_id(8)
     };
     make_order (order_info);
 });
