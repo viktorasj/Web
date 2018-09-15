@@ -1,3 +1,13 @@
+header {
+  transition: 1s ease all;
+  height: 20px;
+  opacity: 0;
+}
+
+header:hover {
+  opacity: 1;
+}
+
 .fira_font{
   font-family: 'Fira Sans', sans-serif;
 }
@@ -33,4 +43,13 @@
 #error_report{
   display: none;
   color: red;
+}
+#golden_phrase {
+  color: #000;
+}
+#golden_phrase:hover {
+  text-decoration: none;
+}
+.add_underline{
+  text-decoration: underline; 
 }

@@ -58,13 +58,13 @@ if(isset($_GET['submit'])){
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col"><a href='?order=id&&sort=<?php echo($sort)?>'>Id</a></th>
-                <th><a href='?order=name&&sort=<?php echo($sort)?>'>Name</a></th>
-                <th><a href='?order=email&&sort=<?php echo($sort)?>'>Email</a></th>
-                <th><a href='?order=sh_addr&&sort=<?php echo($sort)?>'>Shipping Address</a></th>
-                <th><a href='?order=qty&&sort=<?php echo($sort)?>'>Quantity</a></th>
-                <th><a href='?order=order_id&&sort=<?php echo($sort)?>'>Order id</a></th>
-                <th><a href='?order=time_stamp&&sort=<?php echo($sort)?>'>Date</a></th>
+                <th scope="col"><a class="add_underline" href='?order=id&&sort=<?php echo($sort)?>'>Id</a></th>
+                <th><a class="add_underline" href='?order=name&&sort=<?php echo($sort)?>'>Name</a></th>
+                <th><a class="add_underline" href='?order=email&&sort=<?php echo($sort)?>'>Email</a></th>
+                <th><a class="add_underline" href='?order=sh_addr&&sort=<?php echo($sort)?>'>Shipping Address</a></th>
+                <th><a class="add_underline" href='?order=qty&&sort=<?php echo($sort)?>'>Quantity</a></th>
+                <th><a class="add_underline" href='?order=order_id&&sort=<?php echo($sort)?>'>Order id</a></th>
+                <th><a class="add_underline" href='?order=time_stamp&&sort=<?php echo($sort)?>'>Date</a></th>
               </tr>
             </thead>
             <tbody>

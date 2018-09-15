@@ -13,8 +13,8 @@
   <body>
     <div class="container">
       <header class="row">
-        <div class="col-sm-12 bg-secondary">
-
+        <div class="col-sm-12 bg-secondary text-center">
+          <a class="" id="order_list_button" href="./orders.php">Order list</a>
         </div>
       </header>
      <main class="row">
@@ -26,7 +26,7 @@
          </div>
          <div class="row p-3">
            <div class="col-sm-12 fira_font">
-             <p class="h5">Dreaming about great purchace? Why not to get our <b>Mystery Box</b>?! Remember the golden phrase "...A boat's a boat, but the Mystery Box could be anything! It could even be a boat!"?</p>
+             <p class="h5">Dreaming about great purchace? Why not to get our <b>Mystery Box</b>?! Remember the golden phrase <a id="golden_phrase" target="_blank" href="https://www.youtube.com/watch?v=GKZJdaiJF84">"...A boat's a boat, but the Mystery Box could be anything! It could even be a boat!"</a>?</p>
              <br>
              <p class="h5"><b>Fill up</b> the form below, <b>pay</b> us and the <b>box is yours</b>!</p>
            </div>
@@ -61,7 +61,7 @@
                </form>
              </div>
              <div class="ml-5 mr-5 p-5 fira_font" id="confirmation_window">
-               <p class="h4">Congratulations! Your Mystery Box order was placed (order id number - <b><span id="order_id_nr"></span></b>). The more you pay - the more powerful your Mystery Box will be. We'll send you detais soon to <b><span id="order_email"></span></b>.</p>
+               <p class="h4">Congratulations! Your Mystery Box order was placed (order id number - <b><span id="order_id_nr"></span></b>). The more you pay - the more powerful your Mystery Box will be. We'll send you details soon to <b><span id="order_email"></span></b>.</p>
              </div>
             </div>
          </div>

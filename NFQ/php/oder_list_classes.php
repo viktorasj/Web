@@ -3,13 +3,12 @@ include_once('./php/db_conn.php');
 
 class order_list extends dbh {
   public $allOrders = array();
-  public $search_results;
 
-  public function __construct ($order, $sort) {
+  public function __construct ($order_by, $sort) {
     $temp_array = array();
     $sql = "select *
             FROM orders
-            ORDER BY $order
+            ORDER BY $order_by
             $sort";
     $result = $this->connect()->query($sql);
     while($row = $result->fetch_assoc()){
@@ -24,8 +23,7 @@ class order_list extends dbh {
       return;
     }
     $cont = strtolower($search);
-    $search_results = [];
-    $test = array();
+    $search_results = array();
     $array = $this->allOrders;
     foreach ($array as $key => $val) {
        if (strpos(strtolower($val['id']), $cont) !== false ||
@@ -46,8 +44,6 @@ class order_list extends dbh {
     }
     $this->allOrders = $search_results;
   }
-
-
 }
 
 
