@@ -60,6 +60,24 @@ class order extends dbh {
       die('Cannot place order to db!');
     }
   }
+}
+
+// order list classes
+
+
+class order_list extends dbh {
+  public $allOrders;
+
+  public function __construct () {
+    $sql = "select *
+            FROM orders";
+    $result = $this->connect()->query($sql);
+    $this->allOrders = $result;
+  }
+
+  public function test () {
+    echo (mysqli_fetch_assoc($this->allOrders));
+  }
 
 }
 

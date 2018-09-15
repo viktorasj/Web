@@ -11,26 +11,35 @@ function make_order (order_info){
   var order_details = JSON.parse(returnedJson);
   if(!order_details.message){
     $('#error_report').html('');
-    animate_form1 ();
-    $('#confirmation_window').css({'display':'block'});
-    
+    show_form1 ();
+    $('#order_id_nr').html(order_details.order_id);
+    $('#order_email').html(order_details.order_email);
+    show_conf_win ();
   }
   else{
     $('#error_report').html(order_details.message).slideDown();
   }
 }
 
-function animate_form1 (){
+function show_form1 (){
   setTimeout(function(){
-    $('.form_style').css({'display':'none'});
+    $('#order_form').css({'display':'none'});
   }, 1000);
-    $('.form_style').css({
+    $('#order_form').css({
     'transition': 'all ease 1s',
     'left': '100%',
     'opacity': '0'
   });
 }
 
+function show_conf_win (){
+  $('#confirmation_window').css({'display':'block'});
+  $('#confirmation_window').css({
+    'transition': 'all ease 3s',
+    'height': '17em',
+    'opacity': '1'
+  });
+}
 
 function create_order_id(length) {
   var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";

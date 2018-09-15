@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Main page</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans|Michroma">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -33,7 +33,7 @@
          </div>
          <div class="row mt-4">
            <div class="col-sm-12">
-             <div class="form_style ml-5 mr-5 pt-5 pb-5">
+             <div class="ml-5 mr-5 pt-5 pb-5" id="order_form">
                <form class="text-center" action="#" id="form">
                  <div class="text-center mt-2 fira_font" id="error_report"></div>
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -61,7 +61,7 @@
                </form>
              </div>
              <div class="ml-5 mr-5 p-5 fira_font" id="confirmation_window">
-               <p class="h5">labas</p>
+               <p class="h4">Congratulations! Your Mystery Box order was placed (order id number - <b><span id="order_id_nr"></span></b>). The more you pay - the more powerful your Mystery Box will be. We'll send you detais soon to <b><span id="order_email"></span></b>.</p>
              </div>
             </div>
          </div>

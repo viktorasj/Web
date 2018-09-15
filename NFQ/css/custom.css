@@ -4,7 +4,7 @@
 .michroma_font{
   font-family: 'Michroma', sans-serif;
 }
-.form_style {
+#order_form {
   position: absolute;
   left: 3%;
   border: 2px solid black;
