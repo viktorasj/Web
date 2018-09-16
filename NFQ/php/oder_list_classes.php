@@ -2,27 +2,39 @@
 include_once('./php/db_conn.php');
 
 class order_list extends dbh {
+  public $number_of_records;
   public $allOrders = array();
   public $number_of_pages;
-  public $number_of_records;
   public $results_per_page = 10;
+  public $current_page;
+  public $this_page_first_result;
 
-  public function __construct ($order_by, $sort) {
+  public function __construct ($order_by, $sort, $current_page) {
+    $this->number_of_records = $this->get_number_of_records();
+    $this->number_of_pages = ceil($this->number_of_records/$this->results_per_page);
+    $this->current_page = $current_page;
+    $this->this_page_first_result = ($this->current_page-1)*$this->results_per_page;
     $temp_array = array();
+
     $sql = "select *
             FROM orders
             ORDER BY $order_by
-            $sort";
+            $sort
+            LIMIT " .$this->this_page_first_result. ',' .$this->results_per_page;
     $result = $this->connect()->query($sql);
-    while($row = $result->fetch_assoc()){
-      $temp_array[] = $row;
-    }
-    $this->allOrders = $temp_array;
-    $this->number_of_records = mysqli_num_rows($result);
-    $this->number_of_pages = ceil($this->number_of_records/$this->results_per_page);
-
+    while($row = $result->fetch_assoc()){ // defining simple multidimensional array
+      $temp_array[] = $row;               // defining simple multidimensional array
+    }                                     // defining simple multidimensional array
+    $this->allOrders = $temp_array;       // defining simple multidimensional array
   }
 
+  public function get_number_of_records(){
+    $sql = "select *
+            FROM orders
+            ";
+    $result = $this->connect()->query($sql);
+    return mysqli_num_rows($result);
+  }
 
   public function search ($search) {
     if ($search === "") {
