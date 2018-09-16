@@ -3,6 +3,9 @@ include_once('./php/db_conn.php');
 
 class order_list extends dbh {
   public $allOrders = array();
+  public $number_of_pages;
+  public $number_of_records;
+  public $results_per_page = 10;
 
   public function __construct ($order_by, $sort) {
     $temp_array = array();
@@ -15,6 +18,9 @@ class order_list extends dbh {
       $temp_array[] = $row;
     }
     $this->allOrders = $temp_array;
+    $this->number_of_records = mysqli_num_rows($result);
+    $this->number_of_pages = ceil($this->number_of_records/$this->results_per_page);
+
   }
 
 

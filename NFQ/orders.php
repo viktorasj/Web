@@ -1,14 +1,14 @@
 <?php
 include_once ('./php/oder_list_classes.php');
 
-
-if (isset($_GET['order'])) {
-  $order_by = $_GET['order'];
-}else {
-  $order_by = 'id';
+if(isset($_GET['page'])){
+  $current_page = $_GET['page'];
+}
+else {
+  $current_page = 1;
 }
 
-if (isset($_GET['sort'])) {
+if (isset($_GET['sort']) && isset($_GET['change_sort'])) {
   $sort = $_GET['sort'];
   if ($sort == 'ASC') {
     $sort = 'DESC';
@@ -17,6 +17,12 @@ if (isset($_GET['sort'])) {
   }
 }else {
   $sort = 'ASC';
+}
+
+if (isset($_GET['order_by'])) {
+  $order_by = $_GET['order_by'];
+}else {
+  $order_by = 'id';
 }
 
 $allOrders = new order_list ($order_by, $sort);
@@ -51,20 +57,25 @@ if(isset($_GET['submit'])){
       <div class="row" style="height: 100px;">
         <div class="col-sm-12 text-center">
           <p class="h1 fira_font">Orders</p>
+          <?php
+          for ($page=1; $page <= $allOrders->number_of_pages; $page++) {
+            echo ('<a class="h4 mr-3" href="?order_by='.$order_by.'&&sort='.$sort.'&&page='.$page.'">'.$page.'</a>');
+          }
+          ?>
         </div>
       </div>
-      <div class="row" style="height: 100px;">
+      <div class="row">
         <div class="col-sm-12">
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col"><a class="add_underline" href='?order=id&&sort=<?php echo($sort)?>'>Id</a></th>
-                <th><a class="add_underline" href='?order=name&&sort=<?php echo($sort)?>'>Name</a></th>
-                <th><a class="add_underline" href='?order=email&&sort=<?php echo($sort)?>'>Email</a></th>
-                <th><a class="add_underline" href='?order=sh_addr&&sort=<?php echo($sort)?>'>Shipping Address</a></th>
-                <th><a class="add_underline" href='?order=qty&&sort=<?php echo($sort)?>'>Quantity</a></th>
-                <th><a class="add_underline" href='?order=order_id&&sort=<?php echo($sort)?>'>Order id</a></th>
-                <th><a class="add_underline" href='?order=time_stamp&&sort=<?php echo($sort)?>'>Date</a></th>
+                <th scope="col"><a class="add_underline" href='?order=id&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Id</a></th>
+                <th><a class="add_underline" href='?order_by=name&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Name</a></th>
+                <th><a class="add_underline" href='?order_by=email&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Email</a></th>
+                <th><a class="add_underline" href='?order_by=sh_addr&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Shipping Address</a></th>
+                <th><a class="add_underline" href='?order_by=qty&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Quantity</a></th>
+                <th><a class="add_underline" href='?order_by=order_id&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Order id</a></th>
+                <th><a class="add_underline" href='?order_by=time_stamp&&sort=<?php echo($sort)."&&page=".$current_page."&&change_sort=true"?>'>Date</a></th>
               </tr>
             </thead>
             <tbody>
@@ -80,12 +91,17 @@ if(isset($_GET['submit'])){
                   '<td>'.$value['time_stamp'].'</td>
                   <tr>');
                 }
+
               ?>
             </tbody>
           </table>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12">
 
+        </div>
+      </div>
     </div>
   </body>
 </html>
