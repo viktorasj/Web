@@ -72,7 +72,7 @@ class order_list extends dbh {
            strpos(strtolower($val['qty']), $cont) !== false ||
            strpos(strtolower($val['order_id']), $cont) !== false ||
            strpos(strtolower($val['time_stamp']), $cont) !== false) {
-         $search_results[$key]['id'] = $val['id']+1;
+         $search_results[$key]['id'] = $val['id'];
          $search_results[$key]['name'] = $val['name'];
          $search_results[$key]['email'] = $val['email'];
          $search_results[$key]['sh_addr'] = $val['sh_addr'];
