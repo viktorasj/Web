@@ -54,7 +54,7 @@
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                    <input class="mdl-textfield__input" type="number" pattern="[0-9]*" min="1" id="qty">
                    <label class="mdl-textfield__label" for="qty">Quantity</label>
-                   <span class="mdl-textfield__error">Digits only</span>
+                   <span class="mdl-textfield__error">Digits above zero</span>
                  </div>
                  <br>
                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mt-5" id="buy_button">Buy</button>
