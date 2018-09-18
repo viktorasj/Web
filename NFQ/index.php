@@ -34,7 +34,7 @@
          <div class="row mt-4">
            <div class="col-sm-12">
              <div class="ml-5 mr-5 pt-5 pb-5" id="order_form">
-               <form class="text-center" action="#" id="form">
+               <div class="text-center" id="form">
                  <div class="text-center mt-2 fira_font" id="error_report"></div>
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                    <input class="mdl-textfield__input" type="text" id="name">
@@ -53,12 +53,12 @@
                  <br>
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                    <input class="mdl-textfield__input" type="number" pattern="[0-9]*" min="1" id="qty">
-                   <label class="mdl-textfield__label" for="qty">Qty</label>
+                   <label class="mdl-textfield__label" for="qty">Quantity</label>
                    <span class="mdl-textfield__error">Digits only</span>
                  </div>
                  <br>
                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mt-5" id="buy_button">Buy</button>
-               </form>
+               </div>
              </div>
              <div class="ml-5 mr-5 p-5 fira_font" id="confirmation_window">
                <p class="h4">Congratulations! Your Mystery Box order was placed (order id number - <b><span id="order_id_nr"></span></b>). The more you pay - the more powerful your Mystery Box will be. We'll send you details soon to <b><span id="order_email"></span></b>.</p>
@@ -70,6 +70,9 @@
          <img id="mystery_box_pic" src="./img/mystery_box.jpg" alt="">
        </div>
      </main>
+     <div class="" style="height: 100px;">
+
+     </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
