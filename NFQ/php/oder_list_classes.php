@@ -50,7 +50,7 @@ class order_list extends dbh {
             $this->sort
             LIMIT " .$this->this_page_first_result. ',' .$this->results_per_page;
     $result = $this->connect()->query($sql);
-    //-------------------defining simple multidimensional array--------------------------
+    //-------------------defining multidimensional array--------------------------
     while($row = $result->fetch_assoc()){
       $temp_array[] = $row;
     }
@@ -84,8 +84,6 @@ class order_list extends dbh {
     $this->number_of_records = count($search_results);
     $this->number_of_pages = ceil($this->number_of_records/$this->results_per_page);
     $this->orders_to_show = array_slice($search_results, $this->this_page_first_result, $this->results_per_page);
-    
-
   }
 }
 

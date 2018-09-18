@@ -13,8 +13,6 @@ if (isset($_GET['sort']) && $_GET['change_sort'] == 1) { //if any of th sort lin
   $sort = $_GET['sort'];
   if ($sort == 'ASC') {
     $sort = 'DESC';
-  }else {
-    $sort = 'ASC';
   }
 }elseif (isset($_GET['sort']) && $_GET['change_sort'] == 0) { //if pages are changing
     $sort = $_GET['sort'];
@@ -22,9 +20,9 @@ if (isset($_GET['sort']) && $_GET['change_sort'] == 1) { //if any of th sort lin
   $sort = 'ASC';
 }
 //----------------------ORDER_BY----------------------
-if (isset($_GET['order_by'])) {
+if (isset($_GET['order_by'])) {   //if th links are pressed
   $order_by = $_GET['order_by'];
-}else {
+}else {                          //define by loading page (default)
   $order_by = 'id';
 }
 
@@ -32,7 +30,6 @@ if (isset($_GET['order_by'])) {
 $allOrders = new order_list ($order_by, $sort, $current_page);
 
 //----------------------SEARCH------------------------------
-//----I KNOW HOW TO SEARCH IN DB WITH SQL QUERY. JUST WANTED TO SHOW, THAT I KNOW HOW TO SEARCH IN MULTIDIMENSIONAL ARRAY TOO ;)-----------------
 
 if (!isset($_GET['srch_phrase']) || $_GET['srch_phrase'] == "") {     //if search button is pressed and search input is blank
   $srch_phrase = "";
@@ -42,7 +39,7 @@ if (!isset($_GET['srch_phrase']) || $_GET['srch_phrase'] == "") {     //if searc
   $srch_phrase = $_GET['srch_phrase'];
 }
 
-if(isset($_GET['submit']) && $_GET['submit'] === "Search"){
+if(isset($_GET['submit']) && $_GET['submit'] === "Search"){        //if search button is pressed and searh input not blank
   $srch_phrase = $_GET['srch_phrase'];
   $allOrders->get_orders_with_search($srch_phrase);
   $search = "Search";
