@@ -19,6 +19,7 @@ class order extends dbh {
   }
 
   public function validate_order(){
+    //---written with if statements cos' it's less code than with switch/case---
     if (empty($this->name)) {
       $this->message = "Name is missed";
     }
@@ -30,6 +31,9 @@ class order extends dbh {
     }
     elseif (strlen($this->name) < 3) {
       $this->message = "Name must be minimum three letters";
+    }
+    elseif (strlen($this->name) > 20) {
+      $this->message = "Maximum name length twenty letters";
     }
     elseif (empty($this->email)) {
       $this->message = "Email is missed";
@@ -43,11 +47,17 @@ class order extends dbh {
     elseif (strlen($this->sh_addr) < 8) {
       $this->message = "Shipping address is too short";
     }
+    elseif (!preg_replace( '/[^0-9]/', '', $this->sh_addr) || !preg_replace( '/[^a-zA-Z]/', '', $this->sh_addr)) {
+      $this->message = "Shipping address must contain letters and number";
+    }
     elseif (empty($this->qty)) {
       $this->message = "Quantity of boxes is missed";
     }
     elseif (!($this->qty > 0)) {
       $this->message = "Check quantity field";
+    }
+    elseif ($this->qty > 10) {
+      $this->message = "Really? 10+ boxes? Max is ten!";
     }
     return $this->message;
   }
@@ -61,4 +71,5 @@ class order extends dbh {
     }
   }
 }
+
 ?>

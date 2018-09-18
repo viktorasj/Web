@@ -1,7 +1,6 @@
 header {
   transition: 1s ease all;
-  height: 20px;
-  opacity: 0;
+  opacity: 0.8;
 }
 
 header:hover {
@@ -12,8 +11,9 @@ header:hover {
   font-family: 'Fira Sans', sans-serif;
 }
 .michroma_font{
-  font-family: 'Michroma', sans-serif;
+  font-family: 'Michroma', sans-serif!important;
 }
+
 #order_form {
   position: absolute;
   left: 3%;
@@ -21,7 +21,9 @@ header:hover {
   width: 70%;
   height: 33em;
 }
-
+#order_list_button{
+  font-size: 1.2em;
+}
 #confirmation_window {
   display: none;
   position: absolute;
@@ -54,4 +56,19 @@ header:hover {
   text-decoration: underline;
 }
 
-/* ORDER LIST CSS */
+@media screen and (max-width: 880px) {
+  #order_form.ml-5 {
+    margin-left: 1em!important;
+  }
+  button.mt-5 {
+    margin-top: 1em!important;
+  }
+  #order_form {
+    border: 2px solid black;
+    width: 90%;
+    height: 30em;
+  }
+  #mystery_box_pic{
+    margin-top: 130%;
+  }
+}

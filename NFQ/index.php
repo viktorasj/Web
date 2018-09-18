@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <header class="row">
-        <div class="col-sm-12 bg-secondary text-center">
+        <div class="p-1 col-sm-12 bg-secondary text-center">
           <a class="" id="order_list_button" href="./orders.php">Order list</a>
         </div>
       </header>
