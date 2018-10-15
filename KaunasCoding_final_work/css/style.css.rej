@@ -1,0 +1,9 @@
+diff a/Atsiskaitymui/css/style.css b/Atsiskaitymui/css/style.css	(rejected hunks)
+@@ -34,7 +34,6 @@
+   height: 20vhem; }
+ 
+ .au-35 {
+-  height: 35em; }
+   height: 35vh; }
+ 
+ .au-40 {

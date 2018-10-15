@@ -1,0 +1,34 @@
+#pizza_price_medium, #pizza_price_big{
+  width: 10vw;
+}
+#pizza_img_norm, #pizza_cat {
+  width: 20vw;
+}
+
+#add_form, #edit_form {
+  display: none;
+}
+
+div#add_form div {
+  display: none;
+}
+
+.active {
+  display: block!important;
+}
+
+#edit_form .card {
+  transition: all 0.3s ease;
+}
+
+#edit_form .card:hover {
+  transform: scale(1.1, 1.1)
+
+}
+.second_body {
+  display: none;
+}
+
+.food_card:hover {
+  cursor: pointer;
+}
